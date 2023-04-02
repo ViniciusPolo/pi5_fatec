@@ -1,0 +1,10 @@
+const path = require('path');
+
+module.exports = {
+    'config': path.resolve(__dirname, 'config', 'database.js'),
+    'migrations-path': path.resolve(__dirname, 'database', 'migrations')
+}
+//On Root, this comands
+//npx sequelize db:create
+//npx sequelize migration:create --name languages
+//npx sequelize db:migrate
