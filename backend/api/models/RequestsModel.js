@@ -5,9 +5,11 @@ class Requests extends Model {
         super.init({
             restaurant_id: DataTypes.INTEGER,
             food_id: DataTypes.INTEGER,
-            user_id: DataTypes.FLOAT,
+            user_id: DataTypes.INTEGER,
             status_prepare: DataTypes.INTEGER,
-            status_payment: DataTypes.INTEGER
+            status_payment: DataTypes.INTEGER,
+            total_value: DataTypes.FLOAT,
+            total_delivery: DataTypes.FLOAT,
         }, {
             sequelize,
             tableName: "requests"

@@ -46,4 +46,27 @@ module.exports = {
             return res.status(400).send(error)
         }
     },
+
+    async update(req, res) {
+        try {
+            const { id_restaurant } = req.params
+            const {user_owner, restaurant_name, bio, logo, address} = req.body;
+            const restaurants = await Restaurants.update({
+                user_owner,
+                restaurant_name, 
+                bio, 
+                logo, 
+                address
+            }, {
+                where: { id: id_restaurant }
+            });
+            return res.status(200).send({
+                status: 1,
+                message: "Restaurant sucessefull updated",
+                restaurants
+              })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
+    },
 }

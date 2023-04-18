@@ -8,6 +8,6 @@ router.get('/restaurants/:id_restaurant', restaurantsControllers.indexOne);
 
 router.post('/restaurants', restaurantsControllers.store);
 
-//router.put('/restaurants/:id_restaurant', restaurantsControllers.update)
+router.put('/restaurants/:id_restaurant', restaurantsControllers.update)
 
 module.exports = router

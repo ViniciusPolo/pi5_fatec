@@ -7,7 +7,7 @@ class Menus extends Model {
             food_name: DataTypes.STRING,
             price: DataTypes.FLOAT,
             prepare_time: DataTypes.INTEGER,
-            ingredients: DataTypes.JSON,
+            ingrediants: DataTypes.JSON,
         }, {
             sequelize,
             tableName: "menus"
