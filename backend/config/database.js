@@ -4,9 +4,9 @@ module.exports = {
 	dialect: process.env.DIALECT,
 	username: process.env.USERNAME,
 	password: process.env.PASSWORD,
-  	port: process.env.PORT,
-    database: process.env.DATABASE,
-    logging: console.log,
+  port: process.env.PORT,
+  database: process.env.DATABASE,
+  logging: console.log,
   define: {
     timestamps: true,
     underscored: true,

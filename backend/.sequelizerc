@@ -8,3 +8,4 @@ module.exports = {
 //npx sequelize db:create
 //npx sequelize migration:create --name languages
 //npx sequelize db:migrate
+//npx sequelize-cli db:migrate --to 20170316142544-create-an-index.js

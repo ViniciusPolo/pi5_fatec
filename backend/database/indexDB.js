@@ -1,10 +1,12 @@
 const Sequelize = require('sequelize')
-const dbConfig = require('../config/database.js')
+const dbConfig = require('../config/database')
 
 const conexao = new Sequelize(dbConfig)
 
 //import models
-//ex: const users = require('../api/models/UsersModel')
+const users = require('../api/models/UsersModel')
+const restaurants = require('../api/models/RestaurantsModel')
+const menus = require('../api/models/MenusModel')
 
 try{
     conexao.authenticate();
@@ -14,6 +16,11 @@ try{
 }
 
 // init connect with models
-//ex: users.init(conexao)
+users.init(conexao)
+restaurants.init(conexao)
+menus.init(conexao)
+
+users.associate(conexao.models)
+restaurants.associate(conexao.models)
 
 module.exports = conexao
