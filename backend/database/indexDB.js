@@ -7,6 +7,7 @@ const conexao = new Sequelize(dbConfig)
 const users = require('../api/models/UsersModel')
 const restaurants = require('../api/models/RestaurantsModel')
 const menus = require('../api/models/MenusModel')
+const requests = require('../api/models/RequestsModel')
 
 try{
     conexao.authenticate();
@@ -19,6 +20,7 @@ try{
 users.init(conexao)
 restaurants.init(conexao)
 menus.init(conexao)
+requests.init(conexao)
 
 users.associate(conexao.models)
 restaurants.associate(conexao.models)

@@ -5,16 +5,10 @@ module.exports = {
   up: async (queryInterface, Sequelize) => { 
       queryInterface.addColumn(
         'requests',
-        'total_value',
+        'id_request_root',
         {
-          type: Sequelize.FLOAT
-        }
-      ),
-      queryInterface.addColumn(
-        'requests',
-        'total_delivery',
-        {
-          type: Sequelize.FLOAT
+          type: Sequelize.INTEGER,
+          allowNull: false
         }
       )
     }  

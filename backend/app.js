@@ -15,11 +15,13 @@ app.use(cors())
 const usersRoutes = require('./api/routes/usersRoutes')
 const restaurantsRoutes = require('./api/routes/restaurantsRoutes')
 const menusRoutes = require('./api/routes/menusRoutes')
+const requestsRoutes = require('./api/routes/requestsRoutes')
 
 //E usadas aqui
 app.use(usersRoutes)
 app.use(restaurantsRoutes)
 app.use(menusRoutes)
+app.use('/requests',requestsRoutes)
 
 //Quando for fazer o deploy, colocar o que aqui?
 app.set('url', 'http://localhost:');
