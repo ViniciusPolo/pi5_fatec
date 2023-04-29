@@ -9,7 +9,7 @@ const app = express()
 //dbConnection()
 
 app.use(express.json())
-//app.use(cors())
+app.use(cors())
 
 //Todas Rotas deverão ser descriminadas aqui
 const usersRoutes = require('./api/routes/usersRoutes')
