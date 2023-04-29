@@ -59,6 +59,7 @@ module.exports = {
     },
 
     async update(req, res) {
+        try{
         const { id_user } = req.params
         const {first_name, last_name, email, type_of_user, address, documents} = req.body;
         //if (!password) return res.status(500).send({ error: 'Path "password" is required' })
@@ -79,6 +80,9 @@ module.exports = {
             message: "User updated!",
             users
         })
+    } catch (error) {
+        return res.status(400).send(error)
+    }
     },
 
     async login(req,res) {
@@ -102,7 +106,11 @@ module.exports = {
     },
 
     async logout (req, res) {
+    try{
         res.send({ auth: false, token: null })
+    } catch (error) {
+        return res.status(400).send(error)
+    }
     }
 
 

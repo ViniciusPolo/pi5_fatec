@@ -90,6 +90,7 @@ module.exports = {
     },
 
     async update(req, res) {
+        try{
         const { id_request, id_request_root } = req.params
         const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity} = req.body;
             let status_payment_default, status_prepare_default, id_request_root_default
@@ -115,6 +116,9 @@ module.exports = {
             message: "Request updated!",
             requests
         })
+    } catch (error) {
+        return res.status(400).send(error)
+    }
     },
 
 }

@@ -66,6 +66,7 @@ module.exports = {
     },
 
     async update(req, res) {
+        try {
         const { id_menu } = req.params
         const {restaurant_id, food_name, price, prepare_time, ingredients} = req.body;
         const ingrediants = ingredients
@@ -84,6 +85,9 @@ module.exports = {
             message: "Menu updated!",
             menus
         })
+    } catch (error) {
+        return res.status(400).send(error)
+    }
     },
 
 }
