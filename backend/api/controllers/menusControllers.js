@@ -79,6 +79,7 @@ module.exports = {
         }, {
             where: { id: id_menu }
         });
+        Menus.end()
 
         return res.status(200).send({
             status: 1,

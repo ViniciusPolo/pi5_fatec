@@ -10,6 +10,11 @@ module.exports = {
   define: {
     timestamps: true,
     underscored: true,
+  },
+  dialectOptions: {
+    ssl: true,
+    keepAlive: true,
+    keepAliveInterval: 600000 // Tempo limite em milissegundos
   }
 }
 
