@@ -12,7 +12,6 @@ module.exports = {
     underscored: true,
   },
   dialectOptions: {
-    ssl: true,
     rejectUnauthorized: false,
     keepAlive: true,
     keepAliveInterval: 600000, // Tempo limite em milissegundos
