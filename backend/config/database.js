@@ -13,8 +13,9 @@ module.exports = {
   },
   dialectOptions: {
     ssl: true,
+    rejectUnauthorized: true,
     keepAlive: true,
-    keepAliveInterval: 600000 // Tempo limite em milissegundos
+    keepAliveInterval: 600000, // Tempo limite em milissegundos
   }
 }
 
