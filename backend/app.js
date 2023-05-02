@@ -4,9 +4,9 @@ const http = require('http')
 
 require('./database/indexDB')
 
-//const dbConnection = require('./config/db')
+const dbConnection = require('./config/db')
 const app = express()
-//dbConnection()
+dbConnection()
 
 app.use(express.json())
 app.use(cors())
@@ -26,12 +26,12 @@ app.use('/requests',requestsRoutes)
 //Quando for fazer o deploy, colocar o que aqui?
 //app.set('url', 'http://localhost:');
 
-app.set('port', 443);
+//app.set('port', 8443);
 // app.set('port', 3001);
 
 try {
     http.createServer(app).listen(app.get('port'), function(){
-        console.log('Server started on port'+ app.get('port'))
+        console.log('Server started on port')
         //console.log('Server started on '+ app.get('url') + app.get('port'))
     })
 } catch (error) {
