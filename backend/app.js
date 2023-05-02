@@ -4,7 +4,7 @@ const http = require('http')
 
 require('./database/indexDB')
 
-const dbConnection = require('./config/db')
+const dbConnection = require('./config/database')
 const app = express()
 dbConnection()
 
