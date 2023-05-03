@@ -17,7 +17,20 @@ const app = express()
 
 //const conexao = new Sequelize(dbConfig)
 
-app.use(expressSession(dbConnection))
+const sessionConfig = {
+  store: new pgSession({
+    pool: dbConnection
+  }),
+  name: '$DATA$',
+  secret: process.env.COOKIE_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge : 7 * 24 * 60 * 60 * 1000,  // 7 dias
+    httpOnly: true
+  }
+}
+app.use(expressSession(sessionConfig))
 
 app.use(express.json())
 app.use(cors())
