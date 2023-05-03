@@ -26,10 +26,10 @@ const requestsRoutes = require('./api/routes/requestsRoutes')
 
 app.use(conexao)
 //E usadas aqui
-app.use(usersRoutes)
-app.use(restaurantsRoutes)
-app.use(menusRoutes)
-app.use('/requests',requestsRoutes)
+app.use('/users', usersRoutes(conexao))
+app.use('/restaurants', restaurantsRoutes(conexao))
+app.use('/menus', menusRoutes(conexao))
+app.use('/requests', requestsRoutes(conexao))
 
 //Quando for fazer o deploy, colocar o que aqui?
 // app.set('url', 'http://localhost:');
