@@ -25,11 +25,16 @@ app.use('/requests',requestsRoutes)
 
 //Quando for fazer o deploy, colocar o que aqui?
 // app.set('url', 'http://localhost:');
-// app.set('port', 8080);
 // app.set('port', 3001);
 
-http.createServer(app).listen(app.get('port'), function(){
-    console.log('Server started on '+ app.get('url') + app.get('port'))
-})
+// http.createServer(app).listen(app.get('port'), function(){
+//     console.log('Server started on '+ app.get('url') + app.get('port'))
+// })
+
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
 
 module.exports = app
