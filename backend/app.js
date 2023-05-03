@@ -4,16 +4,20 @@ const http = require('http')
 require('dotenv').config()
 const Sequelize = require('sequelize')
 
+const expressSession = require('express-session')
+const pgSession = require('connect-pg-simple')(expressSession)
+
 require('./database/indexDB')
 
-//const dbConnection = require('./config/database')
+const dbConnection = require('./config/database')
 const app = express()
 //dbConnection()
 
 //const sequelize = new Sequelize(process.env.DATABASE_URL);
-const dbConfig = require('./config/database')
 
-const conexao = new Sequelize(dbConfig)
+//const conexao = new Sequelize(dbConfig)
+
+app.use(expressSession(dbConnection))
 
 app.use(express.json())
 app.use(cors())
@@ -25,10 +29,10 @@ const menusRoutes = require('./api/routes/menusRoutes')
 const requestsRoutes = require('./api/routes/requestsRoutes')
 
 //E usadas aqui
-app.use('/users', usersRoutes(conexao))
-app.use('/restaurants', restaurantsRoutes(conexao))
-app.use('/menus', menusRoutes(conexao))
-app.use('/requests', requestsRoutes(conexao))
+app.use(usersRoutes)
+app.use(restaurantsRoutes)
+app.use(menusRoutes)
+app.use('/requests',requestsRoutes)
 
 //Quando for fazer o deploy, colocar o que aqui?
 // app.set('url', 'http://localhost:');
