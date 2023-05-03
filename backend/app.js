@@ -10,7 +10,10 @@ require('./database/indexDB')
 const app = express()
 //dbConnection()
 
-const sequelize = new Sequelize(process.env.DATABASE_URL);
+//const sequelize = new Sequelize(process.env.DATABASE_URL);
+const dbConfig = require('../config/database')
+
+const conexao = new Sequelize(dbConfig)
 
 app.use(express.json())
 app.use(cors())
@@ -21,6 +24,7 @@ const restaurantsRoutes = require('./api/routes/restaurantsRoutes')
 const menusRoutes = require('./api/routes/menusRoutes')
 const requestsRoutes = require('./api/routes/requestsRoutes')
 
+app.use(conexao)
 //E usadas aqui
 app.use(usersRoutes)
 app.use(restaurantsRoutes)
