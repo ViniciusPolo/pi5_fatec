@@ -24,7 +24,6 @@ const restaurantsRoutes = require('./api/routes/restaurantsRoutes')
 const menusRoutes = require('./api/routes/menusRoutes')
 const requestsRoutes = require('./api/routes/requestsRoutes')
 
-app.use(conexao)
 //E usadas aqui
 app.use('/users', usersRoutes(conexao))
 app.use('/restaurants', restaurantsRoutes(conexao))
