@@ -13,16 +13,16 @@ const dbConnection = require('./config/database')
 const app = express()
 //dbConnection()
 
-//const sequelize = new Sequelize(process.env.DATABASE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 //const conexao = new Sequelize(dbConfig)
 
 const sessionConfig = {
   store: new pgSession({
     pool: dbConnection,
-    dialect: 'postgres',
+    Dialect: 'postgres',
   }),
-  dialect: 'postgres',
+  Dialect: 'postgres',
   name: '$DATA$',
   secret: process.env.COOKIE_SECRET,
   resave: false,

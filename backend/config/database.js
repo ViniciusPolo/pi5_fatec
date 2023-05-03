@@ -23,7 +23,7 @@ const { Pool } = require('pg')
 
 const conn = new Pool({
   host: process.env.HOST,
-	dialect: 'postgres',
+	Dialect: 'postgres',
 	username: process.env.USERNAME,
 	password: process.env.PASSWORD,
   port: process.env.PORT,
