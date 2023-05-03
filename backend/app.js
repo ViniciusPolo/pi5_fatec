@@ -82,7 +82,7 @@ const requestsRoutes = require('./api/routes/requestsRoutes')
 // Conecta ao banco de dados
 const dbConn = require('./config/database')
 
-/const expressSession = require('express-session')
+const expressSession = require('express-session')
 const pgSession = require('connect-pg-simple')(expressSession)
 
 var app = express();
