@@ -1,12 +1,15 @@
 const express = require("express")
 const cors = require('cors')
 const http = require('http')
+require('dotenv').config()
 
 require('./database/indexDB')
 
 //const dbConnection = require('./config/database')
 const app = express()
 //dbConnection()
+
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 app.use(express.json())
 app.use(cors())
