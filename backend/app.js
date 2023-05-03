@@ -14,7 +14,9 @@ const app = express()
 //dbConnection()
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres'
+  dialect: 'postgres', 
+  resave: false, 
+  saveUninitialized: false,
 });
 
 //const conexao = new Sequelize(dbConfig)
