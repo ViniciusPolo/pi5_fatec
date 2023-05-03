@@ -95,29 +95,29 @@ const sessionConfig = {
   secret: process.env.COOKIE_SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: {
-    maxAge : 7 * 24 * 60 * 60 * 1000,  // 7 dias
-    httpOnly: true
-  }
+  // cookie: {
+  //   maxAge : 7 * 24 * 60 * 60 * 1000,  // 7 dias
+  //   httpOnly: true
+  // }
 }
 
 // Se for ambiente de produção, habilita confiança no primeiro proxy
 // e cookies seguros
-if(app.get('env') === 'production') {
-  app.set('trust proxy', 1)
-  sessionConfig.cookie.secure = true
-}
+// if(app.get('env') === 'production') {
+//   app.set('trust proxy', 1)
+//   sessionConfig.cookie.secure = true
+// }
 
 app.use(expressSession(sessionConfig))
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'twig');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'twig');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //E usadas aqui
