@@ -22,14 +22,13 @@ require('dotenv').config()
 const { Pool } = require('pg')
 
 const conn = new Pool({
-  host: process.env.HOST,
-	username: process.env.USERNAME,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   dialect: 'postgres',
-	password: process.env.PASSWORD,
-  port: process.env.PORT,
-  database: process.env.DATABASE,
-  }, 
-  {dialect: 'postgres'})
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
+})
 
 // Testando a conexão
 async function testConn() {
@@ -43,6 +42,8 @@ async function testConn() {
 }
 
 testConn()
+
+module.exports = conn
 
 module.exports = conn
 
