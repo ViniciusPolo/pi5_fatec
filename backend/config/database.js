@@ -23,7 +23,6 @@ const { Pool } = require('pg')
 
 const conn = new Pool({
   host: process.env.HOST,
-	dialect: process.env.DIALECT,
 	username: process.env.USERNAME,
 	password: process.env.PASSWORD,
   port: process.env.PORT,
