@@ -19,21 +19,21 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 //const conexao = new Sequelize(dbConfig)
 
-const sessionConfig = {
-  store: new pgSession({
-    pool: dbConnection,
-    Dialect: 'postgres',
-  }),
-  Dialect: 'postgres',
-  name: '$DATA$',
-  secret: process.env.COOKIE_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge : 7 * 24 * 60 * 60 * 1000,  // 7 dias
-    httpOnly: true
-  }
-}
+// const sessionConfig = {
+//   store: new pgSession({
+//     pool: dbConnection,
+//     Dialect: 'postgres',
+//   }),
+//   Dialect: 'postgres',
+//   name: '$DATA$',
+//   secret: process.env.COOKIE_SECRET,
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie: {
+//     maxAge : 7 * 24 * 60 * 60 * 1000,  // 7 dias
+//     httpOnly: true
+//   }
+// }
 app.use(expressSession(sequelize))
 
 app.use(express.json())
