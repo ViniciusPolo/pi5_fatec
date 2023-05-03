@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "build": "node ace build --production"
+    "build": "node ace build --production"  
   },
   "keywords": [],
   "author": "",
