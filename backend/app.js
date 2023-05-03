@@ -19,8 +19,10 @@ const app = express()
 
 const sessionConfig = {
   store: new pgSession({
-    pool: dbConnection
+    pool: dbConnection,
+    dialect: 'postgres',
   }),
+  dialect: 'postgres',
   name: '$DATA$',
   secret: process.env.COOKIE_SECRET,
   resave: false,
