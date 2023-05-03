@@ -13,7 +13,9 @@ const dbConnection = require('./config/database')
 const app = express()
 //dbConnection()
 
-const sequelize = new Sequelize(process.env.DATABASE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres'
+});
 
 //const conexao = new Sequelize(dbConfig)
 
@@ -32,7 +34,7 @@ const sessionConfig = {
     httpOnly: true
   }
 }
-app.use(expressSession(sessionConfig))
+app.use(expressSession(sequelize))
 
 app.use(express.json())
 app.use(cors())
