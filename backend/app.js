@@ -11,7 +11,7 @@ const app = express()
 //dbConnection()
 
 //const sequelize = new Sequelize(process.env.DATABASE_URL);
-const dbConfig = require('../config/database')
+const dbConfig = require('./config/database')
 
 const conexao = new Sequelize(dbConfig)
 
