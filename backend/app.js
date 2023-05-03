@@ -82,14 +82,15 @@ const requestsRoutes = require('./api/routes/requestsRoutes')
 // Conecta ao banco de dados
 const dbConn = require('./config/database')
 
-const expressSession = require('express-session')
+/const expressSession = require('express-session')
 const pgSession = require('connect-pg-simple')(expressSession)
 
 var app = express();
 
 const sessionConfig = {
   store: new pgSession({
-    pool: dbConn
+    pool: dbConn,
+    createTableIfMissing: true, // this will create a `session` table if you do not have it yet
   }),
   name: '$DATA$',
   secret: process.env.COOKIE_SECRET,
