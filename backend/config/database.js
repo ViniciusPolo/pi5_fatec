@@ -1,49 +1,22 @@
 require('dotenv').config()
 
-// module.exports = {
-// 	host: process.env.HOST,
-// 	dialect: process.env.DIALECT,
-// 	username: process.env.USERNAME,
-// 	password: process.env.PASSWORD,
-//   port: process.env.PORT,
-//   database: process.env.DATABASE,
-//   logging: console.log,
-//   define: {
-//     timestamps: true,
-//     underscored: true,
-//   },
-//   dialectOptions: {
-//     rejectUnauthorized: false,
-//     keepAlive: true,
-//     keepAliveInterval: 30000, // Tempo limite em milissegundos
-//   }
-// }
-
-const { Pool } = require('pg')
-
-const conn = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  dialect: 'postgres',
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME
-})
-
-// Testando a conexão
-async function testConn() {
-  try {
-    await conn.query('select now()')
-    console.log('** POSTGRES: conexão estabelecida')
-  }
-  catch(error) {
-    console.error('** POSTGRES: ERRO => ' + error)
+module.exports = {
+	host: process.env.HOST,
+	dialect: process.env.DIALECT,
+	username: process.env.USERNAME,
+	password: process.env.PASSWORD,
+  port: process.env.PORT,
+  database: process.env.DATABASE,
+  logging: console.log,
+  define: {
+    timestamps: true,
+    underscored: true,
+  },
+  dialectOptions: {
+    rejectUnauthorized: false,
+    keepAlive: true,
+    keepAliveInterval: 30000, // Tempo limite em milissegundos
   }
 }
 
-testConn()
-
-module.exports = conn
-
-module.exports = conn
 
