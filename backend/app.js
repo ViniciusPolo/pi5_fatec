@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require('cors')
 const http = require('http')
+const bodyParser = require('body-parse')
 require('dotenv').config()
 //const Sequelize = require('sequelize')
 
@@ -8,14 +9,16 @@ require('./database/indexDB')
 
 // const dbConnection = require('./config/database')
 const app = express()
+
 //dbConnection()
 
 //const sequelize = new Sequelize();
 
 //const conexao = new Sequelize(dbConfig)
 
-
-// app.use(express.json())
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
+app.use(express.json())
 // app.use(cors())
 
 //Todas Rotas deverão ser descriminadas aqui
