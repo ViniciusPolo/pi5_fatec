@@ -45,8 +45,10 @@ module.exports = {
     },
 
     async store(req, res) {
+        console.log("req",req)
         try {
             const {restaurant_id, food_name, price, prepare_time, ingredients} = req.body;
+            console.log()
             const ingrediants = ingredients
             const menus = await Menus.create({
                 restaurant_id,
