@@ -36,6 +36,18 @@ export default function Routes() {
           }
         }}/>
 
+        <Stack.Screen name='menu' component={Home} options={{
+          title: 'Menu',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#3498db',
+          },
+          headerTitleStyle:{
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
