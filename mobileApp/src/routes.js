@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/home';
 import Login from './pages/login';
+import Menu from './pages/menu';
 
 const Stack = createStackNavigator();
 
@@ -36,7 +37,7 @@ export default function Routes() {
           }
         }}/>
 
-        <Stack.Screen name='menu' component={Home} options={{
+        <Stack.Screen name='menu' component={Menu} options={{
           title: 'Menu',
           headerTitleAlign: 'center',
           headerStyle: {
