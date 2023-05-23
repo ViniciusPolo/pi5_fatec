@@ -10,14 +10,15 @@ export default class Home extends Component {
     }
 
     async componentDidMount(){
-        const response = await api.get(`/restaurants`);
-
-        this.setState({restaurants: response.data});
-
-        console.log(response.data)
+        try {
+            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
+            this.setState({restaurants: response.data});
+            console.log(response.data)
+            
+        } catch (error) {
+            console.error(error)
+        }
     }
-
-    
 
     render (){
         const { restaurants } = this.state
@@ -34,7 +35,7 @@ export default class Home extends Component {
                             <Name>{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 
-                            <ProfileButton onPress = {() => {}}>
+                            <ProfileButton onPress = {() => this.gerar()}>
                                 <ProfileButtonText>Ver Menu</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>

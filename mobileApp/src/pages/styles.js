@@ -12,7 +12,7 @@ export const List = styled.FlatList`
 
 export const Restaurant = styled.View`
     align-items: center;
-    margin: 0 20 30px;
+    //margin: 0 20 30px;
 `;
 
 export const Logo = styled.Image`
