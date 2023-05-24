@@ -4,32 +4,49 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-nativ
 import api from '../services/api';
 
 const Login = () => {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [typeOfUser, setTypeOfUser] = useState('')
 
     const navigation = useNavigation();
 
     const handleLogin = async  () => {
-        console.log("teste")
-        const log = await api.post(`https://um-trem-de-cume-api.onrender.com/login`, {
+        const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
+            first_name: firstName,
+            last_name: lastName,
             email: email,
-            password: password
+            password: password,
+            type_of_user: typeOfUser,
+            address: {  },
+            documents: {}
         })
         const data = log.data;
 
-        if (data.auth) {
-            navigation.navigate("home");
+        if (data) {
+            navigation.navigate("login");
         } else {
             console.error("API ERROR", data.error);
-        } 
-    } 
-
-    const handleCreateAccount = async  () => {
-      navigation.navigate("createAccount");
     }
+  } 
 
     return (
         <View style={styles.container}>
+            <TextInput 
+                style={styles.input}
+                placeholder="Primeiro Nome"
+                value={firstName}
+                onChangeText={setFirstName}
+            />
+
+            <TextInput 
+                style={styles.input}
+                placeholder="Sobrenome"
+                value={lastName}
+                onChangeText={setLastName}
+            />
+
             <TextInput 
                 style={styles.input}
                 placeholder="Email"
@@ -43,12 +60,18 @@ const Login = () => {
                 secureTextEntry={true}
                 value={password}
                 onChangeText={setPassword}
-            />
+            />     
+
+            <TextInput 
+                style={styles.input}
+                placeholder="Tipo de Usuário"
+                value={typeOfUser}
+                onChangeText={setTypeOfUser}
+            />   
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Entrar</Text>  
+                <Text style={styles.buttonText}>Criar Usuário</Text>  
             </TouchableOpacity>
-            <Text style={styles.auxText} onPress={handleCreateAccount}>Criar Conta</Text> 
         </View>
     )
 }
@@ -77,10 +100,6 @@ const styles = StyleSheet.create({
     },
     buttonText:{
       color: '#fff',
-      fontWeight: 'bold',
-    },
-    auxText:{
-      color: '#3498db',
       fontWeight: 'bold',
     },
 })
