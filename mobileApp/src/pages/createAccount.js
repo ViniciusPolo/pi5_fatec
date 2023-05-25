@@ -9,10 +9,13 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [typeOfUser, setTypeOfUser] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const navigation = useNavigation();
 
     const handleLogin = async  () => {
+        try {
+    
         const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
             first_name: firstName,
             last_name: lastName,
@@ -25,9 +28,20 @@ const Login = () => {
         const data = log.data;
 
         if (data) {
+            setLoading(false)
+            Alert.alert('Cadastrado com sucesso', [
+                {text: 'Ok', onPress: () => console.log('OK Pressed')},
+              ]);
             navigation.navigate("login");
         } else {
             console.error("API ERROR", data.error);
+        }
+    } catch (error) {
+        Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
+            {text: 'Tendinovo', onPress: () => console.log('OK Pressed')},
+          ]);
+          setLoading(false)
+    
     }
   } 
 
