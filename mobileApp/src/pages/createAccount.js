@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity } from 'react-native';
 import api from '../services/api';
 
 const Login = () => {
@@ -16,6 +16,7 @@ const Login = () => {
 
     const handleLogin = async  () => {
         try {
+        setLoading(true)
     
         const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
             first_name: firstName,
@@ -30,12 +31,11 @@ const Login = () => {
 
         if (data) {
             setLoading(false)
-            Alert.alert('Cadastrado com sucesso', [
-                {text: 'Ok', onPress: () => console.log('OK Pressed')},
-              ]);
             navigation.navigate("login");
         } else {
             console.error("API ERROR", data.error);
+            setLoading(false)
+            navigation.navigate("login");
         }
     } catch (error) {
         Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
@@ -48,6 +48,8 @@ const Login = () => {
 
     return (
         <View style={styles.container}>
+            {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
+            <>
             <TextInput 
                 style={styles.input}
                 placeholder="Primeiro Nome"
@@ -90,6 +92,7 @@ const Login = () => {
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
             </TouchableOpacity>
+            </>)}
         </View>
     )
 }
