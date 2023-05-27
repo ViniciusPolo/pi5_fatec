@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
-import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
 import api from '../services/api';
 
 const Login = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
+    const [confirmEmail, setConfirmEmail] = useState('')
     const [password, setPassword] = useState('')
     const [typeOfUser, setTypeOfUser] = useState('')
     const [loading, setLoading] = useState(false)
@@ -16,34 +17,40 @@ const Login = () => {
 
     const handleLogin = async  () => {
         try {
-        setLoading(true)
-    
-        const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            password: password,
-            type_of_user: typeOfUser,
-            address: {  },
-            documents: {}
-        })
-        const data = log.data;
+            
+            if(email != confirmEmail){
+                Alert.alert('Ô sô, esse email não tá batendo');
+                return
+            } else {
 
-        if (data) {
-            setLoading(false)
-            navigation.navigate("login");
-        } else {
-            console.error("API ERROR", data.error);
-            setLoading(false)
-            navigation.navigate("login");
-        }
-    } catch (error) {
-        Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
-            {text: 'Tendinovo', onPress: () => console.log('OK Pressed')},
-          ]);
+                setLoading(true)
+                
+                const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email,
+                    password: password,
+                    type_of_user: typeOfUser,
+                    address: {  },
+                    documents: {}
+                })
+                const data = log.data;
+                
+                if (data) {
+                    setLoading(false)
+                    navigation.navigate("login");
+                } else {
+                    console.error("API ERROR", data.error);
+                    setLoading(false)
+                    navigation.navigate("login");
+                }
+            }
+        } catch (error) {
+            Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
+                {text: 'Tendinovo', onPress: () => console.log('OK Pressed')},
+            ]);
           setLoading(false)
-    
-    }
+        }
   } 
 
     return (
@@ -67,6 +74,13 @@ const Login = () => {
             <TextInput 
                 style={styles.input}
                 placeholder="Email"
+                value={confirmEmail}
+                onChangeText={setConfirmEmail}
+            />
+
+            <TextInput 
+                style={styles.input}
+                placeholder="Confirme o Email"
                 value={email}
                 onChangeText={setEmail}
             />

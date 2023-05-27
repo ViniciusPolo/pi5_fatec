@@ -56,6 +56,12 @@ export default class Home extends Component {
                     )}
                 />
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
+                {[1,2].includes(users.type_of_user)  ?
+                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
+                        <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
+                    </ProfileButton>) : <></>
+                }
+                {/* exibe somente se for dono de restaurante, type of user 2 */}
                 {users.type_of_user == 2 ?
                     (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
                         <ProfileButtonText>Gerenciar Restaurante</ProfileButtonText>
