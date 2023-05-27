@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 import api from '../services/api';
 
@@ -75,13 +76,16 @@ const Login = () => {
                 value={password}
                 onChangeText={setPassword}
             />     
-
-            <TextInput 
-                style={styles.input}
-                placeholder="Tipo de Usuário"
+            <Picker
+                onChanged={setTypeOfUser}
+                options={[
+                    {value: 1, text: 'Sou Cliente'},
+                    {value: 2, text: 'Tenho um restaurante'},
+                    {value: 3, text: 'Sou Entregador'}
+                ]}
+                style={styles.inputPicker}
                 value={typeOfUser}
-                onChangeText={setTypeOfUser}
-            />   
+            />
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
@@ -105,6 +109,14 @@ const styles = StyleSheet.create({
       marginVertical: 10,
       width: '80%',
     },
+    inputPicker: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        padding: 10,
+        marginVertical: 10,
+        width: '140%',
+      },
     button:{
       backgroundColor: '#3498db',
       borderRadius: 5,

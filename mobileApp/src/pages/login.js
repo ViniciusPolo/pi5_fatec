@@ -13,17 +13,15 @@ const Login = () => {
     const handleLogin = async  () => {
       try {
         setLoading(true)
-        console.log("teste")
         const log = await api.post(`https://um-trem-de-cume-api.onrender.com/login`, {
           email: email,
           password: password
         })
         const data = log.data;
-        console.log("data")
 
         if (data.auth) {
             setLoading(false)
-            navigation.navigate("home");
+            navigation.navigate("home", {user: data});
         } else {
             console.error("API ERROR", data.error);
         } 

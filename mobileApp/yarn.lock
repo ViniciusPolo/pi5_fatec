@@ -1567,6 +1567,18 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@ouroboros/react-native-picker@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/@ouroboros/react-native-picker/-/react-native-picker-0.2.1.tgz"
+  integrity sha512-+GXclbaPWoivG/OEoPWRH/mZGbACd/2eSdowacxrSFElM9CIk8CDnD626AWO9oLUpQLzo1r3id51GGbbYxlK5A==
+  dependencies:
+    "@ouroboros/tools" "^0.1.0"
+
+"@ouroboros/tools@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/@ouroboros/tools/-/tools-0.1.0.tgz"
+  integrity sha512-2b3pkpIzeyA/4AYxzZrGKOr/scb7+UDPd3g8nJiI+z3UMiiAkKk0Y3rf38xS3LAQrjBbXVU9uVD4eoqSoLstAA==
+
 "@react-native-community/cli-clean@^10.1.1":
   version "10.1.1"
   resolved "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-10.1.1.tgz"
@@ -6231,7 +6243,7 @@ react-native-vector-icons@^9.2.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
-react-native@*, react-native@>=0.57, react-native@0.71.5:
+react-native@*, react-native@>=0.57, react-native@>=0.66, react-native@0.71.5:
   version "0.71.5"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.71.5.tgz"
   integrity sha512-fMptnHXoIPotg7gPYAvjMRnfC6gUSkTJzgaIDQJTY/f5F+g6qph5J1xT9LCuWuNguyQ9dh8b0MZTK5ROvTTV9w==
@@ -6318,7 +6330,7 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16.8.0", react@>=16.6.0, react@>=16.8.0, react@>=17.0.0, react@18.2.0:
+react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16.8.0", react@>=16.6.0, react@>=16.8, react@>=16.8.0, react@>=17.0.0, react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
