@@ -10,4 +10,6 @@ router.post('/restaurants', restaurantsControllers.store);
 
 router.put('/restaurants/:id_restaurant', restaurantsControllers.update)
 
+router.get('/restaurants/owner/:user_owner', restaurantsControllers.findAllbyIdOwner)
+
 module.exports = router

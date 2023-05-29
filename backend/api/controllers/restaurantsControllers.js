@@ -69,4 +69,21 @@ module.exports = {
             return res.status(400).send(error)
         }
     },
+
+    async findAllbyIdOwner(req,res){
+        const { user_owner } = req.params;
+        try {
+            const restaurants = await Restaurants.findAll({
+                where : {user_owner: user_owner}
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Restaurants by user_owner found`,
+                restaurants
+            })
+        } catch (err) {
+            return res.status(400).send('restaurants Not Found' + err)
+            
+        }
+    },
 }
