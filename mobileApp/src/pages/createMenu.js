@@ -4,7 +4,7 @@ import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
 import api from '../services/api';
 
-const CreateAccount = () => {
+const Login = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
     },
 })
    
-export default CreateAccount;
+export default Login;

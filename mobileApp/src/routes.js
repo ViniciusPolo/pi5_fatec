@@ -5,6 +5,8 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Menu from './pages/menu';
 import CreateAccount from './pages/createAccount'
+import CreateRestaurant from './pages/createRestaurant';
+import ManagerRestaurant from './pages/managerRestaurant';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +30,30 @@ export default function Routes() {
 
         <Stack.Screen name='createAccount' component={CreateAccount} options={{
           title: 'CRIAR USUÀRIO',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
+          headerTitleStyle: {
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }}/>
+
+        <Stack.Screen name='createRestaurant' component={CreateRestaurant} options={{
+          title: 'CRIAR RESTAURANTE',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
+          headerTitleStyle: {
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }}/>
+
+        <Stack.Screen name='managerRestaurant' component={ManagerRestaurant} options={{
+          title: 'GERENCIAR RESTAURANTE',
           headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: "#3498db",

@@ -55,22 +55,19 @@ export default class Home extends Component {
                         </Restaurant>
                     )}
                 />
-                {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {[1,2].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
+                <ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
                         <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
+                    </ProfileButton>
+                {/* exibe somente se for dono de restaurante, type of user 2 */}
+                {[2,4].includes(users.type_of_user)  ?
+                    (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {restaurant: this.state.restaurants, user: this.state.users})}}>
+                        <ProfileButtonText>Gerenciar Restaurantes</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {users.type_of_user == 2 ?
+                {[3,4].includes(users.type_of_user)  ?
                     (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
                         <ProfileButtonText>Gerenciar Restaurante</ProfileButtonText>
-                    </ProfileButton>) : <></>
-                }
-                {/* exibe somente se for entregador, type of user 3 */}
-                {users.type_of_user == 3 ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar entregas")}}>
-                        <ProfileButtonText>Gerenciar Entregas</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
             </Container>
