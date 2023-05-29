@@ -4,11 +4,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/home';
 import Login from './pages/login';
 import Menu from './pages/menu';
-import CreateAccount from './pages/createAccount'
+import CreateAccount from './pages/createAccount';
 import CreateRestaurant from './pages/createRestaurant';
 import ManagerRestaurant from './pages/managerRestaurant';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Stack = createStackNavigator();
+
+const handleLogout = async () =>{
+  await api.post(`https://um-trem-de-cume-api.onrender.com/logout`)
+  navigation.navigate("login")
+}
+
 
 export default function Routes() {
   return (
@@ -66,6 +73,13 @@ export default function Routes() {
 
         <Stack.Screen name='home' component={Home} options={{
           title: 'Um Trem Di Cumê',
+          headerRight: () => {
+            return <Icon.Button 
+              name='logout' 
+              color='white'
+              onPress={handleLogout}
+            />
+          },
           headerLeft: null,
           headerTitleAlign: 'center',
           headerStyle: {

@@ -21,6 +21,9 @@ const CreateAccount = () => {
             if(email != confirmEmail){
                 Alert.alert('Ô sô, esse email não tá batendo');
                 return
+            } else if (typeOfUser == ''){
+                Alert.alert('Eita, Faz favor de iscoiê uma opção');
+                return
             } else {
 
                 setLoading(true)
@@ -92,9 +95,10 @@ const CreateAccount = () => {
                 value={password}
                 onChangeText={setPassword}
             />     
-            <Picker
-                onChanged={setTypeOfUser}
+            <Picker                
+                onChanged={setTypeOfUser}                
                 options={[
+                    {value: '', text: 'Escolha uma opção', enabled:false},
                     {value: 1, text: 'Sou Cliente'},
                     {value: 2, text: 'Tenho um restaurante'},
                     {value: 3, text: 'Sou Entregador'}
@@ -102,6 +106,8 @@ const CreateAccount = () => {
                 style={styles.inputPicker}
                 value={typeOfUser}
             />
+                
+
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
@@ -132,6 +138,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
+        marginStart: -20,
         width: '140%',
       },
     button:{
