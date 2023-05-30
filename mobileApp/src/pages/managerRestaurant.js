@@ -16,36 +16,73 @@ export default class ManagerRestaurant extends Component {
     //const navigation = useNavigation();
 
     async componentDidMount(){
+        this.setState({loading: true})
         const { route } = this.props;
-        const { user, restaurant } = route.params;
+        const { user } = route.params;
         try {
-            console.log("user-->", user, "restaurant", restaurant)
-            //const userResponse = await api.get(`https://um-trem-de-cume-api.onrender.com/users/${user.user_id}`);
-
-            //const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
-            this.setState({restaurants: restaurant, users: user});
-            console.log("user -->", this.state.users, "\nrestaurant", this.state.restaurants)
+            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants/owner/${user.id}`);
             
+            this.setState({restaurants: response.data.restaurants, users: user});
+            console.log("restaurants --->" ,this.state.restaurants)
+            
+            this.setState({loading: false})
         } catch (error) {
+            this.setState({loading: false})
             console.error(error)
         }
     }
-    
-                
+                  
     render (){
-                
+        const { restaurants, users } = this.state
+        
         return (
         <Container>
-            <Text>Olá {this.state.users.first_name} te ajudo a gerenciar seu negócio</Text>
-            {/* {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
-            <> */}
-                <ProfileButton>
-                    <ProfileButtonText >Gerenciar Restaurante</ProfileButtonText>  
+            {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
+            <>
+                  <Text>Olá {users.first_name} te ajudo a gerenciar seu negócio</Text>
+                  <List
+                    showVerticalScrollIndicator={false}
+                    data={restaurants}
+                    keyExtractor={(restaurant) => String(restaurant.restaurant_name)}
+                    renderItem = {({item}) => (
+                        <Restaurant>
+                            {/* <Logo source={{uri: item.logo}}/> */}
+                            <Name>{item.restaurant_name}</Name>
+                            <Bio>{item.bio}</Bio>
+
+                            <ProfileButton onPress = {() => {
+                                //this.props.navigation.navigate("menu", {restaurant: item});
+                            }}>
+                                <ProfileButtonText>Ver Menu</ProfileButtonText>
+                            </ProfileButton>
+                            <ProfileButton onPress = {() => {
+                                //this.props.navigation.navigate("menu", {restaurant: item});
+                            }}>
+                                <ProfileButtonText>Criar Prato</ProfileButtonText>
+                            </ProfileButton>
+                            <ProfileButton onPress = {() => {
+                                //this.props.navigation.navigate("menu", {restaurant: item});
+                            }}>
+                                <ProfileButtonText>Editar Menu</ProfileButtonText>
+                            </ProfileButton>
+                            <ProfileButton onPress = {() => {
+                                //this.props.navigation.navigate("menu", {restaurant: item});
+                            }}>
+                                <ProfileButtonText>Ver Pedidos</ProfileButtonText>
+                            </ProfileButton>
+                            <ProfileButton onPress = {() => {
+                                //this.props.navigation.navigate("menu", {restaurant: item});
+                            }}>
+                                <ProfileButtonText>Editar Restaurante</ProfileButtonText>
+                            </ProfileButton>
+                        </Restaurant>
+                    )}
+                />
+
+                <ProfileButton style={{button, backgroundColor: "orange"}}>
+                    <ProfileButtonText  onPress={() => {this.props.navigation.navigate("createRestaurant", {userOwner: this.state.users.id})}}>Criar Restaurante</ProfileButtonText>  
                 </ProfileButton>
-                <ProfileButton style={button}>
-                    <ProfileButtonText onPress={() => {this.props.navigation.navigate("createRestaurant", {userOwner: this.state.users.id})}}>Criar Restaurante</ProfileButtonText>  
-                </ProfileButton>
-            {/* </>)} */}
+            </>)}
         </Container>
         )
     }
