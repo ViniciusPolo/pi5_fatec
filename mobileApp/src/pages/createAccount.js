@@ -28,8 +28,9 @@ const CreateAccount = () => {
 
                 setLoading(true)
                 
-                const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
-                    first_name: firstName,
+                // const log = await api.post(`https://um-trem-de-cume-api.onrender.com/users`, {
+                    const log = await api.createUsers({
+                first_name: firstName,
                     last_name: lastName,
                     email: email,
                     password: password,
