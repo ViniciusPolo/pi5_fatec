@@ -9,23 +9,27 @@ export default class Home extends Component {
  
     state = {
         restaurants: [],
-        users:''
+        users:'',
+        loading: false
     }
 
     
     async componentDidMount(){
         try {
+            this.setState({loading:true})
             const { route } = this.props;
             const { user } = route.params;
             console.log("user", user)
             const userResponse = await api.get(`https://um-trem-de-cume-api.onrender.com/users/${user.user_id}`);
-
+            
             const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
             this.setState({restaurants: response.data, users: userResponse.data.user});
             console.log(response.data)
             
+            this.setState({loading:false})
         } catch (error) {
             console.error(error)
+            this.setState({loading:false})
         }
     }
 
@@ -36,6 +40,8 @@ export default class Home extends Component {
        
         return (
             <Container>
+                 {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
+            <>
                 <Text>Olá {users.first_name}, onde vamos comer hoje?</Text>
                 <List
                     showVerticalScrollIndicator={false}
@@ -70,6 +76,7 @@ export default class Home extends Component {
                         <ProfileButtonText>Gerenciar Restaurante</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
+                 </> )}
             </Container>
         );
 

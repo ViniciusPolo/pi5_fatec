@@ -6,6 +6,9 @@ import Login from './pages/login';
 import Main from './pages/main';
 import CreateAccount from './pages/createAccount';
 import Welcome from './pages/welcome';
+import CreateRestaurant from './pages/createRestaurant';
+import ManagerRestaurant from './pages/managerRestaurant';
+import AddMenu from './pages/addMenu';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Stack = createStackNavigator();
@@ -83,6 +86,18 @@ export default function Routes() {
             fontWeight: 'bold',
           }
         }} />
+
+        <Stack.Screen name='addmenu' component={AddMenu} options={{
+          title: 'Criar Prato',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#3498db',
+          },
+          headerTitleStyle:{
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }}/>    
 
       </Stack.Navigator>
     </NavigationContainer>
