@@ -51,12 +51,12 @@ export default class ManagerRestaurant extends Component {
                             <Bio>{item.bio}</Bio>
 
                             <ProfileButton onPress = {() => {
-                                //this.props.navigation.navigate("menu", {restaurant: item});
+                                this.props.navigation.navigate("menu", {restaurant: item});
                             }}>
                                 <ProfileButtonText>Ver Menu</ProfileButtonText>
                             </ProfileButton>
                             <ProfileButton onPress = {() => {
-                                //this.props.navigation.navigate("menu", {restaurant: item});
+                                this.props.navigation.navigate("addmenu", {restaurant: item});
                             }}>
                                 <ProfileButtonText>Criar Prato</ProfileButtonText>
                             </ProfileButton>
