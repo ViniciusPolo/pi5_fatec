@@ -19,14 +19,14 @@ const AddMenu = () => {
         console.log(restaurant)
         try {
             setLoading(true)
-            const log = await api.post(`https://um-trem-de-cume-api.onrender.com/menus`, {
+            const log = await api.addMenu({
                 restaurant_id: restaurant.id,
                 food_name: foodName,
                 price: price,
                 prepare_time: prepareTime,
-                ingrediants: ingredients,
+                ingrediants: '',
                 })
-            const data = log.data;
+            const data = log;
                 
             if (data) {
                 setLoading(false)
@@ -38,7 +38,7 @@ const AddMenu = () => {
                 navigation.navigate("managerRestaurant")
             }
         } catch (error) {
-            Alert.alert('Restaurante não cadastrado, verifique as informações');
+            Alert.alert('Prato não ccriado, verifique as informações');
         }
     }   
 

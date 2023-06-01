@@ -20,9 +20,9 @@ export default class ManagerRestaurant extends Component {
         const { route } = this.props;
         const { user } = route.params;
         try {
-            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants/owner/${user.id}`);
+            const response = await api.listRestaurantsForOwner(user.id);
             
-            this.setState({restaurants: response.data.restaurants, users: user});
+            this.setState({restaurants: response.restaurants, users: user});
             console.log("restaurants --->" ,this.state.restaurants)
             
             this.setState({loading: false})

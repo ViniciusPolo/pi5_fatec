@@ -4,9 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/home';
 import Login from './pages/login';
 import Main from './pages/main';
+import Menu from './pages/menu';
+import ManagerRestaurant from './pages/managerRestaurant';
 import CreateAccount from './pages/createAccount';
 import CreateRestaurant from './pages/createRestaurant';
-import ManagerRestaurant from './pages/managerRestaurant';
 import AddMenu from './pages/addMenu';
 import Welcome from './pages/welcome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -80,6 +81,42 @@ export default function Routes() {
           headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: '#3498db',
+          },
+          headerTitleStyle: {
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }} />
+
+        <Stack.Screen name='menu' component={Menu} options={{
+          headerShown: false,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
+          headerTitleStyle: {
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }} />
+
+        <Stack.Screen name='managerRestaurant' component={ManagerRestaurant} options={{
+          headerShown: false,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
+          headerTitleStyle: {
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }} />
+
+        <Stack.Screen name='createRestaurant' component={CreateRestaurant} options={{
+          headerShown: false,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#3498db",
           },
           headerTitleStyle: {
             color: '#fff',

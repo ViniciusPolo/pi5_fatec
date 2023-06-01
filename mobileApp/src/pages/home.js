@@ -17,14 +17,14 @@ export default class Home extends Component {
     async componentDidMount(){
         try {
             this.setState({loading:true})
-            const { route } = this.props;
+            const { navigation, route } = this.props;
             const { user } = route.params;
             console.log("user", user)
-            const userResponse = await api.get(`https://um-trem-de-cume-api.onrender.com/users/${user.user_id}`);
+            const userResponse = await api.listUsers(user.user_id);
             
-            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
-            this.setState({restaurants: response.data, users: userResponse.data.user});
-            console.log(response.data)
+            const response = await api.listRestaurants()
+            this.setState({restaurants: response, users: userResponse.user});
+            console.log(response)
             
             this.setState({loading:false})
         } catch (error) {
@@ -66,7 +66,7 @@ export default class Home extends Component {
                     </ProfileButton>
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
                 {[2,4].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {restaurant: this.state.restaurants, user: this.state.users})}}>
+                    (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {user: users})}}>
                         <ProfileButtonText>Gerenciar Restaurantes</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }

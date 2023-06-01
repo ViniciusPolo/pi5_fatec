@@ -21,6 +21,29 @@ const Login = () => {
 
       if (data.auth) {
         setLoading(false)
+        navigation.navigate("home", { user: data });
+      } else {
+        console.error("API ERROR", data.error);
+      }
+    } catch (error) {
+      Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
+        { text: 'Tendinovo', onPress: () => console.log('OK Pressed') },
+      ]);
+      setLoading(false)
+    }
+  }
+
+  const handleLoginV2 = async () => {
+    try {
+      setLoading(true)
+      const log = await api.loginUsers({
+        email: email,
+        password: password
+      })
+      const data = log.data;
+
+      if (data.auth) {
+        setLoading(false)
         navigation.navigate("main", { user: data });
       } else {
         console.error("API ERROR", data.error);
@@ -58,6 +81,10 @@ const Login = () => {
           <TouchableOpacity style={styles.button} loading={loading} onPress={handleLogin}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.button} loading={loading} onPress={handleLoginV2}>
+            <Text style={styles.buttonText}>Entrar V2</Text>
+          </TouchableOpacity>
           {/* <Text style={styles.auxText} onPress={handleCreateAccount}>Criar Conta</Text> */}
         </>)
       }
@@ -70,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#FFA500',
   },
   input: {
     borderWidth: 1,
@@ -81,11 +108,12 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   button: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#000',
     borderRadius: 5,
     padding: 10,
     width: '80%',
     alignItems: 'center',
+    marginBottom: 5
   },
   buttonText: {
     color: '#fff',

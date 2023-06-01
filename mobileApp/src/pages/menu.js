@@ -18,9 +18,10 @@ export default class Menu extends Component {
         const { route } = this.props;
         const { restaurant } = route.params;
         try {
-            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurant-menu/${restaurant.id}`);
-            this.setState({menus: response.data.restaurant, restaurants: restaurant});
-            console.log('aqui',this.state.menus) 
+            console.log('aqui',restaurant) 
+            const response = await api.listMenuForRestaurantsForID(restaurant.id);
+            console.log('aqui',response) 
+            this.setState({menus: response.restaurant, restaurants: restaurant});
             if (this.state.menus.length == 0){
                 //console.log('aqui',this.state.menus)
                 this.setState({loading: false})

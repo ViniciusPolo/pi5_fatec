@@ -25,8 +25,24 @@ export default {
     const response = await api.get("/restaurants")
     return response.data
   },
+  listRestaurantsForOwner: async (owner) => {
+    const response = await api.get(`/restaurants/owner/${owner}`)
+    return response.data
+  },
+  createRestaurant: async (dataRestaurant) => {
+    const response = await api.post("/restaurants", dataRestaurant)
+    return response.data
+  },
+  addMenu: async (dataMenu) => {
+    const response = await api.post("/menus", dataMenu)
+    return response.data
+  },
   listRestaurantsForID: async (restaurant) => {
     const response = await api.get(`/restaurants/${restaurant}`)
     return response.data
-  }
+  },
+  listMenuForRestaurantsForID: async (restaurant) => {
+    const response = await api.get(`/restaurant-menu/${restaurant}`)
+    return response.data
+  },
 }

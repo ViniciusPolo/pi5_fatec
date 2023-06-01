@@ -1,17 +1,23 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-import Home from './PagesUsers/home';
+import Home from './home';
 import Restaurante from './PagesUsers/pedidos';
 import Profile from './PagesUsers/perfil';
 import Search from './PagesUsers/search';
+import Login from './login';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 
-export default function TabNav() {
+export default function TabNav(props) {
+    const route = useRoute();
+    const { user } = route.params;
+    const userId = user.user_id
+    console.log("props ->", userId)
 
     return (
         <Navigator

@@ -18,14 +18,14 @@ const CreateRestaurant = () => {
     const handleCreate = async  () => {
         try {
             setLoading(true)
-            const log = await api.post(`https://um-trem-de-cume-api.onrender.com/restaurants`, {
+            const log = await api.createRestaurant({
                 user_owner: userOwner,
                 restaurant_name: restaurantName,
                 bio: bio,
                 logo: '',
                 address: '',
                 })
-            const data = log.data;
+            const data = log;
                 
             if (data) {
                 setLoading(false)
