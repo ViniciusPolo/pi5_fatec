@@ -11,6 +11,8 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
+    setPassword("password")
+    setEmail("pedro@silva.com")
     try {
       setLoading(true)
       const log = await api.loginUsers({

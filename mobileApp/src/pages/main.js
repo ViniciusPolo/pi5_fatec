@@ -11,14 +11,15 @@ import Search from './PagesUsers/search';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 
-export default function TabNav() {
+export default function TabNav({ route }) {
+    const { user } = route.params;
 
     return (
         <Navigator
             screenOptions={{
                 tabBarActiveTintColor: "#fff",
                 tabBarInactiveTintColor: '#000',
-                headerShown: true,
+                headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarVisibilityAnimationConfig: true,
                 tabBarShowLabel: false,
@@ -29,6 +30,7 @@ export default function TabNav() {
                     borderTopWidth: 0
                 }
             }}
+
         >
             <Screen
                 name="Homeuse"
@@ -36,6 +38,7 @@ export default function TabNav() {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="home" size={size} color={color} />,
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Pedidos"
@@ -44,6 +47,7 @@ export default function TabNav() {
                     tabBarIcon: ({ size, color }) => <Icon name="outbox" size={size} color={color} />,
                     // tabBarBadge: 0
                 }}
+                initialParams={user}
             />
 
             <Screen
@@ -52,6 +56,7 @@ export default function TabNav() {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="search" size={size} color={color} />
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Perfil"
@@ -60,6 +65,7 @@ export default function TabNav() {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="person" size={size} color={color} />
                 }}
+                initialParams={user}
             />
 
 
