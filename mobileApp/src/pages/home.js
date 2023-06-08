@@ -66,13 +66,9 @@ export default class Home extends Component {
                     <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
                 </ProfileButton>
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
-<<<<<<< HEAD
                 {[2,4].includes(users.type_of_user)  ?
                     (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {user: users})}}>
-=======
-                {[2, 4].includes(users.type_of_user) ?
-                    (<ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { this.props.navigation.navigate("managerRestaurant", { restaurant: this.state.restaurants, user: this.state.users }) }}>
->>>>>>> ala_mobile
+
                         <ProfileButtonText>Gerenciar Restaurantes</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }

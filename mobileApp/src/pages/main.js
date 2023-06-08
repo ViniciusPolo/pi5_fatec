@@ -12,17 +12,11 @@ import Login from './login';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-
-<<<<<<< HEAD
 export default function TabNav(props) {
     const route = useRoute();
     const { user } = route.params;
     const userId = user.user_id
     console.log("props ->", userId)
-=======
-export default function TabNav({ route }) {
-    const { user } = route.params;
->>>>>>> ala_mobile
 
     return (
         <Navigator

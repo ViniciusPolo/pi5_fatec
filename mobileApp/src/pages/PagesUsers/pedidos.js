@@ -4,11 +4,6 @@ import { Container, Bio, List, Name, ViewContainer, ViewDetail, Avatar } from '.
 
 import api from '../../services/api';
 
-<<<<<<< HEAD
-export default function Menu2(props) {
-=======
-
-
 export default function Pedidos(props) {
     const [prop, setProp] = useState([]);
     const [token, setToken] = useState('');
@@ -49,10 +44,6 @@ export default function Pedidos(props) {
         }
 
     }
-
->>>>>>> ala_mobile
-
-
 
     return (
         <Container>
