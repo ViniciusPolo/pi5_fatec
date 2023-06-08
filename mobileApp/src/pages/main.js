@@ -13,18 +13,23 @@ import Login from './login';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 
+<<<<<<< HEAD
 export default function TabNav(props) {
     const route = useRoute();
     const { user } = route.params;
     const userId = user.user_id
     console.log("props ->", userId)
+=======
+export default function TabNav({ route }) {
+    const { user } = route.params;
+>>>>>>> ala_mobile
 
     return (
         <Navigator
             screenOptions={{
                 tabBarActiveTintColor: "#fff",
                 tabBarInactiveTintColor: '#000',
-                headerShown: true,
+                headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarVisibilityAnimationConfig: true,
                 tabBarShowLabel: false,
@@ -35,6 +40,7 @@ export default function TabNav(props) {
                     borderTopWidth: 0
                 }
             }}
+
         >
             <Screen
                 name="Homeuse"
@@ -42,6 +48,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="home" size={size} color={color} />,
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Pedidos"
@@ -50,6 +57,7 @@ export default function TabNav(props) {
                     tabBarIcon: ({ size, color }) => <Icon name="outbox" size={size} color={color} />,
                     // tabBarBadge: 0
                 }}
+                initialParams={user}
             />
 
             <Screen
@@ -58,6 +66,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="search" size={size} color={color} />
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Perfil"
@@ -66,6 +75,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="person" size={size} color={color} />
                 }}
+                initialParams={user}
             />
 
 
