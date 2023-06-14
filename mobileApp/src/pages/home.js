@@ -8,9 +8,13 @@ import { colors } from 'react-select/dist/declarations/src/theme';
 
 export default class Home extends Component {
 
+    constructor(props){
+        super(props);
+    }
+
     state = {
         restaurants: [],
-        users:'',
+        users:[],
         loading: false
     }
 
@@ -18,8 +22,8 @@ export default class Home extends Component {
     async componentDidMount() {
         try {
             this.setState({loading:true})
-            const { navigation, route } = this.props;
-            const { user } = route.params;
+            const { navigation, route, user } = this.props;
+            //const { user } = route.params || this.props
             console.log("user", user)
             const userResponse = await api.listUsers(user.user_id);
             
@@ -65,13 +69,6 @@ export default class Home extends Component {
                 <ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { console.log("gerenciar restaurante") }}>
                     <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
                 </ProfileButton>
-                {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {[2,4].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {user: users})}}>
-
-                        <ProfileButtonText>Gerenciar Restaurantes</ProfileButtonText>
-                    </ProfileButton>) : <></>
-                }
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
                 {[3, 4].includes(users.type_of_user) ?
                     (<ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { console.log("gerenciar restaurante") }}>

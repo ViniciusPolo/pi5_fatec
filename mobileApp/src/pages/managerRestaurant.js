@@ -7,6 +7,10 @@ import api from '../services/api';
 
 export default class ManagerRestaurant extends Component {
 
+    constructor(props){
+        super(props);
+    }
+
     state = {
         restaurants: [],
         users:'',
@@ -17,10 +21,10 @@ export default class ManagerRestaurant extends Component {
 
     async componentDidMount(){
         this.setState({loading: true})
-        const { route } = this.props;
-        const { user } = route.params;
+        const { route, user } = this.props;
+        //const { user } = route.params;
         try {
-            const response = await api.listRestaurantsForOwner(user.id);
+            const response = await api.listRestaurantsForOwner(user.user_id);
             
             this.setState({restaurants: response.restaurants, users: user});
             console.log("restaurants --->" ,this.state.restaurants)

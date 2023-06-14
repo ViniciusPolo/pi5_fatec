@@ -11,31 +11,6 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
-    setPassword("password")
-    setEmail("pedro@silva.com")
-    try {
-      setLoading(true)
-      const log = await api.loginUsers({
-        email: email,
-        password: password
-      })
-      const data = log.data;
-
-      if (data.auth) {
-        setLoading(false)
-        navigation.navigate("home", { user: data });
-      } else {
-        console.error("API ERROR", data.error);
-      }
-    } catch (error) {
-      Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
-        { text: 'Tendinovo', onPress: () => console.log('OK Pressed') },
-      ]);
-      setLoading(false)
-    }
-  }
-
-  const handleLoginV2 = async () => {
     try {
       setLoading(true)
       const log = await api.loginUsers({
@@ -84,10 +59,6 @@ const Login = () => {
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.button} loading={loading} onPress={handleLoginV2}>
-            <Text style={styles.buttonText}>Entrar V2</Text>
-          </TouchableOpacity>
-          {/* <Text style={styles.auxText} onPress={handleCreateAccount}>Criar Conta</Text> */}
         </>)
       }
     </View>
