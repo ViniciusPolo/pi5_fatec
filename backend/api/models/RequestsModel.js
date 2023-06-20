@@ -10,8 +10,8 @@ class Requests extends Model {
             status_payment: DataTypes.INTEGER,
             total_value: DataTypes.FLOAT,
             total_delivery: DataTypes.FLOAT,
-            id_request_root: DataTypes.INTEGER,
-            quantity: DataTypes.INTEGER
+            quantity: DataTypes.INTEGER,
+            is_open: DataTypes.INTEGER,
         }, {
             sequelize,
             tableName: "requests"

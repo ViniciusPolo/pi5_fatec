@@ -58,6 +58,25 @@ module.exports = {
         }
     },
 
+    async indexByUserOpened(req,res){
+        const { user_id, is_open } = req.params;
+        try {
+            const restaurant = await Requests.findAll(
+                {where: { user_id: user_id,
+                          is_open: is_open
+                        }
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Request Open by User found`,
+                restaurant
+            })
+        } catch (err) {
+            return res.status(400).send('Request by Restaurant Not Found' + err)
+            
+        }
+    },
+
  
     async store(req, res) {
         try {
@@ -76,7 +95,7 @@ module.exports = {
                 status_payment: status_payment || status_payment_default,
                 total_value,
                 total_delivery,
-                id_request_root: id_request_root || id_request_root_default,
+                is_open,
                 quantity
             })
             return res.status(200).send({
@@ -105,7 +124,7 @@ module.exports = {
                 status_payment: status_payment || status_payment_default,
                 total_value,
                 total_delivery,
-                id_request_root,
+                is_open,
                 quantity
         }, {
             where: {  [Op.and]: [{id: id_request }, {id_request_root: id_request_root }]}
