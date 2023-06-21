@@ -80,12 +80,11 @@ module.exports = {
  
     async store(req, res) {
         try {
-            const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity, id_request_root} = req.body;
-            let status_payment_default, status_prepare_default, id_request_root_default
+            const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity, is_open} = req.body;
+            let status_payment_default, status_prepare_default
             if (!status_prepare) status_prepare_default= 1;
             if (!status_payment) status_payment_default= 1;
             const total_value = await getTotalValue(food_id, quantity)
-            if (!id_request_root) id_request_root_default= 0
 
             const requests = await Requests.create({
                 restaurant_id,
@@ -110,7 +109,7 @@ module.exports = {
 
     async update(req, res) {
         try{
-        const { id_request, id_request_root } = req.params
+        const { id_request, is_open } = req.params
         const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity} = req.body;
             let status_payment_default, status_prepare_default, id_request_root_default
             if (!status_prepare) status_prepare_default= 1;
