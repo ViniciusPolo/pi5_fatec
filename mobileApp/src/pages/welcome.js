@@ -67,13 +67,8 @@ const styles = StyleSheet.create({
     containerForm: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-<<<<<<< HEAD
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-=======
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
->>>>>>> origin/fabricio_front
         paddingStart: '5%',
         paddingEnd: '5%'
     },
