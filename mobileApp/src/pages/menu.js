@@ -56,7 +56,7 @@ export default class Menu extends Component {
                             <Bio>R$ {item.price}</Bio>
                             <Bio>{item.prepare_time} minutos</Bio>
 
-                            <ProfileButton onPress = {() => console.log("Fazer pedido")}>
+                            <ProfileButton onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item} )}>
                                 <ProfileButtonText>Quero Experimentar</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>

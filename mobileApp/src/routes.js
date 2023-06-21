@@ -11,6 +11,7 @@ import CreateRestaurant from './pages/createRestaurant';
 import AddMenu from './pages/addMenu';
 import Welcome from './pages/welcome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Basket from './pages/basket';
 
 const Stack = createStackNavigator();
 
@@ -126,6 +127,18 @@ export default function Routes() {
 
         <Stack.Screen name='addmenu' component={AddMenu} options={{
           title: 'Criar Prato',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#3498db',
+          },
+          headerTitleStyle:{
+            color: '#fff',
+            fontWeight: 'bold',
+          }
+        }}/>
+
+        <Stack.Screen name='basket' component={Basket} options={{
+          title: 'Seu Carrinho',
           headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: '#3498db',

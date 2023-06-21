@@ -12,7 +12,6 @@ import Login from './login';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-
 export default function TabNav(props) {
     const route = useRoute();
     const { user } = route.params;
@@ -24,7 +23,7 @@ export default function TabNav(props) {
             screenOptions={{
                 tabBarActiveTintColor: "#fff",
                 tabBarInactiveTintColor: '#000',
-                headerShown: true,
+                headerShown: false,
                 tabBarHideOnKeyboard: true,
                 tabBarVisibilityAnimationConfig: true,
                 tabBarShowLabel: false,
@@ -35,6 +34,7 @@ export default function TabNav(props) {
                     borderTopWidth: 0
                 }
             }}
+
         >
             <Screen
                 name="Homeuse"
@@ -42,6 +42,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="home" size={size} color={color} />,
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Pedidos"
@@ -50,6 +51,7 @@ export default function TabNav(props) {
                     tabBarIcon: ({ size, color }) => <Icon name="outbox" size={size} color={color} />,
                     // tabBarBadge: 0
                 }}
+                initialParams={user}
             />
 
             <Screen
@@ -58,6 +60,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="search" size={size} color={color} />
                 }}
+                initialParams={user}
             />
             <Screen
                 name="Perfil"
@@ -66,6 +69,7 @@ export default function TabNav(props) {
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="person" size={size} color={color} />
                 }}
+                initialParams={user}
             />
 
 
