@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
     input: {
       borderWidth: 1,
-      borderColor: '#ccc',
+      borderColor: '#aaa',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -99,21 +99,22 @@ const styles = StyleSheet.create({
     },
     inputPicker: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#003',
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
         width: '140%',
       },
     button:{
-      backgroundColor: '#3498db',
+      backgroundColor: '#FFA500',
       borderRadius: 5,
+      marginTop: 10,
       padding: 10,
       width:'80%',
       alignItems: 'center',
     },
     buttonText:{
-      color: '#fff',
+      color: '#000',
       fontWeight: 'bold',
     },
 })

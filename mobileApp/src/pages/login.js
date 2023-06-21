@@ -40,6 +40,11 @@ const Login = () => {
     <View style={styles.container}>
       {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
         <>
+          <ImageBackground  
+            source={require('../assets/logo111.png')}
+            style={{width: 400, height: 200}}
+          />
+
           <TextInput
             style={styles.input}
             placeholder="Email"
@@ -58,6 +63,8 @@ const Login = () => {
           <TouchableOpacity style={styles.button} loading={loading} onPress={handleLogin}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
+
+          
           
         </>)
       }
@@ -69,28 +76,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFA500',
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffa500',
+    paddingTop: 80,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#fff',
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,
     width: '80%',
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: '#FFA500',
     borderRadius: 5,
-    padding: 10,
+    padding: 20,
     width: '80%',
     alignItems: 'center',
-    marginBottom: 5
+    marginBottom: 5,
   },
   buttonText: {
-    color: '#fff',
+    color: '#000',
     fontWeight: 'bold',
+    fontSize: 20,
   },
   auxText: {
     color: '#3498db',

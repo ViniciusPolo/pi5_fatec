@@ -43,21 +43,21 @@ export default class Menu extends Component {
             <Container>
                 {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
                 <>
-                <Text>{this.state.restaurants.restaurant_name}</Text>
-                <Text>{this.state.restaurants.bio}</Text>
+                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold'}} >{this.state.restaurants.restaurant_name}</Text>
+                <Text style={{textAlign: 'center', fontSize: 14, fontWeight: 'bold', paddingTop: 6, paddingBottom: 4 }} >{this.state.restaurants.bio}</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={menus}
                     keyExtractor={(menu) => String(menu.food_name)}
                     renderItem = {({item}) => (
-                        <Restaurant>
+                        <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
                             {/* <Logo source={{uri: item.logo}}/> */}
                             <Name>{item.food_name}</Name>
                             <Bio>R$ {item.price}</Bio>
                             <Bio>{item.prepare_time} minutos</Bio>
 
-                            <ProfileButton onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item} )}>
-                                <ProfileButtonText>Quero Experimentar</ProfileButtonText>
+                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item} )}>
+                                <ProfileButtonText style={{ color: '#000' }}>Quero Experimentar</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>
                     )}

@@ -118,7 +118,6 @@ export default class Basket extends Component {
                     <Name>{item.food_name}</Name>
                     </View>
                 
-                
                   </User>
                 )}/> */}
             </Restaurant>

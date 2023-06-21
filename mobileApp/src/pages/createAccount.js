@@ -107,8 +107,6 @@ const CreateAccount = () => {
                 style={styles.inputPicker}
                 value={typeOfUser}
             />
-                
-
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
@@ -143,15 +141,17 @@ const styles = StyleSheet.create({
         width: '140%',
       },
     button:{
-      backgroundColor: '#3498db',
+      backgroundColor: '#FFA500',
       borderRadius: 5,
-      padding: 10,
+      padding: 14,
+      marginTop: 6,
       width:'80%',
       alignItems: 'center',
     },
     buttonText:{
-      color: '#fff',
+      color: '#000',
       fontWeight: 'bold',
+      fontSize: 16,
     },
 })
    

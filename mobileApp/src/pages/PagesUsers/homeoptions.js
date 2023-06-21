@@ -65,9 +65,8 @@ export default function Home(props) {
 
     return (
         <Container>
-<<<<<<< HEAD:mobileApp/src/pages/PagesUsers/homeoptions.js
+
             <Name>Home Options</Name>
-=======
             <ViewDetail>
                 <Name>token: </Name>
                 <Bio>{token}</Bio>
@@ -107,7 +106,8 @@ export default function Home(props) {
 
                 )}
             />
->>>>>>> ala_mobile:mobileApp/src/pages/PagesUsers/home.js
+
+            <Name>Home Options</Name>
         </Container>
     )
 
