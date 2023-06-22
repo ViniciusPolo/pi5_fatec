@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#ffa500',
     },
     input: {
       borderWidth: 1,
-      borderColor: '#ccc',
+      borderColor: '#fff',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     },
     inputPicker: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#fff',
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
@@ -143,15 +143,15 @@ const styles = StyleSheet.create({
     button:{
       backgroundColor: '#FFA500',
       borderRadius: 5,
-      padding: 14,
-      marginTop: 6,
+      padding: 20,
       width:'80%',
       alignItems: 'center',
+      marginBottom: 5,
     },
     buttonText:{
       color: '#000',
       fontWeight: 'bold',
-      fontSize: 16,
+      fontSize: 20,
     },
 })
    
