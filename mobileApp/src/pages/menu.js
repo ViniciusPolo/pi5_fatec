@@ -10,18 +10,17 @@ export default class Menu extends Component {
     state = {
         menus: [],
         restaurants: {},
+        user: 0,
         loading: false
     }
 
     async componentDidMount(){
         this.setState({loading: true})
         const { route } = this.props;
-        const { restaurant } = route.params;
+        const { restaurant, user } = route.params;
         try {
-            console.log('aqui',restaurant) 
             const response = await api.listMenuForRestaurantsForID(restaurant.id);
-            console.log('aqui',response) 
-            this.setState({menus: response.restaurant, restaurants: restaurant});
+            this.setState({menus: response.restaurant, restaurants: restaurant, user: user});
             if (this.state.menus.length == 0){
                 //console.log('aqui',this.state.menus)
                 this.setState({loading: false})
@@ -37,27 +36,27 @@ export default class Menu extends Component {
     }
 
     render (){
-        const { menus } = this.state
+        const { menus, user } = this.state
 
         return (
             <Container>
                 {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
                 <>
-                <Text>{this.state.restaurants.restaurant_name}</Text>
-                <Text>{this.state.restaurants.bio}</Text>
+                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold'}} >{this.state.restaurants.restaurant_name}</Text>
+                <Text style={{textAlign: 'center', fontSize: 14, fontWeight: 'bold', paddingTop: 6, paddingBottom: 4 }} >{this.state.restaurants.bio}</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={menus}
                     keyExtractor={(menu) => String(menu.food_name)}
                     renderItem = {({item}) => (
-                        <Restaurant>
+                        <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
                             {/* <Logo source={{uri: item.logo}}/> */}
                             <Name>{item.food_name}</Name>
                             <Bio>R$ {item.price}</Bio>
                             <Bio>{item.prepare_time} minutos</Bio>
 
-                            <ProfileButton onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item} )}>
-                                <ProfileButtonText>Quero Experimentar</ProfileButtonText>
+                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item, user: user} )}>
+                                <ProfileButtonText style={{ color: '#000' }}>Quero Experimentar</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>
                     )}

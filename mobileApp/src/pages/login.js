@@ -11,31 +11,6 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
-    setPassword("password")
-    setEmail("pedro@silva.com")
-    try {
-      setLoading(true)
-      const log = await api.loginUsers({
-        email: email,
-        password: password
-      })
-      const data = log.data;
-
-      if (data.auth) {
-        setLoading(false)
-        navigation.navigate("home", { user: data });
-      } else {
-        console.error("API ERROR", data.error);
-      }
-    } catch (error) {
-      Alert.alert('Uai sô', 'Ou um trem ou outro trem ta errado uai', [
-        { text: 'Tendinovo', onPress: () => console.log('OK Pressed') },
-      ]);
-      setLoading(false)
-    }
-  }
-
-  const handleLoginV2 = async () => {
     try {
       setLoading(true)
       const log = await api.loginUsers({
@@ -65,6 +40,11 @@ const Login = () => {
     <View style={styles.container}>
       {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
         <>
+          <ImageBackground  
+            source={require('../assets/logo111.png')}
+            style={{width: 400, height: 200}}
+          />
+
           <TextInput
             style={styles.input}
             placeholder="Email"
@@ -83,11 +63,9 @@ const Login = () => {
           <TouchableOpacity style={styles.button} loading={loading} onPress={handleLogin}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
+
           
-          <TouchableOpacity style={styles.button} loading={loading} onPress={handleLoginV2}>
-            <Text style={styles.buttonText}>Entrar V2</Text>
-          </TouchableOpacity>
-          {/* <Text style={styles.auxText} onPress={handleCreateAccount}>Criar Conta</Text> */}
+          
         </>)
       }
     </View>
@@ -98,28 +76,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFA500',
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffa500',
+    paddingTop: 80,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#fff',
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,
     width: '80%',
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: '#FFA500',
     borderRadius: 5,
-    padding: 10,
+    padding: 20,
     width: '80%',
     alignItems: 'center',
-    marginBottom: 5
+    marginBottom: 5,
   },
   buttonText: {
-    color: '#fff',
+    color: '#000',
     fontWeight: 'bold',
+    fontSize: 20,
   },
   auxText: {
     color: '#3498db',

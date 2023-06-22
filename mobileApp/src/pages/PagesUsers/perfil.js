@@ -5,18 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import api from '../../services/api';
 
-
 export default function Profile(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const navigation = useNavigation();
 
-
     useEffect(() => {
         handleListUsers()
     }, [])
-
-
 
     async function handleListUsers() {
         let resp = [];
@@ -38,14 +34,11 @@ export default function Profile(props) {
 
     }
 
-
-
-
     return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.item}>
-                <Image source={{ uri: 'https://i.pravatar.cc/100?img=32' }} style={styles.itemPhoto} />
+                <Image source={{ uri: 'https://i.pravatar.cc/100?img=33' }} style={styles.itemPhoto} />
                 <View style={styles.itemInfo}>
                     <Text style={styles.itemP1}>{name}</Text>
                     <Text style={styles.itemP2}>{email}</Text>
@@ -88,7 +81,7 @@ export default function Profile(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#242425',
+        backgroundColor: '#fff',
     },
     item: {
         flexDirection: 'row',
@@ -109,11 +102,11 @@ const styles = StyleSheet.create({
     },
     itemP1: {
         fontSize: 22,
-        color: '#FFFFFF',
+        color: '#000',
         marginBottom: 5
     },
     itemP2: {
         fontSize: 18,
-        color: '#999999',
+        color: '#000',
     },
 });

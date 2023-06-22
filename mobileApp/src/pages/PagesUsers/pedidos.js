@@ -17,13 +17,9 @@ export default function Pedidos(props) {
         setProp(props)
     }, [])
 
-
-
-
     async function handleListPedidos() {
         let resp = [];
         let results = [];
-
 
         const tokenid = props.route.params.token
         const authUser = props.route.params.auth

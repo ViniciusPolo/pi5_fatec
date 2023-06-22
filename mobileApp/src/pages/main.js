@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import api from '../services/api';
 
 
 import Home from './home';
@@ -8,6 +10,7 @@ import Restaurante from './PagesUsers/pedidos';
 import Profile from './PagesUsers/perfil';
 import Search from './PagesUsers/search';
 import Login from './login';
+import ManagerRestaurant from './managerRestaurant';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -16,7 +19,17 @@ export default function TabNav(props) {
     const route = useRoute();
     const { user } = route.params;
     const userId = user.user_id
-    console.log("props ->", userId)
+    const [userLog, setUserLog] = useState([])
+    
+    useEffect( (userId) => {  
+        const userResponse = async (userId) => {
+            const userLoged = await api.listUsers(userId);
+            console.log("userResponse: ", userLoged.data)
+            setUserLog(userLoged.data)
+        }
+        console.log("props ---> *** --->", userLog)
+        setUserLog(userResponse)
+    }, []);
 
     return (
         <Navigator
@@ -38,12 +51,23 @@ export default function TabNav(props) {
         >
             <Screen
                 name="Homeuse"
-                component={Home}
+                component={(props) => <Home {...props} user={user} />}
+                //component={Home}
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="home" size={size} color={color} />,
                 }}
-                initialParams={user}
+                //initialParams={user}
             />
+                <Screen
+                name="Gerenciar Restaurante"
+                component={(props) => <ManagerRestaurant {...props} user={user} />}
+                //component={Home}
+                options={{
+                    tabBarIcon: ({ size, color }) => <Icon name="business" size={size} color={color} />,
+                }}
+                //initialParams={user}
+                />
+
             <Screen
                 name="Pedidos"
                 component={Restaurante}

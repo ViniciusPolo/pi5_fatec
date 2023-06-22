@@ -29,10 +29,10 @@ export default function Routes() {
           headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -41,10 +41,10 @@ export default function Routes() {
           title: 'LOGIN',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -53,10 +53,10 @@ export default function Routes() {
           title: 'CRIAR USUÀRIO',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -65,7 +65,7 @@ export default function Routes() {
           headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
         }} />
 
@@ -81,10 +81,10 @@ export default function Routes() {
           headerLeft: null,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#3498db',
+            backgroundColor: '#FFA500',
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -93,10 +93,10 @@ export default function Routes() {
           headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -105,10 +105,10 @@ export default function Routes() {
           headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -117,10 +117,10 @@ export default function Routes() {
           headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#FFA500",
           },
           headerTitleStyle: {
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }} />
@@ -129,10 +129,10 @@ export default function Routes() {
           title: 'Criar Prato',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#3498db',
+            backgroundColor: '#FFA500',
           },
           headerTitleStyle:{
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }}/>
@@ -141,10 +141,10 @@ export default function Routes() {
           title: 'Seu Carrinho',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#3498db',
+            backgroundColor: '#FFA500',
           },
           headerTitleStyle:{
-            color: '#fff',
+            color: '#000',
             fontWeight: 'bold',
           }
         }}/>    

@@ -45,4 +45,16 @@ export default {
     const response = await api.get(`/restaurant-menu/${restaurant}`)
     return response.data
   },
+  addProductToBasket: async (itemAdded) => {
+    const response = await api.post("/requests", itemAdded)
+    return response.data
+  },
+  listBasket: async (user_id, is_open) => {
+    const response = await api.get(`/requests/${user_id}/${is_open}`)
+    return response.data
+  },
+  foodById: async (food_id) => {
+    const response = await api.get(`/menus/${food_id}`)
+    return response.data
+  },
 }

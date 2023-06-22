@@ -19,9 +19,6 @@ export default function Search(props) {
         setProp(props)
     }, [])
 
-
-
-
     async function handleListSearch() {
         let resp = [];
         let results = [];
@@ -47,9 +44,6 @@ export default function Search(props) {
         }
 
     }
-
-
-
 
     return (
         <Container>
