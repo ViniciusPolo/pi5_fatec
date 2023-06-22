@@ -47,7 +47,7 @@ export default class Home extends Component {
             <Container>
                  {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
             <>
-                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold'}} >Olá {users.first_name}, onde vamos comer hoje?</Text>
+                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold', color: '#000'}} >Olá {users.first_name}, onde vamos comer hoje?</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={restaurants}
