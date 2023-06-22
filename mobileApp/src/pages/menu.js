@@ -10,18 +10,17 @@ export default class Menu extends Component {
     state = {
         menus: [],
         restaurants: {},
+        user: 0,
         loading: false
     }
 
     async componentDidMount(){
         this.setState({loading: true})
         const { route } = this.props;
-        const { restaurant } = route.params;
+        const { restaurant, user } = route.params;
         try {
-            console.log('aqui',restaurant) 
             const response = await api.listMenuForRestaurantsForID(restaurant.id);
-            console.log('aqui',response) 
-            this.setState({menus: response.restaurant, restaurants: restaurant});
+            this.setState({menus: response.restaurant, restaurants: restaurant, user: user});
             if (this.state.menus.length == 0){
                 //console.log('aqui',this.state.menus)
                 this.setState({loading: false})
@@ -37,7 +36,7 @@ export default class Menu extends Component {
     }
 
     render (){
-        const { menus } = this.state
+        const { menus, user } = this.state
 
         return (
             <Container>
@@ -56,7 +55,7 @@ export default class Menu extends Component {
                             <Bio>R$ {item.price}</Bio>
                             <Bio>{item.prepare_time} minutos</Bio>
 
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item} )}>
+                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item, user: user} )}>
                                 <ProfileButtonText style={{ color: '#000' }}>Quero Experimentar</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>

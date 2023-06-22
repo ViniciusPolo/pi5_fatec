@@ -59,7 +59,7 @@ export default class Home extends Component {
                             <Bio>{item.bio}</Bio>
 
                             <ProfileButton style={{ backgroundColor: '#FFA500'}} onPress={() => {
-                                this.props.navigation.navigate("menu", { restaurant: item });
+                                this.props.navigation.navigate("menu", { restaurant: item, user: users.id });
                             }}>
                                 <ProfileButtonText style={{ color: '#000' }}>Ver Menu</ProfileButtonText>
                             </ProfileButton>

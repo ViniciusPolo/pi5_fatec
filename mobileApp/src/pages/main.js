@@ -20,14 +20,15 @@ export default function TabNav(props) {
     const { user } = route.params;
     const userId = user.user_id
     const [userLog, setUserLog] = useState([])
-    console.log("props ->", userId)
     
     useEffect( (userId) => {  
         const userResponse = async (userId) => {
             const userLoged = await api.listUsers(userId);
             console.log("userResponse: ", userLoged.data)
+            setUserLog(userLoged.data)
         }
-        //setUserLog(userResponse)
+        console.log("props ---> *** --->", userLog)
+        setUserLog(userResponse)
     }, []);
 
     return (
