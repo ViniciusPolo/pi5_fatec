@@ -139,4 +139,40 @@ module.exports = {
     }
     },
 
+    async deleteItem(req,res){
+        const { id_request } = req.params;
+        try {
+            const request = await Requests.destroy({
+                where : {id : id_request}
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Request deleted`,
+                request
+            })
+        } catch (err) {
+            return res.status(400).send('Request Not Found' + err)
+            
+        }
+    },
+
+    async deleteAllItemsOpened(req,res){
+        const { user_id } = req.params;
+        try {
+            const restaurant = await Requests.destroy(
+                {where: { user_id: user_id,
+                          is_open: 1
+                        }
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Requests deleted by User`,
+                restaurant
+            })
+        } catch (err) {
+            return res.status(400).send('Request by Restaurant Not Found' + err)
+            
+        }
+    },
+
 }

@@ -12,4 +12,8 @@ router.post('', requestsControllers.store);
 
 router.put('/:id_request', requestsControllers.update)
 
+router.delete('/delete-item/:id_request', requestsControllers.deleteItem)
+
+router.delete('/delete-basket/:user_id', requestsControllers.deleteAllItemsOpened);
+
 module.exports = router
