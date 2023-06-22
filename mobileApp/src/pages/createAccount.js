@@ -63,7 +63,7 @@ const CreateAccount = () => {
             <>
             <ImageBackground  
                 source={require('../assets/logo111.png')}
-                style={{width: 300, height: 100}}
+                style={{width: 350, height: 100, marginBottom:10}}
             />
 
             <TextInput 

@@ -51,6 +51,7 @@ export default function Routes() {
 
         <Stack.Screen name='createAccount' component={CreateAccount} options={{
           title: 'CADASTRO DE USUÁRIO',
+          headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: "#FFA500",
