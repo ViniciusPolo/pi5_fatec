@@ -55,7 +55,7 @@ export default class Menu extends Component {
                             <Bio>R$ {item.price}</Bio>
                             <Bio>{item.prepare_time} minutos</Bio>
 
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('basket',{itemAdded: item, user: user} )}>
+                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => this.props.navigation.navigate('addBasket',{itemAdded: item, user: user} )}>
                                 <ProfileButtonText style={{ color: '#000' }}>Quero Experimentar</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>
