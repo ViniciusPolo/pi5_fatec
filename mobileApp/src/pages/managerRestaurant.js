@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
 import { ActivityIndicator, Alert, Text } from 'react-native';
-import { Container, List, Restaurant, Logo, Name, Bio, button, ProfileButtonText, ProfileButton } from './styles';
+import { Container, List, Restaurant, Logo, Name, Bio, button, ProfileButtonText, ProfileButton, Buttons, StyleSheet } from './styles';
 import api from '../services/api';
 
 export default class ManagerRestaurant extends Component {
@@ -43,7 +43,7 @@ export default class ManagerRestaurant extends Component {
         <Container>
             {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
             <>
-                  <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16 }} >Olá {users.first_name} te ajudo a gerenciar seu negócio</Text>
+                  <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#000' }} >Olá {users.first_name} te ajudo a gerenciar seu negócio</Text>
                   <List
                     showVerticalScrollIndicator={false}
                     data={restaurants}
@@ -54,31 +54,33 @@ export default class ManagerRestaurant extends Component {
                             <Name style={{ paddingTop: 6, paddingBottom: 4 }} >{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                this.props.navigation.navigate("menu", {restaurant: item});
-                            }}>
-                            <ProfileButtonText style={{ color: '#000' }} >Ver Menu</ProfileButtonText>
-                            </ProfileButton>
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                this.props.navigation.navigate("addmenu", {restaurant: item});
-                            }}>
-                            <ProfileButtonText style={{ color: '#000' }} >Criar Prato</ProfileButtonText>
-                            </ProfileButton>
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                //this.props.navigation.navigate("menu", {restaurant: item});
-                            }}>
-                            <ProfileButtonText style={{ color: '#000' }} >Editar Menu</ProfileButtonText>
-                            </ProfileButton>
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                //this.props.navigation.navigate("menu", {restaurant: item});
-                            }}>
-                            <ProfileButtonText style={{ color: '#000' }} >Ver Pedidos</ProfileButtonText>
-                            </ProfileButton>
-                            <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                //this.props.navigation.navigate("menu", {restaurant: item});
-                            }}>
-                            <ProfileButtonText style={{ color: '#000' }} >Editar Restaurante</ProfileButtonText>
-                            </ProfileButton>
+                            <Buttons style={{flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'center'}}>
+                                <ProfileButton style={{padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress = {() => {
+                                    this.props.navigation.navigate("menu", {restaurant: item});
+                                }}>
+                                <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Ver Menu</ProfileButtonText>
+                                </ProfileButton>
+                                <ProfileButton style={{ padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress = {() => {
+                                    this.props.navigation.navigate("addmenu", {restaurant: item});
+                                }}>
+                                <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Criar Prato</ProfileButtonText>
+                                </ProfileButton>
+                                <ProfileButton style={{ padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress = {() => {
+                                    //this.props.navigation.navigate("menu", {restaurant: item});
+                                }}>
+                                <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Editar Menu</ProfileButtonText>
+                                </ProfileButton>
+                                <ProfileButton style={{ padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress = {() => {
+                                    //this.props.navigation.navigate("menu", {restaurant: item});
+                                }}>
+                                <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Ver Pedidos</ProfileButtonText>
+                                </ProfileButton>
+                                <ProfileButton style={{ padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress = {() => {
+                                    //this.props.navigation.navigate("menu", {restaurant: item});
+                                }}>
+                                <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Editar Restaurante</ProfileButtonText>
+                                </ProfileButton>
+                            </Buttons>
                         </Restaurant>
                     )}
                 />
@@ -89,5 +91,9 @@ export default class ManagerRestaurant extends Component {
             </>)}
         </Container>
         )
+            
     }
+      
 }
+
+

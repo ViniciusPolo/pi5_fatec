@@ -42,8 +42,8 @@ export default class Menu extends Component {
             <Container>
                 {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
                 <>
-                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold'}} >{this.state.restaurants.restaurant_name}</Text>
-                <Text style={{textAlign: 'center', fontSize: 14, fontWeight: 'bold', paddingTop: 6, paddingBottom: 4 }} >{this.state.restaurants.bio}</Text>
+                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold', color: '#000'}} >{this.state.restaurants.restaurant_name}</Text>
+                <Text style={{textAlign: 'center', fontSize: 14, fontWeight: 'bold', paddingTop: 6, paddingBottom: 4, color: '#000' }} >{this.state.restaurants.bio}</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={menus}

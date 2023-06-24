@@ -66,9 +66,9 @@ export default class Home extends Component {
                         </Restaurant>
                     )}
                 />
-                <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress={() => { console.log("gerenciar restaurante") }}>
+                {/* <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress={() => { console.log("gerenciar restaurante") }}>
                     <ProfileButtonText style={{ color: '#000' }} >Gerenciar Usuário</ProfileButtonText>
-                </ProfileButton>
+                </ProfileButton> */}
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
                 {[3, 4].includes(users.type_of_user) ?
                     (<ProfileButton style={{ backgroundColor: "orange", color: '#000' }} onPress={() => { console.log("gerenciar restaurante") }}>

@@ -56,3 +56,7 @@ export const Name = styled.Text`
     color: #fff;
     text-transform: uppercase;
  `;
+
+ export const Buttons = styled.View`
+ 
+ `;
