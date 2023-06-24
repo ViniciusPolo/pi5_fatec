@@ -58,15 +58,33 @@ module.exports = {
         }
     },
 
+    async indexByUserOpened(req,res){
+        const { user_id, is_open } = req.params;
+        try {
+            const restaurant = await Requests.findAll(
+                {where: { user_id: user_id,
+                          is_open: is_open
+                        }
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Request Open by User found`,
+                restaurant
+            })
+        } catch (err) {
+            return res.status(400).send('Request by Restaurant Not Found' + err)
+            
+        }
+    },
+
  
     async store(req, res) {
         try {
-            const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity, id_request_root} = req.body;
-            let status_payment_default, status_prepare_default, id_request_root_default
+            const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity, is_open} = req.body;
+            let status_payment_default, status_prepare_default
             if (!status_prepare) status_prepare_default= 1;
             if (!status_payment) status_payment_default= 1;
             const total_value = await getTotalValue(food_id, quantity)
-            if (!id_request_root) id_request_root_default= 0
 
             const requests = await Requests.create({
                 restaurant_id,
@@ -76,7 +94,7 @@ module.exports = {
                 status_payment: status_payment || status_payment_default,
                 total_value,
                 total_delivery,
-                id_request_root: id_request_root || id_request_root_default,
+                is_open,
                 quantity
             })
             return res.status(200).send({
@@ -91,7 +109,7 @@ module.exports = {
 
     async update(req, res) {
         try{
-        const { id_request, id_request_root } = req.params
+        const { id_request, is_open } = req.params
         const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity} = req.body;
             let status_payment_default, status_prepare_default, id_request_root_default
             if (!status_prepare) status_prepare_default= 1;
@@ -105,7 +123,7 @@ module.exports = {
                 status_payment: status_payment || status_payment_default,
                 total_value,
                 total_delivery,
-                id_request_root,
+                is_open,
                 quantity
         }, {
             where: {  [Op.and]: [{id: id_request }, {id_request_root: id_request_root }]}
@@ -119,6 +137,42 @@ module.exports = {
     } catch (error) {
         return res.status(400).send(error)
     }
+    },
+
+    async deleteItem(req,res){
+        const { id_request } = req.params;
+        try {
+            const request = await Requests.destroy({
+                where : {id : id_request}
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Request deleted`,
+                request
+            })
+        } catch (err) {
+            return res.status(400).send('Request Not Found' + err)
+            
+        }
+    },
+
+    async deleteAllItemsOpened(req,res){
+        const { user_id } = req.params;
+        try {
+            const restaurant = await Requests.destroy(
+                {where: { user_id: user_id,
+                          is_open: 1
+                        }
+            })
+            return res.status(200).send({
+                status: 1,
+                message: `Requests deleted by User`,
+                restaurant
+            })
+        } catch (err) {
+            return res.status(400).send('Request by Restaurant Not Found' + err)
+            
+        }
     },
 
 }
