@@ -131,6 +131,7 @@ export default function Routes() {
 
         <Stack.Screen name='addmenu' component={AddMenu} options={{
           title: 'Criar Prato',
+          headerShown: false,
           headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: '#FFA500',
