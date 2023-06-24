@@ -4,7 +4,7 @@ import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
 import api from '../services/api';
 
-const Login = () => {
+const CreateAccount = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -20,6 +20,9 @@ const Login = () => {
             
             if(email != confirmEmail){
                 Alert.alert('Ô sô, esse email não tá batendo');
+                return
+            } else if (typeOfUser == ''){
+                Alert.alert('Eita, Faz favor de iscoiê uma opção');
                 return
             } else {
 
@@ -92,9 +95,10 @@ const Login = () => {
                 value={password}
                 onChangeText={setPassword}
             />     
-            <Picker
-                onChanged={setTypeOfUser}
+            <Picker                
+                onChanged={setTypeOfUser}                
                 options={[
+                    {value: '', text: 'Escolha uma opção', enabled:false},
                     {value: 1, text: 'Sou Cliente'},
                     {value: 2, text: 'Tenho um restaurante'},
                     {value: 3, text: 'Sou Entregador'}
@@ -102,6 +106,8 @@ const Login = () => {
                 style={styles.inputPicker}
                 value={typeOfUser}
             />
+                
+
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
@@ -132,6 +138,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
+        marginStart: -20,
         width: '140%',
       },
     button:{
@@ -147,4 +154,4 @@ const styles = StyleSheet.create({
     },
 })
    
-export default Login;
+export default CreateAccount;

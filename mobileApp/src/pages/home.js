@@ -6,14 +6,14 @@ import api from '../services/api';
 
 
 export default class Home extends Component {
- 
+
     state = {
         restaurants: [],
-        users:''
+        users: ''
     }
 
-    
-    async componentDidMount(){
+
+    async componentDidMount() {
         try {
             const { route } = this.props;
             const { user } = route.params;
@@ -21,34 +21,34 @@ export default class Home extends Component {
             const userResponse = await api.get(`https://um-trem-de-cume-api.onrender.com/users/${user.user_id}`);
 
             const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
-            this.setState({restaurants: response.data, users: userResponse.data.user});
+            this.setState({ restaurants: response.data, users: userResponse.data.user });
             console.log(response.data)
-            
+
         } catch (error) {
             console.error(error)
         }
     }
 
-    render (){
+    render() {
         const { restaurants, users } = this.state
         console.log("id User logado:", this.state.users.id)
 
-       
+
         return (
             <Container>
-                <Text>Olá {users.first_name}, onde vamos comer hoje?</Text>
+                <Text backgroundColor="#000">Olá {users.first_name}, onde vamos comer hoje?</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={restaurants}
                     keyExtractor={(restaurant) => String(restaurant.restaurant_name)}
-                    renderItem = {({item}) => (
+                    renderItem={({ item }) => (
                         <Restaurant>
                             {/* <Logo source={{uri: item.logo}}/> */}
                             <Name>{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 
-                            <ProfileButton onPress = {() => {
-                                this.props.navigation.navigate("menu", {restaurant: item});
+                            <ProfileButton onPress={() => {
+                                this.props.navigation.navigate("menu", { restaurant: item });
                             }}>
                                 <ProfileButtonText>Ver Menu</ProfileButtonText>
                             </ProfileButton>
@@ -56,20 +56,20 @@ export default class Home extends Component {
                     )}
                 />
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {[1,2].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
+                {[1, 2].includes(users.type_of_user) ?
+                    (<ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { console.log("gerenciar restaurante") }}>
                         <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
                 {/* exibe somente se for dono de restaurante, type of user 2 */}
                 {users.type_of_user == 2 ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
+                    (<ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { console.log("gerenciar restaurante") }}>
                         <ProfileButtonText>Gerenciar Restaurante</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
                 {/* exibe somente se for entregador, type of user 3 */}
                 {users.type_of_user == 3 ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar entregas")}}>
+                    (<ProfileButton style={{ backgroundColor: "orange" }} onPress={() => { console.log("gerenciar entregas") }}>
                         <ProfileButtonText>Gerenciar Entregas</ProfileButtonText>
                     </ProfileButton>) : <></>
                 }
