@@ -16,7 +16,7 @@ module.exports = {
     async indexOne(req,res){
         const { id_user } = req.params;
         try {
-            const user = await Users.findOne({
+            const user = await Users.findAll({
                 where : {id : id_user}
             })
             return res.status(200).send({
