@@ -57,4 +57,12 @@ export default {
     const response = await api.get(`/menus/${food_id}`)
     return response.data
   },
+  deleteItem: async (id_request) => {
+    const response = await api.delete(`/requests/delete-item/${id_request}`)
+    return response.data
+  },
+  deleteBasket: async (user_id) => {
+    const response = await api.delete(`/requests/delete-basket/${user_id}`)
+    return response.data
+  },
 }

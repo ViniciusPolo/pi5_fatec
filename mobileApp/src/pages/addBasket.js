@@ -7,7 +7,7 @@ import { Container, Restaurant, List, Name, Bio, button, ProfileButtonText, Prof
 import api from '../services/api';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default class Basket extends Component {
+export default class AddBasket extends Component {
 
   state = {
     products: [],
@@ -52,12 +52,21 @@ export default class Basket extends Component {
     this.setState({loading: false})
   }
 
-  handleAddProduct = async () => {
-    const { products, user_id } = this.state;
+  async componentDidUpdate(_, prevState) {
+    const { products, basket, basketChanged , quantityTotalItens} = this.state;
+    
+    if (prevState.basket !== basket) {
+      this.forceUpdate()
+      
+    }
+  }
 
+  handleAddProduct = async () => {
+    const { products, user_id, itemAdded } = this.state;
+    
     console.log('products', products)
     this.setState({ loading: true });
-
+    
     try {
       this.setState({ loading: false });
       const data = {
@@ -70,8 +79,17 @@ export default class Basket extends Component {
         is_open: 1,
         quantity: this.state.quantity
       };
-
+      
       const addItem = await api.addProductToBasket(data)
+      this.props.navigation.navigate("basket",{itemAdded: itemAdded, user: user_id} )
+      const added = addItem;
+      if (added) {
+        setLoading(false)
+        Alert.alert('Adicionado ao Carrinho');
+      } else {
+        console.error("API ERROR", data.error);
+        setLoading(false)
+      }
 
     } catch (error) {
       this.setState({ loading: false });
@@ -79,42 +97,24 @@ export default class Basket extends Component {
 
   }
 
-  handleConfirmBasket = async () => {
-        //Fazer um For percorrendo o basket mudando o status dos pedidos
-        console.log("compra realizada")
-    // const { products, user_id } = this.state;
+  handleDeleteItem = async (id_request) => {
+    const { user_id, itemAdded } = this.state;
+    try {
+      await api.deleteItem(id_request)
+      this.props.navigation.navigate("basket",{itemAdded: itemAdded, user: user_id} )
+    } catch (error) {
+      
+    }
+  }
 
-    // console.log('products', products)
-    // this.setState({ loading: true });
-
-    // try {
-    //   this.setState({ loading: false });
-    //   const data = {
-    //     restaurant_id: this.state.itemAdded.restaurant_id,
-    //     food_id: this.state.itemAdded.id,
-    //     user_id: user_id,
-    //     total_delivery: 8.00,
-    //     status_prepare: 1,
-    //     status_delivered: 1,
-    //     is_open: 1,
-    //     quantity: this.state.quantity
-    //   };
-
-    //   const addItem = await api.addProductToBasket(data)
-    //   const added = addItem;
-    //   if (added) {
-    //     setLoading(false)
-    //     Alert.alert('Adicionado ao Carrinho');
-    //     this.navigation.navigate("menu")
-    //   } else {
-    //     console.error("API ERROR", data.error);
-    //     setLoading(false)
-    //   }
-
-    // } catch (error) {
-    //   this.setState({ loading: false });
-    // }
-
+  handleDeleteAll = async (user_id) => {
+    const { itemAdded } = this.state;
+    try {
+      await api.deleteBasket(user_id)
+      this.props.navigation.navigate("basket",{itemAdded: itemAdded, user: user_id} )
+    } catch (error) {
+      
+    }
   }
 
   render() {
@@ -124,14 +124,32 @@ export default class Basket extends Component {
       <Container>
       {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
       <>
-      <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {
-                                this.props.navigation.navigate("menu",{itemAdded: itemAdded, user: user_id});
-                            }}>
-                    <ProfileButtonText style={{ color: '#000' }}>Adicionar mais Itens</ProfileButtonText>
+      <Restaurant style={{borderWidth: 0.6, paddingBottom: 10, backgroundColor: "#FFA500" }}>
+                <Name>{itemAdded.food_name}</Name>
+                <Bio style={{ color: '#000' }}>R$ {itemAdded.price}</Bio>
+                <Bio style={{ color: '#000' }}>{itemAdded.prepare_time} minutos</Bio>
+                <NumericInput 
+                    value={quantity} 
+                    onChange={(value) => this.setState({ quantity: value })}
+                    onLimitReached={(isMax,msg) => console.log(isMax,msg)}
+                    totalWidth={240} 
+                    totalHeight={50} 
+                    iconSize={50}
+                    step={1}
+                    valueType='real'
+                    rounded 
+                    textColor='#000' 
+                    iconStyle={{ color: '#FFA500' }} 
+                    rightButtonBackgroundColor='#000' 
+                    leftButtonBackgroundColor='#000'
+                />
+                <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {this.handleAddProduct}>
+                    <ProfileButtonText style={{ color: '#000' }}>Adicionar</ProfileButtonText>
                 </ProfileButton>
-                <Name style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }}>
-                  {quantityTotalItens == 0 ? "Seu Carrinho está vazio": "Seu Carrinho contém:"}
-                  </Name>
+            </Restaurant>
+            <Name style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }}>
+              {quantityTotalItens == 0 ? "Seu Carrinho está vazio": "Seu Carrinho contém:"}
+              </Name>
       <List
           showVerticalScrollIndicator={false}
           data={basket}
@@ -141,6 +159,10 @@ export default class Basket extends Component {
                   {/* <Logo source={{uri: item.logo}}/> */}
                   <Name>{item.food_name}</Name>
                   <Bio>R$ {item.total_value}</Bio>
+
+                  <ProfileButton style={{ backgroundColor: "#000" }} onPress = {() => {this.handleDeleteItem(item.id)}}>
+                      <ProfileButtonText style={{ color: '#FFA500' }}>Tirar do Carrinho</ProfileButtonText>
+                  </ProfileButton>
               </Restaurant>
           )}
           />
@@ -148,10 +170,8 @@ export default class Basket extends Component {
           <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {this.handleConfirmBasket}>
                     <ProfileButtonText style={{ color: '#000' }}>Finalizar Pedido</ProfileButtonText>
                 </ProfileButton>
-                <ProfileButton style={{ backgroundColor: "#FFA500" }}onPress = {() => {
-                                this.props.navigation.navigate("addBasket",{itemAdded: itemAdded, user:user_id});
-                            }}>
-                    <ProfileButtonText style={{ color: '#000' }}>ALterar Carrinho</ProfileButtonText>
+                <ProfileButton style={{ backgroundColor: "#FFA500" }} onPress = {() => {this.handleDeleteAll(user_id)}}>
+                    <ProfileButtonText style={{ color: '#000' }}>Esvaziar Carrinho</ProfileButtonText>
                 </ProfileButton>
       </>)}    
   </Container>
