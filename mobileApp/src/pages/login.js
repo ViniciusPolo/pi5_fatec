@@ -50,6 +50,8 @@ const Login = () => {
             placeholder="Email"
             value={email}
             onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"
           />
 
           <TextInput
