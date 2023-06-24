@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
-import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, ImageBackground, Alert } from 'react-native';
 import api from '../services/api';
 
 const CreateAccount = () => {
@@ -61,6 +61,11 @@ const CreateAccount = () => {
         <View style={styles.container}>
             {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
             <>
+            <ImageBackground  
+                source={require('../assets/logo111.png')}
+                style={{width: 350, height: 100, marginBottom:10}}
+            />
+
             <TextInput 
                 style={styles.input}
                 placeholder="Primeiro Nome"

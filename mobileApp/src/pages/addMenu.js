@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
-import api from '../services/api';
+import api from '../services/api'; 
 
 const AddMenu = () => {
     const [foodName, setFoodName] = useState('')
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#ffa500',
     },
     input: {
       borderWidth: 1,
-      borderColor: '#aaa',
+      borderColor: '#fff',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -109,13 +109,14 @@ const styles = StyleSheet.create({
       backgroundColor: '#FFA500',
       borderRadius: 5,
       marginTop: 10,
-      padding: 10,
+      padding: 20,
       width:'80%',
       alignItems: 'center',
     },
     buttonText:{
       color: '#000',
       fontWeight: 'bold',
+      fontSize: 20,
     },
 })
    
