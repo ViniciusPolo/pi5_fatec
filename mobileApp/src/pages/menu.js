@@ -18,6 +18,7 @@ export default class Menu extends Component {
         this.setState({loading: true})
         const { route } = this.props;
         const { restaurant, user } = route.params;
+        console.log("userMenu",user)
         try {
             const response = await api.listMenuForRestaurantsForID(restaurant.id);
             this.setState({menus: response.restaurant, restaurants: restaurant, user: user});

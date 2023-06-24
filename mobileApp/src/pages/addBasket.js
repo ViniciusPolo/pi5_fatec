@@ -12,7 +12,6 @@ export default class AddBasket extends Component {
   state = {
     products: [],
     basket: [],
-    basketChanged: false, // Indicador de alteração do estado basket
     loading: false,
     itemAdded: [],
     user_id: 0,
@@ -41,6 +40,7 @@ export default class AddBasket extends Component {
   async componentDidMount() {
     const { route } = this.props;
     const { itemAdded, user } = route.params;
+    console.log("UserBasket", user)
     this.setState({ itemAdded: itemAdded, user_id: user, loading: true })
     const basket = await this.searchForRequests(user, 1)
 
@@ -49,14 +49,13 @@ export default class AddBasket extends Component {
       this.setState({ basket: basket.restaurant });
     }
     this.setState({loading: false})
-    this.setState({loading: false})
   }
 
   async componentDidUpdate(_, prevState) {
     const { products, basket, basketChanged , quantityTotalItens} = this.state;
     
     if (prevState.basket !== basket) {
-      this.forceUpdate()
+      //this.forceUpdate()
       
     }
   }
@@ -122,7 +121,7 @@ export default class AddBasket extends Component {
 
     return (
       <Container>
-      {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
+      {loading ? (<ActivityIndicator color="#FFA500" size={"large"} />) : (
       <>
       <Restaurant style={{borderWidth: 0.6, paddingBottom: 10, backgroundColor: "#FFA500" }}>
                 <Name>{itemAdded.food_name}</Name>
@@ -156,7 +155,6 @@ export default class AddBasket extends Component {
           keyExtractor={(basket) => String(basket.id)}
           renderItem = {({item}) => (
               <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
-                  {/* <Logo source={{uri: item.logo}}/> */}
                   <Name>{item.food_name}</Name>
                   <Bio>R$ {item.total_value}</Bio>
 

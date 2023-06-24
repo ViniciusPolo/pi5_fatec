@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../services/api';
 
@@ -18,10 +19,13 @@ const { Navigator, Screen } = createBottomTabNavigator();
 export default function TabNav(props) {
     const route = useRoute();
     const { user } = route.params;
-    const userId = user.user_id
+    const [userId, setUserId] = useState(user.user_id)
     const [userLog, setUserLog] = useState([])
+    const [typeUser, setTypeUser] = useState(0)
     
-    useEffect( (userId) => {  
+    useEffect( async (userId) => {  
+        const userLoged = await api.listUsers(userId);
+        if(userLoged) setTypeUser(userLoged.user[0].type_of_user)
         const userResponse = async (userId) => {
             const userLoged = await api.listUsers(userId);
             console.log("userResponse: ", userLoged.data)
@@ -58,15 +62,16 @@ export default function TabNav(props) {
                 }}
                 //initialParams={user}
             />
-                <Screen
-                name="Gerenciar Restaurante"
+                {typeUser >= 0 ? (<Screen
+                name="GerenciarRestaurante"
                 component={(props) => <ManagerRestaurant {...props} user={user} />}
                 //component={Home}
                 options={{
                     tabBarIcon: ({ size, color }) => <Icon name="business" size={size} color={color} />,
                 }}
                 //initialParams={user}
-                />
+                />): (<></>)
+            }
 
             <Screen
                 name="Pedidos"
