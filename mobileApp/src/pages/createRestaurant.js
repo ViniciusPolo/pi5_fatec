@@ -18,23 +18,30 @@ const CreateRestaurant = () => {
     const handleCreate = async  () => {
         try {
             setLoading(true)
-            const log = await api.createRestaurant({
-                user_owner: userOwner,
-                restaurant_name: restaurantName,
-                bio: bio,
-                logo: '',
-                address: '',
+            if (restaurantName && userOwner){
+
+                const log = await api.createRestaurant({
+                    user_owner: userOwner,
+                    restaurant_name: restaurantName,
+                    bio: bio,
+                    logo: '',
+                    address: '',
                 })
-            const data = log;
+                const data = log;
                 
-            if (data) {
-                setLoading(false)
-                Alert.alert('Restaurante Criado');
-                navigation.navigate("managerRestaurant")
+                if (data) {
+                    setLoading(false)
+                    Alert.alert('Restaurante Criado');
+                    navigation.navigate("managerRestaurant")
+                } else {
+                    console.error("API ERROR", data.error);
+                    setLoading(false)
+                    navigation.navigate("managerRestaurant")
+                }
             } else {
-                console.error("API ERROR", data.error);
+                Alert.alert('Estão faltando informações, por favor preencha corretamente');
                 setLoading(false)
-                navigation.navigate("managerRestaurant")
+                return
             }
         } catch (error) {
             Alert.alert('Restaurante não cadastrado, verifique as informações');

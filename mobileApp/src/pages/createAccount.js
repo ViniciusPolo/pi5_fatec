@@ -24,6 +24,9 @@ const CreateAccount = () => {
             } else if (typeOfUser == ''){
                 Alert.alert('Eita, Faz favor de iscoiê uma opção');
                 return
+            } else if (!firstName || !lastName || !email || !password){
+                Alert.alert('Eita, Faz favor de preencher direito');
+                return
             } else {
 
                 setLoading(true)

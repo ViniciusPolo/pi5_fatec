@@ -3,6 +3,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
 import api from '../services/api'; 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const AddMenu = () => {
     const [foodName, setFoodName] = useState('')
@@ -16,29 +17,40 @@ const AddMenu = () => {
     const { restaurant } = route.params;
     
     const handleCreate = async  () => {
-        console.log(restaurant)
+        await AsyncStorage.setItem("id_user", JSON.stringify(restaurant.user_owner))
         try {
-            setLoading(true)
-            const log = await api.addMenu({
-                restaurant_id: restaurant.id,
-                food_name: foodName,
-                price: price,
-                prepare_time: prepareTime,
-                ingrediants: '',
-                })
-            const data = log;
-                
-            if (data) {
+            if (!foodName || !price || !prepareTime){
+                Alert.alert('Estão faltando informações, por favor preencha corretamente');
                 setLoading(false)
-                Alert.alert(`Prato para ${restaurant.restaurant_name} foi criado`);
-                navigation.navigate("managerRestaurant")
-            } else {
-                console.error("API ERROR", data.error);
-                setLoading(false)
-                navigation.navigate("managerRestaurant")
+                return 
             }
+            else {
+                setLoading(true)
+                const log = await api.addMenu({
+                    restaurant_id: restaurant.id,
+                    food_name: foodName,
+                    price: price,
+                    prepare_time: prepareTime,
+                    ingrediants: '',
+                })
+                const data = log;
+                
+                console.log("API ------>", restaurant);
+                if (data) {
+                    setLoading(false)
+                    this.setStorage
+                    Alert.alert(`Prato para ${restaurant.restaurant_name} foi criado`);
+                    navigation.navigate("managerRestaurant")
+                } else {
+                    console.error("API ERROR", data.error);
+                    setLoading(false)
+                    navigation.navigate("managerRestaurant")
+                    return
+                }
+            } 
         } catch (error) {
-            Alert.alert('Prato não ccriado, verifique as informações');
+            Alert.alert('Prato não criado, verifique as informações');
+            return
         }
     }   
 
