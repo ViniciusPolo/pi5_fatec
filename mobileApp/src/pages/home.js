@@ -3,28 +3,33 @@ import { useNavigation } from "@react-navigation/native";
 import { Alert, ActivityIndicator, Text } from 'react-native';
 import { Container, List, Restaurant, Logo, Name, Bio, ProfileButton, ProfileButtonText } from './styles';
 import api from '../services/api';
+import { colors } from 'react-select/dist/declarations/src/theme';
 
 
 export default class Home extends Component {
- 
+
+    constructor(props){
+        super(props);
+    }
+
     state = {
         restaurants: [],
-        users:'',
+        users:[],
         loading: false
     }
 
-    
-    async componentDidMount(){
+
+    async componentDidMount() {
         try {
             this.setState({loading:true})
-            const { route } = this.props;
-            const { user } = route.params;
+            const { navigation, route, user } = this.props;
+            //const { user } = route.params || this.props
             console.log("user", user)
-            const userResponse = await api.get(`https://um-trem-de-cume-api.onrender.com/users/${user.user_id}`);
+            const userResponse = await api.listUsers(user.user_id);
             
-            const response = await api.get(`https://um-trem-de-cume-api.onrender.com/restaurants`);
-            this.setState({restaurants: response.data, users: userResponse.data.user});
-            console.log(response.data)
+            const response = await api.listRestaurants()
+            this.setState({restaurants: response, users: userResponse.user});
+            console.log(response)
             
             this.setState({loading:false})
         } catch (error) {
@@ -33,49 +38,34 @@ export default class Home extends Component {
         }
     }
 
-    render (){
+    render() {
         const { restaurants, users } = this.state
         console.log("id User logado:", this.state.users.id)
 
-       
+
         return (
             <Container>
                  {this.state.loading ? (<ActivityIndicator color='black' size={"large"} />) : (
             <>
-                <Text>Olá {users.first_name}, onde vamos comer hoje?</Text>
+                <Text style={{textAlign: 'center', fontSize: 18, fontWeight: 'bold', color: '#000'}} >Olá {users.first_name}, onde vamos comer hoje?</Text>
                 <List
                     showVerticalScrollIndicator={false}
                     data={restaurants}
                     keyExtractor={(restaurant) => String(restaurant.restaurant_name)}
-                    renderItem = {({item}) => (
-                        <Restaurant>
+                    renderItem={({ item }) => (
+                        <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
                             {/* <Logo source={{uri: item.logo}}/> */}
-                            <Name>{item.restaurant_name}</Name>
+                            <Name style={{ paddingTop: 6, paddingBottom: 4 }} >{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 
-                            <ProfileButton onPress = {() => {
-                                this.props.navigation.navigate("menu", {restaurant: item});
+                            <ProfileButton style={{ backgroundColor: '#FFA500'}} onPress={() => {
+                                this.props.navigation.navigate("menu", { restaurant: item, user: users.id });
                             }}>
-                                <ProfileButtonText>Ver Menu</ProfileButtonText>
+                                <ProfileButtonText style={{ color: '#000' }}>Ver Menu</ProfileButtonText>
                             </ProfileButton>
                         </Restaurant>
                     )}
                 />
-                <ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
-                        <ProfileButtonText>Gerenciar Usuário</ProfileButtonText>
-                    </ProfileButton>
-                {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {[2,4].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}} onPress = {() => {this.props.navigation.navigate("managerRestaurant", {restaurant: this.state.restaurants, user: this.state.users})}}>
-                        <ProfileButtonText>Gerenciar Restaurantes</ProfileButtonText>
-                    </ProfileButton>) : <></>
-                }
-                {/* exibe somente se for dono de restaurante, type of user 2 */}
-                {[3,4].includes(users.type_of_user)  ?
-                    (<ProfileButton style={{backgroundColor: "orange"}}onPress = {() => {console.log("gerenciar restaurante")}}>
-                        <ProfileButtonText>Gerenciar Restaurante</ProfileButtonText>
-                    </ProfileButton>) : <></>
-                }
                  </> )}
             </Container>
         );

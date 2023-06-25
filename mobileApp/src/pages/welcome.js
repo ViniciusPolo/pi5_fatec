@@ -21,7 +21,7 @@ export default function Welcome() {
             <View style={styles.containerLogo}>
                 <Animatable.Image
                     animation="flipInY"
-                    source={require('../assets/logo1.png')}
+                    source={require('../assets/logo111.png')}
                     style={{ width: '100%' }}
                     resizeMode="contain"
                 />
@@ -41,10 +41,7 @@ export default function Welcome() {
                 >
                     <Text style={styles.buttonText}>Cadastrar-se</Text>
                 </TouchableOpacity>
-
             </Animatable.View>
-
-
         </View>
     )
 }
@@ -70,8 +67,8 @@ const styles = StyleSheet.create({
     containerForm: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
         paddingStart: '5%',
         paddingEnd: '5%'
     },

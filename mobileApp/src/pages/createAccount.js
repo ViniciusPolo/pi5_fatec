@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
-import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, ImageBackground, Alert } from 'react-native';
 import api from '../services/api';
 
 const CreateAccount = () => {
@@ -23,6 +23,9 @@ const CreateAccount = () => {
                 return
             } else if (typeOfUser == ''){
                 Alert.alert('Eita, Faz favor de iscoiê uma opção');
+                return
+            } else if (!firstName || !lastName || !email || !password){
+                Alert.alert('Eita, Faz favor de preencher direito');
                 return
             } else {
 
@@ -61,6 +64,11 @@ const CreateAccount = () => {
         <View style={styles.container}>
             {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
             <>
+            <ImageBackground  
+                source={require('../assets/logo111.png')}
+                style={{width: 350, height: 100, marginBottom:10}}
+            />
+
             <TextInput 
                 style={styles.input}
                 placeholder="Primeiro Nome"
@@ -80,6 +88,8 @@ const CreateAccount = () => {
                 placeholder="Email"
                 value={confirmEmail}
                 onChangeText={setConfirmEmail}
+                autoCapitalize="none"
+                keyboardType="email-address"
             />
 
             <TextInput 
@@ -87,6 +97,8 @@ const CreateAccount = () => {
                 placeholder="Confirme o Email"
                 value={email}
                 onChangeText={setEmail}
+                autoCapitalize="none"
+                keyboardType="email-address"
             />
 
             <TextInput 
@@ -107,8 +119,6 @@ const CreateAccount = () => {
                 style={styles.inputPicker}
                 value={typeOfUser}
             />
-                
-
 
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Criar Usuário</Text>  
@@ -123,11 +133,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#ffa500',
     },
     input: {
       borderWidth: 1,
-      borderColor: '#ccc',
+      borderColor: '#fff',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -135,7 +145,7 @@ const styles = StyleSheet.create({
     },
     inputPicker: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#fff',
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
@@ -143,15 +153,17 @@ const styles = StyleSheet.create({
         width: '140%',
       },
     button:{
-      backgroundColor: '#3498db',
+      backgroundColor: '#FFA500',
       borderRadius: 5,
-      padding: 10,
+      padding: 20,
       width:'80%',
       alignItems: 'center',
+      marginBottom: 5,
     },
     buttonText:{
-      color: '#fff',
+      color: '#000',
       fontWeight: 'bold',
+      fontSize: 20,
     },
 })
    

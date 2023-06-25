@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
 import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
-import api from '../services/api';
+import api from '../services/api'; 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const AddMenu = () => {
     const [foodName, setFoodName] = useState('')
@@ -16,29 +17,40 @@ const AddMenu = () => {
     const { restaurant } = route.params;
     
     const handleCreate = async  () => {
-        console.log(restaurant)
+        await AsyncStorage.setItem("id_user", JSON.stringify(restaurant.user_owner))
         try {
-            setLoading(true)
-            const log = await api.post(`https://um-trem-de-cume-api.onrender.com/menus`, {
-                restaurant_id: restaurant.id,
-                food_name: foodName,
-                price: price,
-                prepare_time: prepareTime,
-                ingrediants: ingredients,
-                })
-            const data = log.data;
-                
-            if (data) {
+            if (!foodName || !price || !prepareTime){
+                Alert.alert('Estão faltando informações, por favor preencha corretamente');
                 setLoading(false)
-                Alert.alert(`Prato para ${restaurant.restaurant_name} foi criado`);
-                navigation.navigate("managerRestaurant")
-            } else {
-                console.error("API ERROR", data.error);
-                setLoading(false)
-                navigation.navigate("managerRestaurant")
+                return 
             }
+            else {
+                setLoading(true)
+                const log = await api.addMenu({
+                    restaurant_id: restaurant.id,
+                    food_name: foodName,
+                    price: price,
+                    prepare_time: prepareTime,
+                    ingrediants: '',
+                })
+                const data = log;
+                
+                console.log("API ------>", restaurant);
+                if (data) {
+                    setLoading(false)
+                    this.setStorage
+                    Alert.alert(`Prato para ${restaurant.restaurant_name} foi criado`);
+                    navigation.navigate("managerRestaurant")
+                } else {
+                    console.error("API ERROR", data.error);
+                    setLoading(false)
+                    navigation.navigate("managerRestaurant")
+                    return
+                }
+            } 
         } catch (error) {
-            Alert.alert('Restaurante não cadastrado, verifique as informações');
+            Alert.alert('Prato não criado, verifique as informações');
+            return
         }
     }   
 
@@ -87,11 +99,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#ffa500',
     },
     input: {
       borderWidth: 1,
-      borderColor: '#ccc',
+      borderColor: '#fff',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -99,22 +111,24 @@ const styles = StyleSheet.create({
     },
     inputPicker: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#003',
         borderRadius: 5,
         padding: 10,
         marginVertical: 10,
         width: '140%',
       },
     button:{
-      backgroundColor: '#3498db',
+      backgroundColor: '#FFA500',
       borderRadius: 5,
-      padding: 10,
+      marginTop: 10,
+      padding: 20,
       width:'80%',
       alignItems: 'center',
     },
     buttonText:{
-      color: '#fff',
+      color: '#000',
       fontWeight: 'bold',
+      fontSize: 20,
     },
 })
    
