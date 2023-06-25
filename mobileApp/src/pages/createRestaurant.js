@@ -74,7 +74,7 @@ const CreateRestaurant = () => {
                     />     
     
                 <TouchableOpacity style={styles.button} onPress={handleCreate}>
-                    <Text style={styles.buttonText}>Criar Resturante</Text>  
+                    <Text style={styles.buttonText}>Criar Restaurante</Text>  
                 </TouchableOpacity>
             </>)}
         </View>
@@ -86,11 +86,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#ffa500',
     },
     input: {
       borderWidth: 1,
-      borderColor: '#aaa',
+      borderColor: '#fff',
       borderRadius: 5,
       padding: 10,
       marginVertical: 10,
@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     buttonText:{
       color: '#000',
       fontWeight: 'bold',
+      fontSize: 20,
     },
 })
    

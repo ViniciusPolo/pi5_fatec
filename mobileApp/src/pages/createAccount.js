@@ -85,6 +85,8 @@ const CreateAccount = () => {
                 placeholder="Email"
                 value={confirmEmail}
                 onChangeText={setConfirmEmail}
+                autoCapitalize="none"
+                keyboardType="email-address"
             />
 
             <TextInput 
@@ -92,6 +94,8 @@ const CreateAccount = () => {
                 placeholder="Confirme o Email"
                 value={email}
                 onChangeText={setEmail}
+                autoCapitalize="none"
+                keyboardType="email-address"
             />
 
             <TextInput 
