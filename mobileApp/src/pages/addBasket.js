@@ -132,6 +132,8 @@ export default class AddBasket extends Component {
                     onChange={(value) => this.setState({ quantity: value })}
                     onLimitReached={(isMax,msg) => console.log(isMax,msg)}
                     totalWidth={240} 
+                    maxValue={100}
+                    minValue={0}
                     totalHeight={50} 
                     iconSize={50}
                     step={1}
