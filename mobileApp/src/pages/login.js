@@ -4,8 +4,8 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
 import api from '../services/api';
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('pedro@silva.com')
+  const [password, setPassword] = useState('password')
   const [loading, setLoading] = useState(false)
 
   const navigation = useNavigation();
@@ -40,9 +40,9 @@ const Login = () => {
     <View style={styles.container}>
       {loading ? (<ActivityIndicator color='black' size={"large"} />) : (
         <>
-          <ImageBackground  
+          <ImageBackground
             source={require('../assets/logo111.png')}
-            style={{width: 400, height: 200}}
+            style={{ width: 400, height: 200 }}
           />
 
           <TextInput
@@ -50,6 +50,9 @@ const Login = () => {
             placeholder="Email"
             value={email}
             onChangeText={setEmail}
+
+            autoCapitalize="none"
+            keyboardType="email-address"
           />
 
           <TextInput
@@ -64,8 +67,8 @@ const Login = () => {
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
 
-          
-          
+
+
         </>)
       }
     </View>
