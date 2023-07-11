@@ -33,6 +33,10 @@ export default {
     const response = await api.post("/restaurants", dataRestaurant)
     return response.data
   },
+  editRestaurant: async (dataRestaurant) => {
+    const response = await api.post("/restaurants", dataRestaurant)
+    return response.data
+  },
   addMenu: async (dataMenu) => {
     const response = await api.post("/menus", dataMenu)
     return response.data

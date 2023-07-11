@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Picker from '@ouroboros/react-native-picker';
-import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import api from '../services/api';
+
+import storageImage from '../services/storage'
+
+import { storage } from "../config/firebase";
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+
+import DocumentPicker from "react-native-document-picker";
+
+import NativeUploady, {
+  UploadyContext,
+  useItemFinishListener,
+  useItemStartListener,
+  useItemErrorListener,
+} from "@rpldy/native-uploady";
 
 const CreateRestaurant = () => {
     const [restaurantName, setRestaurantName] = useState('')
     const [logo, setLogo] = useState('')
+    const [logoUrl, setLogoUrl] = useState('')
     const [address, setAddress] = useState('')
     const [bio, setBio] = useState('')
     const [loading, setLoading] = useState(false)
@@ -31,6 +46,18 @@ const CreateRestaurant = () => {
                 
                 if (data) {
                     setLoading(false)
+                    await storageImage.saveImage(logo, `restaurant_id_${data.restaurants.id}`)
+
+                    const imagemRef = ref(storage, `restaurant_id_${data.restaurants.id}`)
+                    const url = await getDownloadURL(imagemRef)
+            
+                    await api.editRestaurant({
+                    user_owner: userOwner,
+                    restaurant_name: restaurantName,
+                    bio: bio,
+                    logo: url,
+                    address: '',
+                    })
                     Alert.alert('Restaurante Criado');
                     navigation.navigate("managerRestaurant")
                 } else {
@@ -46,7 +73,64 @@ const CreateRestaurant = () => {
         } catch (error) {
             Alert.alert('Restaurante não cadastrado, verifique as informações');
         }
-    }   
+    }  
+
+    const handleUpload = async () => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+    
+    const Upload = () => {
+      const [uploadUrl, setUploadUrl] = useState(false);
+      const uploadyContext = useContext(UploadyContext);
+      
+      useItemFinishListener((item) => {
+        const response = JSON.parse(item.uploadResponse.data);
+        console.log(`item ${item.id} finished uploading, response was: `, response);
+        setUploadUrl(response.url);
+      });
+      
+      useItemErrorListener((item) => {
+        console.log(`item ${item.id} upload error !!!! `, item);
+        setLogo(item.file.uri)
+        console.log("logo",logo);
+        });
+      
+        useItemStartListener((item) => {
+          console.log(`item ${item.id} starting to upload,name = ${item.file.name}`);
+        });
+      
+        const pickFile = useCallback(async () => {
+          try {
+            const res = await DocumentPicker.pick({
+              type: [DocumentPicker.types.images],
+            });
+      
+            uploadyContext.upload(res);
+            
+          } catch (err) {
+            if (DocumentPicker.isCancel(err)) {
+              console.log("User cancelled the picker, exit any dialogs or menus and move on");
+            } else {
+              throw err;
+            }
+          }
+        }, [uploadyContext]);
+      
+        return (
+          <>
+            <TouchableOpacity style={styles.input} onPress={pickFile}>
+                            <Text >{logo ? logo : "Selecione a Logo"}</Text>  
+                        </TouchableOpacity>
+            {uploadUrl && <Image source={{ uri: uploadUrl }} style={styles.uploadedImage} />}
+          </>
+        );
+      };
+
+    
 
     return (
         <View style={styles.container}>
@@ -68,17 +152,14 @@ const CreateRestaurant = () => {
     
                 <TextInput 
                     style={styles.input}
-                    placeholder="Logo"
-                    value={logo}
-                    onChangeText={setLogo}
-                    />
-    
-                <TextInput 
-                    style={styles.input}
                     placeholder="Endereço"
                     value={address}
                     onChangeText={setAddress}
-                    />     
+                    />   
+
+                <NativeUploady>
+                    <Upload/>
+                </NativeUploady>
     
                 <TouchableOpacity style={styles.button} onPress={handleCreate}>
                     <Text style={styles.buttonText}>Criar Restaurante</Text>  

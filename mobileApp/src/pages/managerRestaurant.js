@@ -97,7 +97,7 @@ export default class ManagerRestaurant extends Component {
                         />
 
                         <ProfileButton style={{ button, backgroundColor: "orange", color: '#000' }} >
-                            <ProfileButtonText onPress={() => { this.props.navigation.navigate("createRestaurant", { userOwner: this.state.users.id }) }} style={{ color: '#000' }}>Criar Restaurante</ProfileButtonText>
+                            <ProfileButtonText onPress={() => { this.props.navigation.navigate("createRestaurant", { userOwner: users.user_id }) }} style={{ color: '#000' }}>Criar Restaurante</ProfileButtonText>
                         </ProfileButton>
                     </>)}
             </Container>

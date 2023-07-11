@@ -3,8 +3,9 @@ import { useNavigation } from "@react-navigation/native";
 import { Alert, ActivityIndicator, Text } from 'react-native';
 import { Container, List, Restaurant, Logo, Name, Bio, ProfileButton, ProfileButtonText } from './styles';
 import api from '../services/api';
-import { colors } from 'react-select/dist/declarations/src/theme';
-
+//import { colors } from 'react-select/dist/declarations/src/theme';
+import { storage } from '../config/firebase';
+import { ref, getDownloadURL } from 'firebase/storage'
 
 export default class Home extends Component {
 
@@ -15,7 +16,8 @@ export default class Home extends Component {
     state = {
         restaurants: [],
         users:[],
-        loading: false
+        loading: false,
+        logoteste:''
     }
 
 
@@ -30,6 +32,13 @@ export default class Home extends Component {
             const response = await api.listRestaurants()
             this.setState({restaurants: response, users: userResponse.user});
             console.log(response)
+
+            const imagemRef = ref(storage, 'restaurant_id_1.png')
+
+            getDownloadURL(imagemRef).then((url) => {
+            console.log(url)
+            this.setState({logoteste:url})
+        })
             
             this.setState({loading:false})
         } catch (error) {
@@ -39,7 +48,7 @@ export default class Home extends Component {
     }
 
     render() {
-        const { restaurants, users } = this.state
+        const { restaurants, users, logoteste } = this.state
         console.log("id User logado:", this.state.users.id)
 
 
@@ -54,7 +63,7 @@ export default class Home extends Component {
                     keyExtractor={(restaurant) => String(restaurant.restaurant_name)}
                     renderItem={({ item }) => (
                         <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
-                            {/* <Logo source={{uri: item.logo}}/> */}
+                            <Logo source={{uri: item.logo}}/>
                             <Name style={{ paddingTop: 6, paddingBottom: 4 }} >{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 
