@@ -27,11 +27,8 @@ export default function TabNav(props) {
         const userLoged = await api.listUsers(userId);
         if(userLoged) setTypeUser(userLoged.user[0].type_of_user)
         const userResponse = async (userId) => {
-            const userLoged = await api.listUsers(userId);
-            console.log("userResponse: ", userLoged.data)
             setUserLog(userLoged.data)
         }
-        console.log("props ---> *** --->", userLog)
         setUserLog(userResponse)
     }, []);
 

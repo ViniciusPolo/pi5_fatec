@@ -32,7 +32,6 @@ export default class Basket extends Component {
       quantityTotalItens += basketList.restaurant[i].quantity
       basketList.restaurant[i].food_name = food_description.menu.food_name
       basketList.restaurant[i].valueproduct = food_description.menu.total_value
-      console.log("basketList---------------------------------------------->", basketList.restaurant[i])
     }
     this.setState({totalValue: totalValue, quantityTotalItens: quantityTotalItens})
     return basketList
@@ -45,7 +44,6 @@ export default class Basket extends Component {
     const basket = await this.searchForRequests(user, 1)
 
     if (basket) {
-      console.log("teste", basket.restaurant)
       this.setState({ basket: basket.restaurant });
     }
     this.setState({loading: false})
@@ -55,7 +53,6 @@ export default class Basket extends Component {
   handleAddProduct = async () => {
     const { products, user_id } = this.state;
 
-    console.log('products', products)
     this.setState({ loading: true });
 
     try {
@@ -82,39 +79,6 @@ export default class Basket extends Component {
   handleConfirmBasket = async () => {
         //Fazer um For percorrendo o basket mudando o status dos pedidos
         console.log("compra realizada")
-    // const { products, user_id } = this.state;
-
-    // console.log('products', products)
-    // this.setState({ loading: true });
-
-    // try {
-    //   this.setState({ loading: false });
-    //   const data = {
-    //     restaurant_id: this.state.itemAdded.restaurant_id,
-    //     food_id: this.state.itemAdded.id,
-    //     user_id: user_id,
-    //     total_delivery: 8.00,
-    //     status_prepare: 1,
-    //     status_delivered: 1,
-    //     is_open: 1,
-    //     quantity: this.state.quantity
-    //   };
-
-    //   const addItem = await api.addProductToBasket(data)
-    //   const added = addItem;
-    //   if (added) {
-    //     setLoading(false)
-    //     Alert.alert('Adicionado ao Carrinho');
-    //     this.navigation.navigate("menu")
-    //   } else {
-    //     console.error("API ERROR", data.error);
-    //     setLoading(false)
-    //   }
-
-    // } catch (error) {
-    //   this.setState({ loading: false });
-    // }
-
   }
 
   render() {

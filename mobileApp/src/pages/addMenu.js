@@ -35,7 +35,6 @@ const AddMenu = () => {
                 })
                 const data = log;
                 
-                console.log("API ------>", restaurant);
                 if (data) {
                     setLoading(false)
                     this.setStorage

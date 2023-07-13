@@ -14,7 +14,6 @@ export default {
             await uploadBytes(imagemRef, blobImagem);
             const url = await getDownloadURL(imagemRef);
             return url;
-            console.log("entrou function salvar imagem", imagem, imagemNome, "-------   ", url)
         }
         catch(error) {
             console.log(error)

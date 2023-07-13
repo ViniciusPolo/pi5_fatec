@@ -26,12 +26,10 @@ export default class Home extends Component {
             this.setState({loading:true})
             const { navigation, route, user } = this.props;
             //const { user } = route.params || this.props
-            console.log("user", user)
             const userResponse = await api.listUsers(user.user_id);
             
             const response = await api.listRestaurants()
             this.setState({restaurants: response, users: userResponse.user});
-            console.log(response)
 
             const imagemRef = ref(storage, 'restaurant_id_1.png')
 
@@ -49,8 +47,6 @@ export default class Home extends Component {
 
     render() {
         const { restaurants, users, logoteste } = this.state
-        console.log("id User logado:", this.state.users.id)
-
 
         return (
             <Container>
@@ -63,7 +59,7 @@ export default class Home extends Component {
                     keyExtractor={(restaurant) => String(restaurant.restaurant_name)}
                     renderItem={({ item }) => (
                         <Restaurant style={{ borderBottomWidth: 0.6, borderColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: 10 }} >
-                            <Logo source={{uri: item.logo}}/>
+                            <Logo source={{uri: item.logo !== '' ? item.logo : logoteste}}/>
                             <Name style={{ paddingTop: 6, paddingBottom: 4 }} >{item.restaurant_name}</Name>
                             <Bio>{item.bio}</Bio>
 

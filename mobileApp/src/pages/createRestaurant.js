@@ -11,6 +11,8 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 import DocumentPicker from "react-native-document-picker";
 
+import Upload from "../components/upload";
+
 import NativeUploady, {
   UploadyContext,
   useItemFinishListener,
@@ -81,56 +83,7 @@ const CreateRestaurant = () => {
         } catch (error) {
             
         }
-    }
-    
-    const Upload = () => {
-      const [uploadUrl, setUploadUrl] = useState(false);
-      const uploadyContext = useContext(UploadyContext);
-      
-      useItemFinishListener((item) => {
-        const response = JSON.parse(item.uploadResponse.data);
-        console.log(`item ${item.id} finished uploading, response was: `, response);
-        setUploadUrl(response.url);
-      });
-      
-      useItemErrorListener((item) => {
-        console.log(`item ${item.id} upload error !!!! `, item);
-        setLogo(item.file.uri)
-        console.log("logo",logo);
-        });
-      
-        useItemStartListener((item) => {
-          console.log(`item ${item.id} starting to upload,name = ${item.file.name}`);
-        });
-      
-        const pickFile = useCallback(async () => {
-          try {
-            const res = await DocumentPicker.pick({
-              type: [DocumentPicker.types.images],
-            });
-      
-            uploadyContext.upload(res);
-            
-          } catch (err) {
-            if (DocumentPicker.isCancel(err)) {
-              console.log("User cancelled the picker, exit any dialogs or menus and move on");
-            } else {
-              throw err;
-            }
-          }
-        }, [uploadyContext]);
-      
-        return (
-          <>
-            <TouchableOpacity style={styles.input} onPress={pickFile}>
-                            <Text >{logo ? logo : "Selecione a Logo"}</Text>  
-                        </TouchableOpacity>
-            {uploadUrl && <Image source={{ uri: uploadUrl }} style={styles.uploadedImage} />}
-          </>
-        );
-      };
-
-    
+    }  
 
     return (
         <View style={styles.container}>
@@ -158,7 +111,9 @@ const CreateRestaurant = () => {
                     />   
 
                 <NativeUploady>
-                    <Upload/>
+                    <Upload 
+                        setLogo={setLogo}
+                    />
                 </NativeUploady>
     
                 <TouchableOpacity style={styles.button} onPress={handleCreate}>
@@ -208,112 +163,3 @@ const styles = StyleSheet.create({
 })
    
 export default CreateRestaurant;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component, useState } from "react";
-// import { useNavigation } from "@react-navigation/native";
-// import Picker from '@ouroboros/react-native-picker';
-// import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity, Alert } from 'react-native';
-// import api from '../services/api';
-
-
-// export default class CreateRestaurant extends Component {
-    
-//     state = {
-//         userOwner: '',
-//         restaurantName: '',
-//         bio: '',
-//         logo: '',
-//         address: '',
-//         loading: false
-//     }
-
-//     async handleCreate(){
-//         try {
-//             const { route } = this.props;
-//             const { userOwner } = route.params;
-//             this.setState({userOwner:userOwner})
-//             console.log('aqui', this.state.userOwner)
-            
-//             const log = await api.post(`https://um-trem-de-cume-api.onrender.com/restaurants`, {
-//                         user_owner: this.state.userOwner,
-//                         restaurant_name: restaurantName,
-//                         bio: bio,
-//                         logo: '',
-//                         address: '',
-//                     })
-//                     const data = log.data;
-                    
-//                     if (data) {
-//                         this.props.navigation.navigate("managerResturant",{});
-//                     } else {
-//                         console.error("API ERROR", data.error);
-//                         this.props.navigation.navigate("managerResturant",{});
-//                     }
-//             } catch (error) {
-//                 Alert.alert('Restaurante não cadastrado, verifique as informações');
-//             }
-//         }
-            
-//             return (
-//                 <View>
-//                 <TextInput 
-//                     style={styles.input}
-//                     placeholder="Nome do Restaurante"
-//                     value={restaurantName}
-//                     onChangeText={this.setState({restaurantName: restaurantName})}
-//                 />
-    
-//                 <TextInput 
-//                     style={styles.input}
-//                     placeholder="Descrição"
-//                     value={bio}
-//                     onChangeText={this.setState({bio:bio})}
-//                 />
-    
-//                 <TextInput 
-//                     style={styles.input}
-//                     placeholder="Logo"
-//                     value={logo}
-//                     onChangeText={this.setState({logo:logo})}
-//                     />
-    
-//                 <TextInput 
-//                     style={styles.input}
-//                     placeholder="Endereço"
-//                     value={address}
-//                     onChangeText={this.setState({address:address})}
-//                     />     
-    
-//                 <TouchableOpacity style={styles.button} onPress={this.handleCreate}>
-//                     <Text style={styles.buttonText}>Criar Resturante</Text>  
-//                 </TouchableOpacity>
-//                 </>)}
-//             </View>
-//         )
-// }
-
-

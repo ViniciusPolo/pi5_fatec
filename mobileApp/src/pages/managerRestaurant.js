@@ -28,17 +28,14 @@ export default class ManagerRestaurant extends Component {
         try {
             if (!user) {
                 user_id = await AsyncStorage.getItem("id_user")
-                console.log("user_manager", user_id)
                 const userResponse = await api.listUsers(user_id);
                 this.setState({ users: userResponse });
-                console.log("user_manager ---->", userResponse)
             } else {
                 this.setState({ users: user });
             }
             const response = await api.listRestaurantsForOwner(user_id);
 
             this.setState({ restaurants: response.restaurants});
-            console.log("restaurants --->", this.state.restaurants)
 
             this.setState({ loading: false })
         } catch (error) {

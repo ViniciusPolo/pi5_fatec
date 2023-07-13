@@ -23,7 +23,6 @@ export default class Menu extends Component {
             const response = await api.listMenuForRestaurantsForID(restaurant.id);
             this.setState({menus: response.restaurant, restaurants: restaurant, user: user});
             if (this.state.menus.length == 0){
-                //console.log('aqui',this.state.menus)
                 this.setState({loading: false})
                 Alert.alert('Oxi, esse restaurante não tem pratos disponíveis');
                 this.navigation.navigate("home");
