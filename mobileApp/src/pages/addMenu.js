@@ -5,12 +5,30 @@ import { StyleSheet, View, Text, ActivityIndicator, TextInput, TouchableOpacity,
 import api from '../services/api'; 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import storageImage from '../services/storage'
+
+import { storage } from "../config/firebase";
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+
+import DocumentPicker from "react-native-document-picker";
+
+import Upload from "../components/upload";
+
+import NativeUploady, {
+  UploadyContext,
+  useItemFinishListener,
+  useItemStartListener,
+  useItemErrorListener,
+} from "@rpldy/native-uploady";
+
+
 const AddMenu = () => {
     const [foodName, setFoodName] = useState('')
     const [price, setPrice] = useState('')
     const [prepareTime, setPrepareTime] = useState('')
     const [ingredients, setIngredients] = useState('')
     const [loading, setLoading] = useState(false)
+    const [logo, setLogo] = useState('')
     
     const navigation = useNavigation();
     const route = useRoute();
@@ -36,6 +54,18 @@ const AddMenu = () => {
                 const data = log;
                 
                 if (data) {
+                    await storageImage.saveImage(logo, `restaurant_id_${data.restaurants.id + 1}`)
+                    
+                    const imagemRef = ref(storage, `restaurant_id_${data.restaurants.id + 1}`)
+                    const url = await getDownloadURL(imagemRef)
+                    
+                    await api.editMenu({
+                        user_owner: userOwner,
+                        restaurant_name: restaurantName,
+                        bio: bio,
+                        logo: url,
+                        address: '',
+                    })
                     setLoading(false)
                     this.setStorage
                     Alert.alert(`Prato para ${restaurant.restaurant_name} foi criado`);
@@ -83,7 +113,13 @@ const AddMenu = () => {
                     placeholder="Ingredientes"
                     value={ingredients}
                     onChangeText={setIngredients}
-                    />     
+                    />    
+
+                <NativeUploady>
+                    <Upload 
+                        setLogo={setLogo}
+                    />
+                </NativeUploady> 
     
                 <TouchableOpacity style={styles.button} onPress={handleCreate}>
                     <Text style={styles.buttonText}>Criar Prato</Text>  

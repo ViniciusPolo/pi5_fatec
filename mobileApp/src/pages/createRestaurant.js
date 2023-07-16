@@ -47,19 +47,15 @@ const CreateRestaurant = () => {
                 const data = log;
                 
                 if (data) {
-                    setLoading(false)
-                    await storageImage.saveImage(logo, `restaurant_id_${data.restaurants.id}`)
-
-                    const imagemRef = ref(storage, `restaurant_id_${data.restaurants.id}`)
+                    await storageImage.saveImage(logo, `restaurant_id_${data.restaurants.id + 1}`)
+                    
+                    const imagemRef = ref(storage, `restaurant_id_${data.restaurants.id + 1}`)
                     const url = await getDownloadURL(imagemRef)
-            
-                    await api.editRestaurant({
-                    user_owner: userOwner,
-                    restaurant_name: restaurantName,
-                    bio: bio,
-                    logo: url,
-                    address: '',
+                    
+                    await api.editLogoRestaurant({
+                        logo: url,
                     })
+                    setLoading(false)
                     Alert.alert('Restaurante Criado');
                     navigation.navigate("managerRestaurant")
                 } else {

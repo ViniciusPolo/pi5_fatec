@@ -37,6 +37,10 @@ export default {
     const response = await api.post("/restaurants", dataRestaurant)
     return response.data
   },
+  editLogoRestaurant: async (dataRestaurant) => {
+    const response = await api.patch("/restaurants", dataRestaurant)
+    return response.data
+  },
   addMenu: async (dataMenu) => {
     const response = await api.post("/menus", dataMenu)
     return response.data
@@ -47,6 +51,10 @@ export default {
   },
   listMenuForRestaurantsForID: async (restaurant) => {
     const response = await api.get(`/restaurant-menu/${restaurant}`)
+    return response.data
+  },
+  editMenu: async (menuId) => {
+    const response = await api.put(`/menu/${menuId}`)
     return response.data
   },
   addProductToBasket: async (itemAdded) => {
