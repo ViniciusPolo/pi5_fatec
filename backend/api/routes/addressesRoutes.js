@@ -3,10 +3,10 @@ const router = express.Router()
 
 const addressesController = require ('../controllers/addressesControllers');
 
-router.get('/addresses', addressesController.indexAll);
-router.get('/addresses/:belong-to/:belong-type', addressesController.indexOne);
+router.get('/', addressesController.indexAll);
+router.get('/:belong_to/:belong_type', addressesController.indexOne);
 
-router.post('/addresses', addressesController.store);
-router.put('/addresses/:belong-to/:belong-type', addressesController.update);
+router.post('/', addressesController.store);
+router.put('/:belong_to/:belong_type', addressesController.update);
 
 module.exports = router

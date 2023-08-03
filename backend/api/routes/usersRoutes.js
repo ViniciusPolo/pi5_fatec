@@ -8,6 +8,7 @@ router.get('/users/:id_user', usersController.indexOne);
 
 router.post('/users', usersController.store);
 router.put('/users/:id_user', usersController.update);
+router.patch('/users/:id_user', usersController.updateImage);
 
 router.post('/login', usersController.login)
 router.post('/logout', usersController.logout)

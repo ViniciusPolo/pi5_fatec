@@ -1,28 +1,29 @@
-const Users = require('../models/UsersModel');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
-
+const Addresses = require('../models/AddressesModel');
 
 module.exports = {
     async indexAll(req, res) {
         try {
-            const users = await Users.findAll()
-            return res.json(users)
+            console.log("Aqui")
+            const addresses = await Addresses.findAll() 
+            return res.json(addresses || {})
         } catch (err) {
             return res.status(400).send('Broked ->' + err)
         }
     },
 
     async indexOne(req,res){
-        const { id_user } = req.params;
+        const { belong_to, belong_type } = req.params;
         try {
-            const user = await Users.findOne({
-                where : {id : id_user}
+            const address = await Addresses.findOne({
+                where : {
+                    belong_to : belong_to,
+                    belong_type: belong_type
+                }
             })
             return res.status(200).send({
                 status: 1,
-                message: `User found`,
-                user
+                message: `Address found`,
+                address
             })
         } catch (err) {
             return res.status(400).send('User Not Found' + err)
@@ -32,26 +33,33 @@ module.exports = {
 
     async store(req, res) {
         try {
-            const {first_name, last_name, email, password, type_of_user, address, documents} = req.body;
-            if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+            const {belong_to,
+                   belong_type,
+                   street,
+                   number,
+                   complement,
+                   cep,
+                   state,
+                   country,
+                   latitude,
+                   longitude} = req.body;
             
-            // Encripta o valor de "password" em "password_hash"
-
-            const password_hash = await bcrypt.hash(password, 12)
-            console.log(password_hash)
-            const users = await Users.create({
-                first_name,
-                last_name,
-                email,
-                password_hash,
-                type_of_user,
-                address,
-                documents
+            const address = await Addresses.create({
+                belong_to,
+                belong_type,
+                street,
+                number,
+                complement,
+                cep,
+                state,
+                country,
+                latitude,
+                longitude,
             })
             return res.status(200).send({
                 status: 1,
-                message: "User sucessefull included",
-                users
+                message: "Address sucessefull included",
+                address
               })
         } catch (error) {
             return res.status(400).send(error)
@@ -61,57 +69,43 @@ module.exports = {
     async update(req, res) {
         try{
         const { id_user } = req.params
-        const {first_name, last_name, email, type_of_user, address, documents} = req.body;
-        //if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+        const {belong_to,
+            belong_type,
+            street,
+            number,
+            complement,
+            cep,
+            state,
+            country,
+            latitude,
+            longitude} = req.body;
 
-        const users = await Users.update({
-            first_name,
-            last_name,
-            email,
-            type_of_user,
-            address,
-            documents
+        const users = await Addresses.update({
+            belong_to,
+            belong_type,
+            street,
+            number,
+            complement,
+            cep,
+            state,
+            country,
+            latitude,
+            longitude,
         }, {
-            where: { id: id_user }
+            where : {
+                belong_to : belong_to,
+                belong_type: belong_type
+            }
         });
 
         return res.status(200).send({
             status: 1,
-            message: "User updated!",
+            message: "Address updated!",
             users
         })
     } catch (error) {
         return res.status(400).send(error)
     }
     },
-
-    async login(req,res) {
-        try {
-            const user = await Users.findOne({where: {email: req.body.email}})
-            if(!user) res.status(401).send("Unauthorized")
-            else {
-                console.log("USER", user.dataValues)
-                bcrypt.compare(req.body.password, user.dataValues.password_hash, function(err, result){
-                    if (result){
-                        const token = jwt.sign({id: user.id}, process.env.SECRET, {expiresIn: 3600})
-                        res.json({auth: true, user_id: user.id, token})
-                    } else res.status(401).end()
-                })
-            }
-        } catch (error) {
-            console.error(error)
-            // HTTP 500: Internal Server Error
-            res.status(500).send(error)
-        }
-    },
-
-    async logout (req, res) {
-    try{
-        res.send({ auth: false, token: null })
-    } catch (error) {
-        return res.status(400).send(error)
-    }
-    }
-
 
 }

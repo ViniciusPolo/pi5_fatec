@@ -46,14 +46,15 @@ module.exports = {
 
     async store(req, res) {
         try {
-            const {restaurant_id, food_name, price, prepare_time, ingredients} = req.body;
+            const {restaurant_id, food_name, price, prepare_time, ingredients, image} = req.body;
             const ingrediants = ingredients
             const menus = await Menus.create({
                 restaurant_id,
                 food_name, 
                 price, 
                 prepare_time, 
-                ingrediants
+                ingrediants, 
+                image
             })
             return res.status(200).send({
                 status: 1,
@@ -75,7 +76,8 @@ module.exports = {
             food_name, 
             price, 
             prepare_time, 
-            ingrediants
+            ingrediants,
+            image,
         }, {
             where: { id: id_menu }
         });
@@ -89,6 +91,25 @@ module.exports = {
     } catch (error) {
         return res.status(400).send(error)
     }
+    },
+
+    async updateImage(req, res) {
+        try {
+            const { id_menu } = req.params
+            const {image} = req.body;
+            const menus = await Menus.update({
+                logo, 
+            }, {
+                where: { id: id_menu }
+            });
+            return res.status(200).send({
+                status: 1,
+                message: "Menu Image sucessefull updated",
+                menus
+              })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
     },
 
 }

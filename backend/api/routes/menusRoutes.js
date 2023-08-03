@@ -10,5 +10,6 @@ router.get('/restaurant-menu/:restaurant_id', menusControllers.indexByRestaurant
 router.post('/menus', menusControllers.store);
 
 router.put('/menus/:id_menu', menusControllers.update)
+router.patch('/menus/:id_menu', menusControllers.update)
 
 module.exports = router
