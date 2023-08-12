@@ -13,6 +13,7 @@ import Welcome from './pages/welcome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Basket from './pages/basket';
 import AddBasket from './pages/addBasket';
+import AddAndUpdateAddress from './pages/addAndUpdateAddress';
 
 const Stack = createStackNavigator();
 
@@ -164,7 +165,20 @@ export default function Routes() {
             color: '#000',
             fontWeight: 'bold',
           }
-        }}/>    
+        }}/> 
+
+        <Stack.Screen name='addAndUpdateAddress' component={AddAndUpdateAddress} options={{
+          title: 'Criar Restaurante',
+          headerShown: false,
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: "#FFA500",
+          },
+          headerTitleStyle: {
+            color: '#000',
+            fontWeight: 'bold',
+          }
+        }} />   
 
       </Stack.Navigator>
     </NavigationContainer>

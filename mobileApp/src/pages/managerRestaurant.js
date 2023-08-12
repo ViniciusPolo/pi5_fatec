@@ -88,6 +88,11 @@ export default class ManagerRestaurant extends Component {
                                         }}>
                                             <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Editar Restaurante</ProfileButtonText>
                                         </ProfileButton>
+                                        <ProfileButton style={{ padding: 2, margin: 5, width: 120, height: 120, backgroundColor: "#FFA500" }} onPress={() => {
+                                            this.props.navigation.navigate("addAndUpdateAddress", { restaurant: item });
+                                        }}>
+                                            <ProfileButtonText style={{ color: '#000', textAlign: 'center' }} >Endereço</ProfileButtonText>
+                                        </ProfileButton>
                                     </Buttons>
                                 </Restaurant>
                             )}
