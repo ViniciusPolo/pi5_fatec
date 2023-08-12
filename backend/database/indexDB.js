@@ -8,6 +8,7 @@ const users = require('../api/models/UsersModel')
 const restaurants = require('../api/models/RestaurantsModel')
 const menus = require('../api/models/MenusModel')
 const requests = require('../api/models/RequestsModel')
+const addresses = require('../api/models/AddressesModel')
 
 try{
     conexao.authenticate();
@@ -21,8 +22,10 @@ users.init(conexao)
 restaurants.init(conexao)
 menus.init(conexao)
 requests.init(conexao)
+addresses.init(conexao)
 
 users.associate(conexao.models)
 restaurants.associate(conexao.models)
+addresses.associate(conexao.models)
 
 module.exports = conexao

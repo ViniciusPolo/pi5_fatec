@@ -1,6 +1,7 @@
 const Users = require('../models/UsersModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
+const dotenv = require("dotenv");
 
 
 module.exports = {
@@ -46,7 +47,8 @@ module.exports = {
                 password_hash,
                 type_of_user,
                 address,
-                documents
+                documents,
+                image
             })
             return res.status(200).send({
                 status: 1,
@@ -70,7 +72,8 @@ module.exports = {
             email,
             type_of_user,
             address,
-            documents
+            documents, 
+            image
         }, {
             where: { id: id_user }
         });
@@ -83,6 +86,25 @@ module.exports = {
     } catch (error) {
         return res.status(400).send(error)
     }
+    },
+
+    async updateImage(req, res) {
+        try {
+            const { id_user } = req.params
+            const {image} = req.body;
+            const users = await Users.update({
+                image, 
+            }, {
+                where: { id: id_user }
+            });
+            return res.status(200).send({
+                status: 1,
+                message: "User Image sucessefull updated",
+                users
+              })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
     },
 
     async login(req,res) {

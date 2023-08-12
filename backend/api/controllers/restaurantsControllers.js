@@ -70,6 +70,25 @@ module.exports = {
         }
     },
 
+    async updateLogo(req, res) {
+        try {
+            const { id_restaurant } = req.params
+            const {logo} = req.body;
+            const restaurants = await Restaurants.update({
+                logo, 
+            }, {
+                where: { id: id_restaurant }
+            });
+            return res.status(200).send({
+                status: 1,
+                message: "Restaurant Logo sucessefull updated",
+                restaurants
+              })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
+    },
+
     async findAllbyIdOwner(req,res){
         const { user_owner } = req.params;
         try {
