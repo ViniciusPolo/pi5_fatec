@@ -1,0 +1,110 @@
+.container {
+  background: #fff;
+  height: 100vh;
+}
+
+header {
+  height: 120px;
+  background: #f5f5f5;
+  display: flex;
+  position: fixed;
+  width: 100%;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+}
+.navigation ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navigation ul li {
+  color: #000;
+  font-size: 1rem;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+/* .navigation ul li:last-child {
+  background-color: var(--button-color);
+  width: 60px;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.navigation ul li a {
+  text-decoration: none;
+}
+
+.logo img {
+  padding-left: 30px;
+  height: 120px;
+  width: 120px;
+}
+
+main {
+  padding-top: 180px;
+  background: #d5d5d5;
+  height: 100vh;
+}
+
+.conta a {
+  color: #be4d25;
+}
+
+.login a {
+  color: #fff;
+}
+
+.login,
+.inpButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #be4d25;
+  width: 100px;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.pesq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.pesq p {
+  padding: 10px;
+}
+
+.proc {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  padding: 10px;
+}
+
+.proc input {
+  height: 40px;
+}
+
+.proc .inpText {
+  border: none;
+  background: #f5f5f5;
+  border-radius: 5px;
+  width: 500px;
+  margin: 10px;
+}
