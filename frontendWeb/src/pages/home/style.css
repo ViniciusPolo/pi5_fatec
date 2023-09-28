@@ -42,7 +42,6 @@ header {
 main {
   padding-top: 180px;
   background: #d5d5d5;
-  height: 100vh;
 }
 
 footer {
@@ -67,6 +66,10 @@ footer ul li {
 footer ul li a {
   color: #fff;
   font-size: 1rem;
+  text-decoration: none;
+}
+
+.labels a {
   text-decoration: none;
 }
 
@@ -158,6 +161,25 @@ footer ul li a {
   justify-content: space-evenly;
 }
 
+.merc .opc1 {
+  background: #be4d25;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.merc .opc2 {
+  background: #f54;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.merc .opc1 p {
+  color: #f5f5f5;
+}
+
+.merc .opc2 p {
+  color: #d5d5d5;
+}
 .merc img {
   /* padding-left: 30px; */
   height: 100px;
@@ -175,6 +197,10 @@ footer ul li a {
   padding: 20px;
   font-family: Cursive;
   font-weight: normal;
+}
+
+.listarest {
+  height: 250px;
 }
 
 .redes h2 {
@@ -199,4 +225,40 @@ footer ul li a {
   height: 40px;
   justify-content: space-between;
   font-size: 2rem;
+}
+
+.pagescroll {
+  display: flex;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+}
+
+.teste1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #d5d5d5;
+  margin: 20px;
+  /* padding: 5px */
+  height: 120px;
+  width: 150px;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+}
+
+.teste1 img {
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.rest h2 {
+  font-size: 1rem;
+}
+
+.rest p {
+  font-size: 0.8rem;
 }
