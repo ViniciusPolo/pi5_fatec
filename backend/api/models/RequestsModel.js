@@ -12,6 +12,18 @@ class Requests extends Model {
             total_delivery: DataTypes.FLOAT,
             quantity: DataTypes.INTEGER,
             is_open: DataTypes.INTEGER,
+            type_of_product: {
+                type: DataTypes.ENUM(['weekday',
+                'weekend']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            },      
+            type_of_product: {
+                type: DataTypes.ENUM(['food',
+                'drink',
+                'alcoholicDrink',
+                'desert']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            }       
         }, {
             sequelize,
             tableName: "requests"

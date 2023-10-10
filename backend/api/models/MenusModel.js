@@ -8,6 +8,13 @@ class Menus extends Model {
             price: DataTypes.FLOAT,
             prepare_time: DataTypes.INTEGER,
             ingrediants: DataTypes.JSON,
+            type_of_product: {
+                type: DataTypes.ENUM(['food',
+                'drink',
+                'alcoholicDrink',
+                'desert']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            }        
         }, {
             sequelize,
             tableName: "menus"

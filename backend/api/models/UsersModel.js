@@ -9,7 +9,10 @@ class Users extends Model {
             password_hash: DataTypes.STRING,
             type_of_user: DataTypes.INTEGER,
             address: DataTypes.JSON,
-            documents: DataTypes.JSON
+            documents: DataTypes.JSON,
+            gender: DataTypes.STRING,
+            age: DataTypes.STRING,
+            image: DataTypes.STRING
         }, {
             sequelize,
             tableName: "users"

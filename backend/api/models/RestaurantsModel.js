@@ -7,7 +7,8 @@ class Restaurants extends Model {
             restaurant_name: DataTypes.STRING,
             bio: DataTypes.STRING,
             logo: DataTypes.STRING,
-            address: DataTypes.JSON,
+            address: DataTypes.INTEGER,
+            cousine_type: DataTypes.STRING
         }, {
             sequelize,
             tableName: "restaurants"

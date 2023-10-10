@@ -29,13 +29,16 @@ module.exports = {
 
     async store(req, res) {
         try {
-            const {user_owner, restaurant_name, bio, logo, address} = req.body;
+            const {user_owner, restaurant_name, bio, logo, address, cousine} = req.body;
+            let cousine_type = cousine.toUpperCase();
+            if (!["JAPONESA", "FASTFOOD", "ARABE", "ITALIANA", "NORDESTINA", "MINEIRA", "CHINESA", "FRANCESA", "CHURRASCO", "SOBREMESA"].includes(cousine_type)) throw new err(400);
             const restaurants = await Restaurants.create({
                 user_owner,
                 restaurant_name, 
                 bio, 
                 logo, 
-                address
+                address,
+                cousine_type
             })
             return res.status(200).send({
                 status: 1,
