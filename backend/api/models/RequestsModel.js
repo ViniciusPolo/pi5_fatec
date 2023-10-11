@@ -12,7 +12,7 @@ class Requests extends Model {
             total_delivery: DataTypes.FLOAT,
             quantity: DataTypes.INTEGER,
             is_open: DataTypes.INTEGER,
-            type_of_product: {
+            day_of_week: {
                 type: DataTypes.ENUM(['weekday',
                 'weekend']),
                 allowNull: false // Defina como true ou false, dependendo dos requisitos.
