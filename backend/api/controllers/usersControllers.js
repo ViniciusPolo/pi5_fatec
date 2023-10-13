@@ -117,7 +117,7 @@ module.exports = {
                 age = null;
             }
 
-            const users = await Users.create({
+            const users = await Users.update({
                 first_name,
                 last_name,
                 email,
