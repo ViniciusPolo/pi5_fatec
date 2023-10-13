@@ -64,8 +64,6 @@ module.exports = {
                 age = null;
             }
 
-            
-
             console.log(password_hash)
             const users = await Users.create({
                 first_name,
@@ -92,18 +90,45 @@ module.exports = {
     async update(req, res) {
         try{
         const { id_user } = req.params
-        const {first_name, last_name, email, type_of_user, address, documents} = req.body;
-        //if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+        const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, client_age} = req.body;
 
-        const users = await Users.update({
-            first_name,
-            last_name,
-            email,
-            type_of_user,
-            address,
-            documents, 
-            image
-        }, {
+        let age = client_age;
+            let gender = client_gender.toUpperCase();
+
+            console.log(gender)
+
+            if (["M", "MASC", "MASCULINO"].includes(gender)) gender = "M"
+            if (["F", "FEM", "FEMININO"].includes(gender)) gender = "F"
+            else gender = null
+
+            if (age > 0 && age < 18) {
+                age = "18-";
+            } else if (age >= 18 && age < 25) {
+                age = "18 e 25";
+            } else if (age >= 25 && age < 30) {
+                age = "25 e 30";
+            } else if (age >= 30 && age < 40) {
+                age = "30 e 40";
+            } else if (age >= 40 && age < 60) {
+                age = "40 e 60";
+            } else if (age >= 60) {
+                age = "60+";
+            } else {
+                age = null;
+            }
+
+            const users = await Users.create({
+                first_name,
+                last_name,
+                email,
+                password_hash,
+                type_of_user,
+                address,
+                documents,
+                image,
+                gender,
+                age,
+            }, {
             where: { id: id_user }
         });
 

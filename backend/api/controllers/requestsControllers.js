@@ -112,21 +112,23 @@ module.exports = {
     async update(req, res) {
         try{
         const { id_request, is_open } = req.params
-        const {restaurant_id, food_id, user_id, total_delivery, status_prepare, status_payment,quantity, dayOfWeek, type_of_product} = req.body;
+        const {restaurant_id, food_id, user_id, status_prepare, status_payment, total_delivery,quantity, day_of_week, type_of_product} = req.body;
             let status_payment_default, status_prepare_default, id_request_root_default
             if (!status_prepare) status_prepare_default= 1;
             if (!status_payment) status_payment_default= 1;
             const total_value = await getTotalValue(food_id, quantity)
         const requests = await Requests.update({
-                restaurant_id,
-                food_id, 
-                user_id, 
-                status_prepare: status_prepare || status_prepare_default, 
-                status_payment: status_payment || status_payment_default,
-                total_value,
-                total_delivery,
-                is_open,
-                quantity
+            restaurant_id,
+            food_id, 
+            user_id, 
+            status_prepare: status_prepare || status_prepare_default, 
+            status_payment: status_payment || status_payment_default,
+            total_value,
+            total_delivery,
+            is_open,
+            quantity,
+            day_of_week,
+            type_of_product
         }, {
             where: {  [Op.and]: [{id: id_request }, {id_request_root: id_request_root }]}
         });

@@ -53,13 +53,16 @@ module.exports = {
     async update(req, res) {
         try {
             const { id_restaurant } = req.params
-            const {user_owner, restaurant_name, bio, logo, address} = req.body;
+            const {user_owner, restaurant_name, bio, logo, address, cousine} = req.body;
+            let cousine_type = cousine.toUpperCase();
+            if (!["JAPONESA", "FASTFOOD", "ARABE", "ITALIANA", "NORDESTINA", "MINEIRA", "CHINESA", "FRANCESA", "CHURRASCO", "SOBREMESA"].includes(cousine_type)) throw new err(400);
             const restaurants = await Restaurants.update({
                 user_owner,
                 restaurant_name, 
                 bio, 
                 logo, 
-                address
+                address,
+                cousine_type
             }, {
                 where: { id: id_restaurant }
             });
