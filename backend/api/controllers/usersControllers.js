@@ -92,6 +92,10 @@ module.exports = {
         const { id_user } = req.params
         const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, client_age} = req.body;
 
+        if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+            // Encripta o valor de "password" em "password_hash"
+            const password_hash = await bcrypt.hash(password, 12)
+
         let age = client_age;
             let gender = client_gender.toUpperCase();
 
