@@ -42,11 +42,6 @@ module.exports = {
             let age = client_age;
             let gender = client_gender.toUpperCase();
 
-            console.log(gender)
-
-            if (["M", "MASC", "MASCULINO"].includes(gender)) gender = "M"
-            if (["F", "FEM", "FEMININO"].includes(gender)) gender = "F"
-            else gender = null
 
             if (age > 0 && age < 18) {
                 age = "18-";

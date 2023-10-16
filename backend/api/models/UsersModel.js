@@ -11,7 +11,10 @@ class Users extends Model {
             address: DataTypes.JSON,
             documents: DataTypes.JSON,
             gender: DataTypes.STRING,
-            age: DataTypes.STRING,
+            age: {
+                type: DataTypes.ENUM(['M', 'F']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            },
             image: DataTypes.STRING
         }, {
             sequelize,
