@@ -12,7 +12,7 @@ export default function Delivery() {
           <div className="box">
             <div className="circle">
               <h2>
-                20<small>%</small>
+                Pagina<small>%</small>
               </h2>
             </div>
             <h3>Html</h3>
@@ -23,7 +23,7 @@ export default function Delivery() {
                 20<small>%</small>
               </h2>
             </div>
-            <h3>Html</h3>
+            <h3>Logomarca</h3>
           </div>
           <div className="box">
             <div className="circle">
@@ -31,7 +31,7 @@ export default function Delivery() {
                 20<small>%</small>
               </h2>
             </div>
-            <h3>Html</h3>
+            <h3>Pagina </h3>
           </div>
         </div>
       </div>

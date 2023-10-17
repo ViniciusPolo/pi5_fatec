@@ -23,7 +23,7 @@ export default function About() {
       <div className="container">
         <Header />
         <div className="about">
-          <h1>Equipe PI 6º periodo DSM - fatec franca - SP</h1>
+          <h1>Equipe PI 6º periodo DSM - fatec franca/SP -  2023</h1>
 
           <Swiper
             effect={"coverflow"}
