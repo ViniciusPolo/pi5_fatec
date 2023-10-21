@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 import "../style.css";
 
 import Fig from "../../../assets/logoLogin.svg";
+
+// import { UseApi } from "../../../services/api";
 
 export default function UserLogin() {
   const [email, setEmail] = useState("");
@@ -11,9 +14,18 @@ export default function UserLogin() {
   const [notify, setNotify] = useState("");
   const navigate = useNavigate();
 
+  const auth = useContext(AuthContext);
+
+  // const api = UseApi();
+
   async function handleSubmit(e) {
     e.preventDefault();
     setNotify("");
+
+    const user = await auth.signin(email, password);
+    if (!user) {
+      return false;
+    }
     navigate("/home");
   }
 
