@@ -13,6 +13,20 @@ module.exports = {
     }
   },
 
+  async indexByEmail(req, res) {
+    const { email } = req.body;
+    try {
+      const verifyEmail = await Users.findOne({
+        where: { email },
+      });
+      return res.status(200).send({
+        verifyEmail,
+      });
+    } catch (err) {
+      return res.status(400).send("email not found" + err);
+    }
+  },
+
   async indexOne(req, res) {
     const { id_user } = req.params;
     try {
@@ -40,7 +54,6 @@ module.exports = {
         address,
         documents,
       } = req.body;
-      console.log(password);
 
       if (!password)
         return res.status(500).send({ error: 'Path "password" is required' });
@@ -107,17 +120,16 @@ module.exports = {
         {
           first_name,
           last_name,
-          email,
+          // email,
           type_of_user,
           address,
           documents,
-          image,
+          // image,
         },
         {
           where: { id: id_user },
         }
       );
-
       return res.status(200).send({
         status: 1,
         message: "User updated!",

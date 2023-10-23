@@ -7,6 +7,9 @@ import UserLogin from "./pages/users/Login";
 import UserCad from "./pages/users/Cadastro";
 import About from "./pages/about";
 import Inicial from "./pages/Inicial";
+import Dados from "./pages/dados";
+import Restaurants from "./pages/restaurants";
+import Menus from "./pages/menus";
 
 export default function Routers() {
   return (
@@ -21,10 +24,37 @@ export default function Routers() {
         path="/home"
         element={
           <RequireAuth>
+            <Restaurants />
+          </RequireAuth>
+        }
+      />
+      <Route
+        exact
+        path="/pedidos"
+        element={
+          <RequireAuth>
             <Inicial />
           </RequireAuth>
         }
       />
+      <Route
+        exact
+        path="/dados"
+        element={
+          <RequireAuth>
+            <Dados />
+          </RequireAuth>
+        }
+      />
+      <Route
+        exact
+        path="/menu"
+        element={
+          <RequireAuth>
+            <Menus />
+          </RequireAuth>
+        }
+      />      
     </Routes>
   );
 }

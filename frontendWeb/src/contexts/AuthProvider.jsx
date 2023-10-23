@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("AuthUser", data.data.auth);
       localStorage.setItem("email", email);
       // localStorage.setItem("UserLog", data.user_id);
+      console.log(data);
       return true;
     }
     return false;

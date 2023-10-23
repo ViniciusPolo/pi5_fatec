@@ -24,6 +24,7 @@ export default function UserLogin() {
 
     const user = await auth.signin(email, password);
     if (!user) {
+      setNotify("Email ou senha inválidos!");
       return false;
     }
     navigate("/home");
@@ -61,7 +62,7 @@ export default function UserLogin() {
                 value="Login"
                 href="/home"
               ></input>
-              <h3>{notify}</h3>
+              <p>{notify}</p>
               <p className="signup">
                 Não tem uma conta? <Link to="/caduser">Cadastre-se</Link>
               </p>

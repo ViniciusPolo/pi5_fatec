@@ -1,14 +1,15 @@
 import "./style.css";
 import HeaderText from "../../components/HeaderText";
 
-export default function Inicial() {
+export default function Restaurants() {
   return (
     <>
       <div className="container">
-        <HeaderText nomeClass="pedido" />
+        <HeaderText />
         <main>
           <div className="pesq">
-            <h1>Pedidos</h1>
+            <h1>Restaurantes</h1>
+
           </div>
         </main>
       </div>

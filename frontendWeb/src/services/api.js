@@ -10,8 +10,8 @@ export const UseApi = () => ({
     const response = await api
       .post("/login", { email, password })
       .catch(function (error) {
-        if (error.response) {
-          return error.response.status;
+        if (error) {
+          return error;
         }
       });
     return response;
@@ -19,6 +19,22 @@ export const UseApi = () => ({
   logOut: async () => {
     const response = await api.post("/logout");
     return response.data;
+  },
+  findUserById: async (id) => {
+    const user = await api.get("/users/" + id);
+
+    return user;
+  },
+  findEmailById: async (email) => {
+    let emailResponse = "";
+    const response = await api.post("/emailusers", { email });
+
+    if (response.data.verifyEmail) {
+      emailResponse = response.data.verifyEmail.email;
+    } else {
+      emailResponse = "";
+    }
+    return emailResponse;
   },
   creatUser: async (first_name, email, password) => {
     const type_of_user = 1;
@@ -37,6 +53,15 @@ export const UseApi = () => ({
           return error.response.status;
         }
       });
+    return response.status;
+  },
+  updateUser: async (data, id) => {
+    const response = await api
+      .put("/users/" + id, { data })
+      .catch(function (error) {
+        return error.response.status;
+      });
+    console.log(response);
     return response.status;
   },
   validToken: async (token) => {

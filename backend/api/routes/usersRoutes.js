@@ -9,6 +9,7 @@ router.get("/users/:id_user", usersController.indexOne);
 router.post("/validate", usersController.ValidToken);
 router.post("/users", usersController.store);
 router.post("/cadusers", usersController.storeOne);
+router.post("/emailusers", usersController.indexByEmail);
 
 router.put("/users/:id_user", usersController.update);
 router.patch("/users/:id_user", usersController.updateImage);

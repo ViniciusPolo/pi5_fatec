@@ -19,7 +19,15 @@ export default function UserCad() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    
+
+    // verificar se existe email cadastrado no banco
+
+    const userEmail = await api.findEmailById(email);
+
+    if (userEmail === email) {
+      setNotify("Email já cadastrado!");
+      return false;
+    }
 
     if (!first_name) {
       setNotify("Campo Nome não pode ser vazio!");
@@ -57,7 +65,7 @@ export default function UserCad() {
               <h2>Cadastre-se e mate sua fome.</h2>
               <input
                 type="text"
-                placeholder="Nome"
+                placeholder="Primeiro nome"
                 id="cadastro-nome"
                 name="fullname"
                 value={first_name}
