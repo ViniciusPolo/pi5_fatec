@@ -1,52 +1,56 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('restaurants', {
+    await queryInterface.createTable("restaurants", {
       // colunas da tabela
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       user_owner: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'users', // <<< Note, its table's name, not object name
-          key: 'id', // <<< Note, its a column name
+          model: "users", // <<< Note, its table's name, not object name
+          key: "id", // <<< Note, its a column name
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       restaurant_name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       bio: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       logo: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       address: {
         type: Sequelize.JSON,
       },
+      cousine_type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       // objeto options
       created_at: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
-  }
+    await queryInterface.dropTable("users");
+  },
 };

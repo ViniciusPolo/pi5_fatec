@@ -5,6 +5,8 @@ const restaurantsControllers = require ('../controllers/restaurantsControllers')
 
 router.get('/restaurants', restaurantsControllers.indexAll);
 router.get('/restaurants/:id_restaurant', restaurantsControllers.indexOne);
+router.get('/restDest', restaurantsControllers.indexAllDest);
+
 
 router.post('/restaurants', restaurantsControllers.store);
 

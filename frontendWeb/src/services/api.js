@@ -57,7 +57,7 @@ export const UseApi = () => ({
   },
   updateUser: async (data, id) => {
     const response = await api
-      .put("/users/" + id, { data })
+      .put("/users/" + id, data)
       .catch(function (error) {
         return error.response.status;
       });
@@ -69,5 +69,16 @@ export const UseApi = () => ({
 
     const auth = response.data.auth;
     return auth;
+  },
+});
+
+export const restaurantApi = () => ({
+  findRestAll: async () => {
+    const rest = await api.get("/restaurants");
+    return rest;
+  },
+  findRestbyLimit: async () => {
+    const rest = await api.get("/restDest");
+    return rest;
   },
 });

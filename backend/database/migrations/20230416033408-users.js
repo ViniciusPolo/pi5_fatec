@@ -1,40 +1,50 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable("users", {
       // colunas da tabela
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       first_name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       last_name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       password_hash: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       type_of_user: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       address: {
         type: Sequelize.JSON,
       },
       documents: {
         type: Sequelize.JSON,
+      },
+      age: {
+        type: Sequelize.INTEGER,
+      },
+      gender: {
+        type: Sequelize.ENUM(["M", "F"]),
+        allowNull: false, // Defina como true ou false, dependendo dos requisitos.
+      },
+      image: {
+        type: Sequelize.STRING,
       },
       // objeto options
       created_at: {
@@ -43,12 +53,12 @@ module.exports = {
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
-  }
+    await queryInterface.dropTable("users");
+  },
 };

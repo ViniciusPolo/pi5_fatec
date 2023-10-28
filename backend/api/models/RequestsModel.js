@@ -12,6 +12,11 @@ class Requests extends Model {
             total_delivery: DataTypes.FLOAT,
             quantity: DataTypes.INTEGER,
             is_open: DataTypes.INTEGER,
+            day_of_week: {
+                type: DataTypes.ENUM(['weekday',
+                'weekend']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            }
         }, {
             sequelize,
             tableName: "requests"

@@ -83,6 +83,7 @@ module.exports = {
   },
 
   async storeOne(req, res) {
+    const age = 0;
     try {
       const { first_name, email, password, type_of_user, last_name } = req.body;
 
@@ -97,6 +98,7 @@ module.exports = {
         email,
         password_hash,
         type_of_user,
+        age,
       });
       return res.status(200).send({
         status: 1,
@@ -110,32 +112,16 @@ module.exports = {
   },
 
   async update(req, res) {
-    try {
-      const { id_user } = req.params;
-      const { first_name, last_name, email, type_of_user, address, documents } =
-        req.body;
-      //if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+    const { id_user } = req.params;
+    const data = req.body;
+    console.log("Aqui");
+    console.log(data);
+    console.log("id: " + id_user);
 
-      const users = await Users.update(
-        {
-          first_name,
-          last_name,
-          // email,
-          type_of_user,
-          address,
-          documents,
-          // image,
-        },
-        {
-          where: { id: id_user },
-        }
-      );
-      return res.status(200).send({
-        status: 1,
-        message: "User updated!",
-        users,
-      });
+    try {
+      const user = await Users.update(data, { where: { id: id_user } });
     } catch (error) {
+      console.log(error);
       return res.status(400).send(error);
     }
   },
