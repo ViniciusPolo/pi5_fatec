@@ -9,7 +9,13 @@ class Users extends Model {
             password_hash: DataTypes.STRING,
             type_of_user: DataTypes.INTEGER,
             address: DataTypes.JSON,
-            documents: DataTypes.JSON
+            documents: DataTypes.JSON,
+            gender: {
+                type: DataTypes.ENUM(['M', 'F']),
+                allowNull: false // Defina como true ou false, dependendo dos requisitos.
+            },
+            age: DataTypes.STRING,
+            image: DataTypes.STRING
         }, {
             sequelize,
             tableName: "users"

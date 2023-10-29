@@ -46,7 +46,7 @@ module.exports = {
 
     async store(req, res) {
         try {
-            const {restaurant_id, food_name, price, prepare_time, ingredients, image} = req.body;
+            const {restaurant_id, food_name, price, prepare_time, ingredients, image, type_of_product} = req.body;
             const ingrediants = ingredients
             const menus = await Menus.create({
                 restaurant_id,
@@ -54,7 +54,8 @@ module.exports = {
                 price, 
                 prepare_time, 
                 ingrediants, 
-                image
+                image,
+                type_of_product
             })
             return res.status(200).send({
                 status: 1,
@@ -69,15 +70,15 @@ module.exports = {
     async update(req, res) {
         try {
         const { id_menu } = req.params
-        const {restaurant_id, food_name, price, prepare_time, ingredients} = req.body;
-        const ingrediants = ingredients
+        const {restaurant_id, food_name, price, prepare_time, ingrediants, image, type_of_product} = req.body;     
         const menus = await Menus.update({
             restaurant_id,
             food_name, 
             price, 
             prepare_time, 
-            ingrediants,
+            ingrediants, 
             image,
+            type_of_product
         }, {
             where: { id: id_menu }
         });
