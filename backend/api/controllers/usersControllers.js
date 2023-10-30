@@ -75,11 +75,12 @@ module.exports = {
                 email,
                 password_hash,
                 type_of_user,
-                address,
                 documents,
-                image,
+                address,
                 gender,
                 age,
+                image,
+                date_of_birth
             })
             return res.status(200).send({
                 status: 1,
