@@ -14,7 +14,7 @@ class Users extends Model {
                 type: DataTypes.ENUM(['M', 'F']),
                 allowNull: false // Defina como true ou false, dependendo dos requisitos.
             },
-            //age: DataTypes.STRING,
+            age: DataTypes.STRING,
             image: DataTypes.STRING,
             date_of_birth: DataTypes.DATE
         }, {
