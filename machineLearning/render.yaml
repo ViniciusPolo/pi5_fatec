@@ -1,0 +1,5 @@
+services:
+- name: fastapi-service
+  buildCommand: pip install -r requirements.txt
+  startCommand: uvicorn knn_api:app --host 0.0.0.0 --port 8000
+  env: python=3.8
