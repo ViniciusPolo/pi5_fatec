@@ -1,5 +1,4 @@
 absl-py==2.0.0
-annotated-types==0.6.0
 anyio==3.7.1
 appdirs==1.4.4
 apturl==0.5.2
