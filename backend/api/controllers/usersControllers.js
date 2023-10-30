@@ -2,7 +2,13 @@ const Users = require('../models/UsersModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const dotenv = require("dotenv");
+const moment = require("moment")
 
+async function getAge(dateString) {
+    const date = moment(dateString, 'YYYY-MM-DD')
+    const years = moment().diff(date, 'years')
+    return { years }
+  }
 
 module.exports = {
     async indexAll(req, res) {
@@ -32,17 +38,20 @@ module.exports = {
     },
 
     async store(req, res) {
+        console.log("store")
         try {
-            const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, client_age} = req.body;
+            console.log("store 2", req.body)
+            const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, date_of_birth} = req.body;
+            console.log("date_of_birth", date_of_birth)
             
             if (!password) return res.status(500).send({ error: 'Path "password" is required' })
             // Encripta o valor de "password" em "password_hash"
             const password_hash = await bcrypt.hash(password, 12)
 
-            let age = client_age;
-            let gender = client_gender.toUpperCase();
+            let age = (await getAge(date_of_birth)).years
 
-
+            let gender = client_gender.toUpperCase();          
+            
             if (age > 0 && age < 18) {
                 age = "18-";
             } else if (age >= 18 && age < 25) {
@@ -58,7 +67,7 @@ module.exports = {
             } else {
                 age = null;
             }
-
+            
             console.log(password_hash)
             const users = await Users.create({
                 first_name,
