@@ -17,6 +17,7 @@ class Users extends Model {
           allowNull: true, // Defina como true ou false, dependendo dos requisitos.
         },
         image: DataTypes.STRING,
+        date_of_birth: DataTypes.DATE
       },
       {
         sequelize,

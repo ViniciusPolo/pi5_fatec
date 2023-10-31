@@ -10,6 +10,7 @@ import Inicial from "./pages/Inicial";
 import Dados from "./pages/dados";
 import Restaurants from "./pages/restaurants";
 import Menus from "./pages/menus";
+import Cart from "./pages/menus/cart";
 
 export default function Routers() {
   return (
@@ -39,6 +40,15 @@ export default function Routers() {
       />
       <Route
         exact
+        path="/pedidos/cart"
+        element={
+          <RequireAuth>
+            <Cart />
+          </RequireAuth>
+        }
+      />
+      <Route
+        exact
         path="/dados"
         element={
           <RequireAuth>
@@ -46,6 +56,7 @@ export default function Routers() {
           </RequireAuth>
         }
       />
+
       <Route
         exact
         path="/menu"
@@ -54,7 +65,7 @@ export default function Routers() {
             <Menus />
           </RequireAuth>
         }
-      />      
+      />
     </Routes>
   );
 }

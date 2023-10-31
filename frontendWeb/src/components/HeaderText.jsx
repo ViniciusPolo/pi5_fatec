@@ -9,6 +9,7 @@ export default function HeaderText({ nomeClass }) {
   const [menu, setMenu] = useState("");
   const [restaurante, setRestaurante] = useState("");
   const [pedidos, setPedidos] = useState("");
+  const [carrinho, setCarrinho] = useState("");
   const auth = useContext(AuthContext);
 
   function HandleOut() {
@@ -30,7 +31,9 @@ export default function HeaderText({ nomeClass }) {
       case "pedido":
         setPedidos("conta");
         break;
-
+      case "carrinho":
+        setCarrinho("conta");
+        break;
       default:
         setRestaurante("conta");
         break;
@@ -58,6 +61,9 @@ export default function HeaderText({ nomeClass }) {
             </li>
             <li className={pedidos}>
               <Link to="/pedidos">Pedidos</Link>
+            </li>
+            <li className={carrinho}>
+              <Link to="/pedidos/cart">Carrinho</Link>
             </li>
             <li className="login">
               <Link to="#" onClick={HandleOut}>

@@ -46,6 +46,9 @@ module.exports = {
       image: {
         type: Sequelize.STRING,
       },
+      date_of_birth: {
+        type: Sequelize.DATE,
+      },
       // objeto options
       created_at: {
         type: Sequelize.DATE,

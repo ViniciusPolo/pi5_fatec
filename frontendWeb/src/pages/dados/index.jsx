@@ -34,6 +34,7 @@ export default function Dados() {
     setLastName(user.data.user.last_name);
     setName(user.data.user.first_name);
     setEmail(user.data.user.email);
+    console.log(user.data.user.address[0]);
   }
 
   async function handleSubmit(e) {
