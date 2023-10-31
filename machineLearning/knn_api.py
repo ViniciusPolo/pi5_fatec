@@ -3,6 +3,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 from surprise import Dataset, Reader, KNNBasic
 from typing import List
+from decouple import config
+import asyncio
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
@@ -15,14 +19,13 @@ class IndicationResponse:
 def homepage():
     return 'A API está no ar'
 
-@app.get('/um-treim-de-cume/indicacao/{cousine}/{food}')
-def pegarvendas(cousine:str, food: str):
+async def getIndication(cousine, food):
     # Substitua pelas suas próprias informações de conexão
     host = "bfei8escsg94jy6dk4gk-postgresql.services.clever-cloud.com"
     dbname = "bfei8escsg94jy6dk4gk"
     user = "ujhrqenft29mcpu7xvwx"
     password = "4xdZfWCSz5DyTldDnuoxqlMgWganMb"
-    port=50013
+    port= config('PORT')
 
     conn_str = f"postgresql://{user}:{password}@{host}:{port}/{dbname}"
     engine = create_engine(conn_str)
@@ -98,9 +101,13 @@ def pegarvendas(cousine:str, food: str):
 
         # Criar uma instância da classe IndicationResponse
     response = IndicationResponse(cousine_indication, food_indication)
-
+    responseJSON = jsonable_encoder(response)
     # Retornar a instância como resposta JSON
-    return response
+    return JSONResponse(content=responseJSON)
+
+@app.get('/indicacao/{cousine}/{food}')
+async def indicationReturn(cousine:str, food: str):
+    return await getIndication( cousine, food)
 
 if __name__ == '__main__':
     import uvicorn
