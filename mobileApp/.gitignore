@@ -63,4 +63,4 @@ yarn-error.log
 .metro-health-check*
 
 #env cloudStorage
-*.env.js
+env.js

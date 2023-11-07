@@ -43,83 +43,111 @@ module.exports = {
     }
   },
 
-  async store(req, res) {
-    try {
-      const {
-        first_name,
-        last_name,
-        email,
-        password,
-        type_of_user,
-        address,
-        documents,
-      } = req.body;
+    async store(req, res) {
+        try {
+            const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, client_age} = req.body;
+            
+            if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+            // Encripta o valor de "password" em "password_hash"
+            const password_hash = await bcrypt.hash(password, 12)
 
-      if (!password)
-        return res.status(500).send({ error: 'Path "password" is required' });
+            let age = client_age;
+            let gender = client_gender.toUpperCase();
 
-      // Encripta o valor de "password" em "password_hash"
 
-      const password_hash = await bcrypt.hash(password, 12);
-      //   console.log(password_hash);
-      const users = await Users.create({
-        first_name,
-        last_name,
-        email,
-        password_hash,
-        type_of_user,
-        address,
-        documents,
-        image,
-      });
-      return res.status(200).send({
-        status: 1,
-        message: "User sucessefull included",
-        users,
-      });
-    } catch (error) {
-      return res.status(400).send(error);
-    }
-  },
+            if (age > 0 && age < 18) {
+                age = "18-";
+            } else if (age >= 18 && age < 25) {
+                age = "18 e 25";
+            } else if (age >= 25 && age < 30) {
+                age = "25 e 30";
+            } else if (age >= 30 && age < 40) {
+                age = "30 e 40";
+            } else if (age >= 40 && age < 60) {
+                age = "40 e 60";
+            } else if (age >= 60) {
+                age = "60+";
+            } else {
+                age = null;
+            }
 
-  async storeOne(req, res) {
-    const age = 0;
-    try {
-      const { first_name, email, password, type_of_user, last_name } = req.body;
+            console.log(password_hash)
+            const users = await Users.create({
+                first_name,
+                last_name,
+                email,
+                password_hash,
+                type_of_user,
+                address,
+                documents,
+                image,
+                gender,
+                age,
+            })
+            return res.status(200).send({
+                status: 1,
+                message: "User sucessefull included",
+                users
+              })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
+    },
 
-      if (!password)
-        return res.status(500).send({ error: 'Path "password" is required' });
+    async update(req, res) {
+        try{
+        const { id_user } = req.params
+        const {first_name, last_name, email, password, type_of_user, address, documents, image, client_gender, client_age} = req.body;
 
-      const password_hash = await bcrypt.hash(password, 12);
-      //   console.log(password_hash);
-      const users = await Users.create({
-        first_name,
-        last_name,
-        email,
-        password_hash,
-        type_of_user,
-        age,
-      });
-      return res.status(200).send({
-        status: 1,
-        message: "User sucessefull included",
-        users,
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).send(error);
-    }
-  },
+        if (!password) return res.status(500).send({ error: 'Path "password" is required' })
+            // Encripta o valor de "password" em "password_hash"
+            const password_hash = await bcrypt.hash(password, 12)
 
-  async update(req, res) {
-    const { id_user } = req.params;
-    const data = req.body;
-    console.log("Aqui");
-    console.log(data);
-    console.log("id: " + id_user);
+        let age = client_age;
+            let gender = client_gender.toUpperCase();
 
-    try {
-      const user = await Users.update(data, { where: { id: id_user } });
+            console.log(gender)
+
+            if (["M", "MASC", "MASCULINO"].includes(gender)) gender = "M"
+            if (["F", "FEM", "FEMININO"].includes(gender)) gender = "F"
+            else gender = null
+
+            if (age > 0 && age < 18) {
+                age = "18-";
+            } else if (age >= 18 && age < 25) {
+                age = "18 e 25";
+            } else if (age >= 25 && age < 30) {
+                age = "25 e 30";
+            } else if (age >= 30 && age < 40) {
+                age = "30 e 40";
+            } else if (age >= 40 && age < 60) {
+                age = "40 e 60";
+            } else if (age >= 60) {
+                age = "60+";
+            } else {
+                age = null;
+            }
+
+            const users = await Users.update({
+                first_name,
+                last_name,
+                email,
+                password_hash,
+                type_of_user,
+                address,
+                documents,
+                image,
+                gender,
+                age,
+            }, {
+            where: { id: id_user }
+        });
+
+        return res.status(200).send({
+            status: 1,
+            message: "User updated!",
+            users
+        })
     } catch (error) {
       console.log(error);
       return res.status(400).send(error);

@@ -13,7 +13,7 @@ import Welcome from './pages/welcome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Basket from './pages/basket';
 import AddBasket from './pages/addBasket';
-import AddAndUpdateAddress from './pages/addAndUpdateAddress';
+//import AddAndUpdateAddress from './pages/addAndUpdateAddress';
 
 const Stack = createStackNavigator();
 

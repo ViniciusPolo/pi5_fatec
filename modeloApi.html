@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo APi</title>
+</head>
+<body>
+    <h1>Exemplos para post Api Um trem de cume</h1>
+    <div style="width:  90%; margin: 1%; border: black 2px solid;">
+        <h2>Rota de Usuarios</h2>
+        <button style="margin: 1% 0 0 5%;">POST</button>
+    <input type="text" value="https://um-trem-de-cume-api.onrender.com/users" style="width:  50%; margin: 1% 0 1% 0;">
+    <pre style="background-color: #101010; color: #fff; width:  54%; margin: 0 0 1% 5%;"><code class="json" contentEditable="true" >
+        {
+            "first_name":"Vinicius",
+            "last_name":"Vinicius",
+            "email": "email@email",
+            "password": "password",
+            "type_of_user": 1,
+            "address": null,
+            "documents": null,
+            "image": null,
+            "client_gender": "masc",
+            "client_age": 36
+        }   
+        </code></pre>
+    </div>
+    <div style="width:  90%; margin: 1%; border: black 2px solid;">
+        <h2>Rota de Restaurantes</h2>
+        <button style="margin: 1% 0 0 5%;">POST</button>
+    <input type="text" value="https://um-trem-de-cume-api.onrender.com/restaurants" style="width:  50%; margin: 1% 0 1% 0;">
+    <pre style="background-color: #101010; color: #fff; width:  54%; margin: 0 0 1% 5%;"><code class="json" contentEditable="true" >
+        {
+            "user_owner": 6,
+            "restaurant_name": "Toca do Queijo",
+            "bio": "qujim bom sô",
+            "logo": "",
+            "address": 1, 
+            "cousine": "MINEIRA"
+}
+        </code></pre>
+    </div>
+    <div style="width:  90%; margin: 1%; border: black 2px solid;">
+        <h2>Rota de menus</h2>
+        <button style="margin: 1% 0 0 5%;">POST</button>
+    <input type="text" value="https://um-trem-de-cume-api.onrender.com/menus" style="width:  50%; margin: 1% 0 1% 0;">
+    <pre style="background-color: #101010; color: #fff; width:  54%; margin: 0 0 1% 5%;"><code class="json" contentEditable="true" >
+        {
+            "restaurant_id": 1,
+            "food_name": "Eat meat a moda",
+            "price": 19.9,
+            "prepare_time": 25,
+            "ingrediants": {
+                "main": "Ervilhas",
+                "secondary": "Molho Soyo"
+            },
+            "image":"",
+            "type_of_product":"food"
+        }
+        </code></pre>
+    </div>
+    <div style="width:  90%; margin: 1%; border: black 2px solid;">
+        <h2>Rota de Requests (Pedidos)</h2>
+        <button style="margin: 1% 0 0 5%;">POST</button>
+    <input type="text" value="https://um-trem-de-cume-api.onrender.com/requests" style="width:  50%; margin: 1% 0 1% 0;">
+    <pre style="background-color: #101010; color: #fff; width:  54%; margin: 0 0 1% 5%;"><code class="json" contentEditable="true" >
+        {
+            "restaurant_id":1,
+            "food_id":8, 
+            "user_id":1, 
+            "status_prepare":1,
+            "status_payment":1,
+            "total_delivery":0,
+            "is_open":0,
+            "quantity":2,
+            "day_of_week":"weekday",
+            "type_of_product":"food"
+        }
+        </code></pre>
+    </div>
+    
+</body>
+</html>
