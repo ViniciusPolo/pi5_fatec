@@ -1,0 +1,57 @@
+.about {
+  padding-top: 150px;
+  background: #d5d5d5;
+  height: calc(100vh - 350px);
+  overflow: hidden;
+}
+
+.about h1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.about p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.about .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.about .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+  background: #d5d5d5;
+}
+
+.about .swiper-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.iconsabout {
+  display: flex;
+  width: 60%;
+  height: 50px;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+

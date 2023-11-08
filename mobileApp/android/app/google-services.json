@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "920161554106",
+    "project_id": "tremdecume-382ab",
+    "storage_bucket": "tremdecume-382ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920161554106:android:a999b6c57f476157f53c83",
+        "android_client_info": {
+          "package_name": "treimdicume.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920161554106-4l5o9bpmo4epqnauop9sthh7vu6fd0p2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv06o9KGt_uUomp0oSTQbSTH0wFYBCtHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920161554106-4l5o9bpmo4epqnauop9sthh7vu6fd0p2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
