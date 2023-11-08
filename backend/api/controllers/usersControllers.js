@@ -16,7 +16,7 @@ module.exports = {
             const users = await Users.findAll()
             return res.json(users)
         } catch (err) {
-            return res.status(400).send('Broked ->' + err)
+            return res.status(400).send('Broked --->' + err)
         }
     },
 
