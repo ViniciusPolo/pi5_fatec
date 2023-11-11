@@ -37,6 +37,20 @@ module.exports = {
         }
     },
 
+    async indexByEmail(req, res) {
+        const { email } = req.body;
+        try {
+          const verifyEmail = await Users.find({
+            where: { email: email },
+          });
+          return res.status(200).send({
+            verifyEmail,
+          });
+        } catch (err) {
+          return res.status(400).send("email not found" + err);
+        }
+      },
+
     async store(req, res) {
         console.log("store")
         try {
