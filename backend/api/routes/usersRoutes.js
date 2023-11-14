@@ -5,7 +5,7 @@ const usersController = require ('../controllers/usersControllers');
 
 router.get('/users', usersController.indexAll);
 router.get('/users/:id_user', usersController.indexOne);
-router.get('/users/email', usersController.indexByEmail);
+router.get('/users/search/email', usersController.indexByEmail);
 
 router.post('/users', usersController.store);
 router.put('/users/update/:id_user', usersController.update);
