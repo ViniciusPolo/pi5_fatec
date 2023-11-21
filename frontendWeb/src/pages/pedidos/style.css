@@ -1,0 +1,36 @@
+.scroll {
+  width: 700px;
+  margin: 3%;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.pedidos {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background: #f5f5f1;
+  width: 100%;
+  padding-left: 5px;
+  margin: 1%;
+  height: 80px;
+  /* border-bottom: 1px solid #000; */
+  color: var(--button-color);
+}
+
+.listpedido {
+  display: flex;
+  flex-direction: row;
+  margin: 3%;
+}
+
+.listpedido img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+ul {
+  list-style-type: none;
+}
