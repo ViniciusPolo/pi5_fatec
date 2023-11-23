@@ -1,0 +1,567 @@
+user_id;food_name;age
+1;Combinado Sushi Salmão;30 e 40
+2;Combinado Sushi Salmão;25 e 30
+2;Saquê;25 e 30
+3;Teppanyaki;18 e 25
+1;Lasanha à Bolonhesa;30 e 40
+4;Macarrão à carbonara;60+
+1;Guioza;30 e 40
+1;Tiramisù;30 e 40
+8;Coca-cola;60+
+7;Combinado Hot Roll;40 e 60
+9;Combinado Hot Roll;18 e 25
+9;Coca-cola;18 e 25
+6;Guioza;40 e 60
+7;Lasanha à Bolonhesa;40 e 60
+6;Tiramisù;40 e 60
+6;Tiramisù;40 e 60
+6;Tiramisù;40 e 60
+6;Guioza;40 e 60
+7;Guioza;40 e 60
+8;Teppanyaki;60+
+9;Tiramisù;18 e 25
+6;Tiramisù;40 e 60
+9;Tiramisù;18 e 25
+1;Tiramisù;30 e 40
+4;Combinado Sushi Salmão;60+
+4;Coca-cola;60+
+1;Coca-cola;30 e 40
+7;Coca-cola;40 e 60
+9;Coca-cola;18 e 25
+6;Teppanyaki;40 e 60
+5;Combinado Hot Roll;40 e 60
+4;Macarrão à carbonara;60+
+2;Lasanha à Bolonhesa;25 e 30
+3;Risoto de Camarão;18 e 25
+3;Frango Caipira com Quiabo;18 e 25
+3;Cerveja Heineken;18 e 25
+13;Porco na lata;40 e 60
+13;Quejim com goiabada;40 e 60
+13;Coca Cola lata;40 e 60
+14;Bisteca di porco;40 e 60
+14;Suco di laranja;40 e 60
+2;Combinado Hot Roll;25 e 30
+2;Combinado Sushi Salmão;25 e 30
+2;Combinado Hot Roll;25 e 30
+12;Combinado Hot Roll;40 e 60
+12;Combinado Sushi Salmão;40 e 60
+12;Guioza;40 e 60
+12;Combinado Hot Roll;40 e 60
+12;Guioza;40 e 60
+6;Esfirra aberta de Carne;40 e 60
+6;Suco laranja;40 e 60
+8;Esfirra fechada de calabresa;60+
+8;Quibe cru com menta;60+
+8;Heineken lata;60+
+40;Macaron;18 e 25
+40;Sundaes;18 e 25
+39;Suco;25 e 30
+39;Cerveja Heineken;25 e 30
+38;CocaCola lata;40 e 60
+38;Picolé;40 e 60
+37;Milk-shake;60+
+37;Tiramisù;60+
+37;Risoto de Camarão;60+
+36;Ratatouille;30 e 40
+36;Pão;30 e 40
+35;Esfirra aberta de frango;18 e 25
+35;Porco na lata;18 e 25
+35;Coca Cola lata;18 e 25
+34;esfirra fechada com doce de leite;25 e 30
+34;Bavaria lata;25 e 30
+34;Antarctica lata;25 e 30
+34;Esfirra fechada de carne;25 e 30
+33;Bisteca di porco;30 e 40
+33;Suco;30 e 40
+32;Suco;40 e 60
+32;Skol lata;40 e 60
+32;Petit gateau;40 e 60
+31;Quibe cru com menta;25 e 30
+31;Sundaes;25 e 30
+31;Saquê;25 e 30
+30;Esfirra aberta de Queijo;30 e 40
+30;Combinado Hot Roll;30 e 40
+30;Croissant;30 e 40
+29;Pão;18-
+29;Milk-shake;18-
+29;Caipirinha cachaça;18-
+29;Macaron;18-
+28;Milk-shake;25 e 30
+28;Suco;25 e 30
+27;Pão;18-
+27;Tiramisù;18-
+26;Frango Caipira com Quiabo;40 e 60
+26;Polenta de belorzonte;40 e 60
+26;Quejim com goiabada;40 e 60
+25;Suco di laranja;30 e 40
+25;Esfirra aberta de Calabresa;30 e 40
+25;Ratatouille;30 e 40
+24;Croissant;18-
+24;Risoto de Camarão;18-
+24;Tiramisù;18-
+23;Coca Cola lata;30 e 40
+23;Suco;30 e 40
+23;Pão;30 e 40
+23;Macaron;30 e 40
+23;Milk-shake;30 e 40
+22;Ratatouille;18 e 25
+22;Esfirra aberta a moda;18 e 25
+22;esfirra aberta romeu e julietta;18 e 25
+21;Antarctica lata;40 e 60
+21;Bavaria lata;40 e 60
+21;Petit gateau;40 e 60
+20;Pão;30 e 40
+20;Suco;30 e 40
+20;Picolé;30 e 40
+20;Sundaes;30 e 40
+20;Brahma lata;30 e 40
+20;Café au lait;30 e 40
+20; expresso caramel;30 e 40
+19; vitamina gelada;18 e 25
+19;Suco;18 e 25
+19;Esfirra aberta de frango;18 e 25
+19;Cerveja Heineken;18 e 25
+19;Quibe cru com menta;18 e 25
+19;Teppanyaki;18 e 25
+18;Caipirinha cachaça;40 e 60
+18;Bisteca di porco;40 e 60
+18;Esfirra aberta de Queijo;40 e 60
+18;Antarctica lata;40 e 60
+18;Macaron;40 e 60
+18; expresso caramel;40 e 60
+17; vitamina gelada;30 e 40
+17; vitamina gelada;30 e 40
+17;Croissant;30 e 40
+17;Suco;30 e 40
+17;Sundaes;30 e 40
+17;Suco laranja;30 e 40
+17;esfirra aberta de chocolate;30 e 40
+16;Coca-cola;30 e 40
+16;Polenta de belorzonte;30 e 40
+16;Coca Cola lata;30 e 40
+16;Pão;30 e 40
+16;Frango Caipira com Quiabo;30 e 40
+15;File do meio ao alho;40 e 60
+15;Quejim com goiabada;40 e 60
+15;esfirra fechada com doce de leite;40 e 60
+15;Skol lata;40 e 60
+15;Suco;40 e 60
+15;Petit gateau;40 e 60
+40;Café au lait;18 e 25
+40; expresso caramel;18 e 25
+40;Croissant;18 e 25
+40;Ratatouille;18 e 25
+29;Guioza;18-
+23;Combinado Hot Roll;30 e 40
+33;Teppanyaki;30 e 40
+20;Macarrão à carbonara;30 e 40
+38;Tiramisù;40 e 60
+12; vitamina gelada;40 e 60
+33;Suco di laranja;30 e 40
+33;Café au lait;30 e 40
+40;Café au lait;18 e 25
+6;File do meio ao alho;40 e 60
+8;File do meio ao alho;60+
+8;Frango Caipira com Quiabo;60+
+8;Quejim com goiabada;60+
+7;Polenta de belorzonte;40 e 60
+6;Porco na lata;40 e 60
+7;Porco na lata;40 e 60
+9;Porco na lata;18 e 25
+7;Bisteca di porco;40 e 60
+7;Suco di laranja;40 e 60
+9;Esfirra aberta de Carne;18 e 25
+9;Esfirra aberta de Carne;18 e 25
+8;Esfirra aberta de Carne;60+
+7;Esfirra aberta de Queijo;40 e 60
+6;Esfirra aberta a moda;40 e 60
+9;Esfirra fechada de carne;18 e 25
+6;Quibe cru com menta;40 e 60
+9;Quibe cru com menta;18 e 25
+9;esfirra aberta de chocolate;18 e 25
+6;Milk-shake;40 e 60
+6;Pão;40 e 60
+6;Petit gateau;40 e 60
+8;Ratatouille;60+
+6;Ratatouille;40 e 60
+7; expresso caramel;40 e 60
+8; vitamina gelada;60+
+7;Combinado Sushi Salmão;40 e 60
+6;Combinado Hot Roll;40 e 60
+8;Teppanyaki;60+
+7;Teppanyaki;40 e 60
+7;Saquê;40 e 60
+8;Macarrão à carbonara;60+
+9;Lasanha à Bolonhesa;18 e 25
+6;Tiramisù;40 e 60
+8;Coca-cola;60+
+8;Coca-cola;60+
+6;Risoto de Camarão;40 e 60
+8;File do meio ao alho;60+
+6;Polenta de belorzonte;40 e 60
+6;Quejim com goiabada;40 e 60
+7;Cerveja Heineken;40 e 60
+8;Caipirinha cachaça;60+
+7;Coca Cola lata;40 e 60
+6;Porco na lata;40 e 60
+6;Bisteca di porco;40 e 60
+6;Suco di laranja;40 e 60
+9;Coca cola lata;18 e 25
+12;Pão;40 e 60
+12; vitamina gelada;40 e 60
+12;Croissant;40 e 60
+12;Croissant;40 e 60
+12;Ratatouille;40 e 60
+12;Ratatouille;40 e 60
+12;Petit gateau;40 e 60
+10;Petit gateau;25 e 30
+8; expresso caramel;60+
+8; expresso caramel;60+
+8; expresso caramel;60+
+15; expresso caramel;40 e 60
+15; expresso caramel;40 e 60
+15; vitamina gelada;40 e 60
+14;Guioza;40 e 60
+5;Guioza;40 e 60
+8;Macarrão à carbonara;60+
+8;Risoto de Camarão;60+
+9;Tiramisù;18 e 25
+9;Tiramisù;18 e 25
+9;Tiramisù;18 e 25
+12;Tiramisù;40 e 60
+13;Tiramisù;40 e 60
+12;Tiramisù;40 e 60
+13;Tiramisù;40 e 60
+13;Macarrão à carbonara;40 e 60
+13;Combinado Hot Roll;40 e 60
+13;Frango Caipira com Quiabo;40 e 60
+13;Polenta de belorzonte;40 e 60
+13;Polenta de belorzonte;40 e 60
+12;Frango Caipira com Quiabo;40 e 60
+1;Coca Cola lata;30 e 40
+1;Coca Cola lata;30 e 40
+1;Lasanha à Bolonhesa;30 e 40
+2;Combinado Sushi Salmão;25 e 30
+2;Combinado Hot Roll;25 e 30
+2;Saquê;25 e 30
+1;Teppanyaki;30 e 40
+1;Guioza;30 e 40
+11;Combinado Hot Roll;25 e 30
+11;Tiramisù;25 e 30
+11;Coca-cola;25 e 30
+13;Frango Caipira com Quiabo;40 e 60
+13;Frango Caipira com Quiabo;40 e 60
+13;Quejim com goiabada;40 e 60
+13;Coca Cola lata;40 e 60
+3;Bisteca di porco;18 e 25
+3;Suco di laranja;18 e 25
+4;Esfirra fechada a moda;60+
+4;Esfirra fechada de carne;60+
+4;esfirra aberta de chocolate;60+
+5;esfirra aberta romeu e julietta;40 e 60
+5;esfirra fechada com doce de leite;40 e 60
+5;Antarctica lata;40 e 60
+6;Guioza;40 e 60
+8;Suco limao;60+
+8;Picanha;60+
+8;Pão de alho;60+
+14;Pão de alho;40 e 60
+14;Cerveja Colorado;40 e 60
+6;Guaraná Antarctica;40 e 60
+14;Pão de alho;40 e 60
+14;Contra-file;40 e 60
+9;Pão de alho;18 e 25
+14;File do meio ao alho;40 e 60
+9;Linguiça Cuiabana;18 e 25
+9;Tulipa;18 e 25
+9;Picanha;18 e 25
+1;Picanha;30 e 40
+9;Milk-shake;18 e 25
+1;Contra-file;30 e 40
+1;Pepsi Cola;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Pão de alho;30 e 40
+2;Cerveja Amstel;25 e 30
+2;Contra-file;25 e 30
+9;Heineken lata;18 e 25
+10;Pão;25 e 30
+10; expresso caramel;25 e 30
+10;Macaron;25 e 30
+5;Pão;40 e 60
+5;Croissant;40 e 60
+5;Ratatouille;40 e 60
+5;Petit gateau;40 e 60
+5; vitamina gelada;40 e 60
+6;Quibe cru com menta;40 e 60
+5; vitamina gelada;40 e 60
+6;Esfirra fechada de calabresa;40 e 60
+5;Ratatouille;40 e 60
+5;Macaron;40 e 60
+6;Suco di laranja;40 e 60
+1;Suco limao;30 e 40
+6;Suco;40 e 60
+7;Picanha;40 e 60
+7;Contra-file;40 e 60
+7;Suco limao;40 e 60
+6; vitamina gelada;40 e 60
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+1;Guaraná Antarctica;30 e 40
+8;Café au lait;60+
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+8;Macaron;60+
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+1;Pepsi Cola;30 e 40
+8;Ratatouille;60+
+6;Ratatouille;40 e 60
+6;Petit gateau;40 e 60
+6;Ratatouille;40 e 60
+6;Petit gateau;40 e 60
+6;Suco;40 e 60
+6;Picolé;40 e 60
+9;Risoto de Camarão;18 e 25
+9;Coca-cola;18 e 25
+9;Quejim com goiabada;18 e 25
+8;Porco na lata;60+
+8;Coca Cola lata;60+
+7;Esfirra aberta de frango;40 e 60
+7;esfirra fechada com doce de leite;40 e 60
+7;Brahma lata;40 e 60
+7;Suco laranja;40 e 60
+7;Ratatouille;40 e 60
+7; expresso caramel;40 e 60
+6;Contra-file;40 e 60
+6;Tulipa;40 e 60
+1;Pepsi Cola;30 e 40
+1;Picanha;30 e 40
+1;Picanha;30 e 40
+1;Picanha;30 e 40
+1;Picanha;30 e 40
+1;Picanha;30 e 40
+1;Suco limao;30 e 40
+1;Picanha;30 e 40
+1;Suco limao;30 e 40
+1;Picanha;30 e 40
+1;Pão;30 e 40
+1;Pão;30 e 40
+1;Pão;30 e 40
+1;Pão;30 e 40
+1;Pão;30 e 40
+1;Pão;30 e 40
+1;Macaron;30 e 40
+1;Macaron;30 e 40
+1;Macaron;30 e 40
+1;Macaron;30 e 40
+1;Croissant;30 e 40
+1;Croissant;30 e 40
+1;Croissant;30 e 40
+1;Croissant;30 e 40
+1;Café au lait;30 e 40
+1;Café au lait;30 e 40
+1;Café au lait;30 e 40
+1; expresso caramel;30 e 40
+1;Café au lait;30 e 40
+1; expresso caramel;30 e 40
+1;Café au lait;30 e 40
+1;Esfirra aberta de Carne;30 e 40
+1;Esfirra aberta de Carne;30 e 40
+1;Antarctica lata;30 e 40
+1;Antarctica lata;30 e 40
+1;Antarctica lata;30 e 40
+1;Antarctica lata;30 e 40
+1;Antarctica lata;30 e 40
+1;Antarctica lata;30 e 40
+41;Antarctica lata;40 e 60
+41;File do meio ao alho;40 e 60
+41;File do meio ao alho;40 e 60
+41;Bisteca di porco;40 e 60
+41;Bisteca di porco;40 e 60
+41;Suco di laranja;40 e 60
+41;Suco di laranja;40 e 60
+41;Suco di laranja;40 e 60
+41;Coca cola lata;40 e 60
+41;Coca cola lata;40 e 60
+41;Bisteca di porco;40 e 60
+41;Bisteca di porco;40 e 60
+41;Coca cola lata;40 e 60
+41;Coca cola lata;40 e 60
+41;Coca cola lata;40 e 60
+5;Macaron;40 e 60
+41;Coca cola lata;40 e 60
+44;Macarrão à carbonara;40 e 60
+12;Esfirra fechada de calabresa;40 e 60
+12;Pão;40 e 60
+10;Pão;25 e 30
+14;Pão;40 e 60
+14;Ratatouille;40 e 60
+14;Ratatouille;40 e 60
+16;Ratatouille;30 e 40
+44;Lasanha à Bolonhesa;40 e 60
+44;Tiramisù;40 e 60
+44;Coca Cola lata;40 e 60
+43;Picanha;40 e 60
+43;Tulipa;40 e 60
+43;Panceta;40 e 60
+43;Pão de alho;40 e 60
+43;CocaCola lata;40 e 60
+43;Frango Caipira com Quiabo;40 e 60
+43;Quejim com goiabada;40 e 60
+43;Suco di laranja;40 e 60
+43;Esfirra aberta de Carne;40 e 60
+43;Esfirra aberta de Queijo;40 e 60
+43;esfirra aberta romeu e julietta;40 e 60
+43;CocaCola lata;40 e 60
+43;Picolé;40 e 60
+41;File do meio ao alho;40 e 60
+42;Pão;25 e 30
+41;File do meio ao alho;40 e 60
+41;File do meio ao alho;40 e 60
+42;Ratatouille;25 e 30
+41;File do meio ao alho;40 e 60
+41;File do meio ao alho;40 e 60
+41;File do meio ao alho;40 e 60
+41;File do meio ao alho;40 e 60
+42;Croissant;25 e 30
+41;Bisteca di porco;40 e 60
+41;Bisteca di porco;40 e 60
+41;Bisteca di porco;40 e 60
+42;Macaron;25 e 30
+42;Café au lait;25 e 30
+43; expresso caramel;40 e 60
+6; vitamina gelada;40 e 60
+41;Brahma lata;40 e 60
+41;Brahma lata;40 e 60
+41;Brahma lata;40 e 60
+41;Brahma lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Porco na lata;40 e 60
+12;Esfirra aberta de frango;40 e 60
+12;Esfirra aberta de frango;40 e 60
+12;Esfirra aberta de frango;40 e 60
+6;Suco limao;40 e 60
+12;Esfirra aberta de Queijo;40 e 60
+12;Esfirra aberta de Queijo;40 e 60
+12;Esfirra aberta a moda;40 e 60
+12;Esfirra aberta a moda;40 e 60
+43;Combinado Hot Roll;40 e 60
+43;Teppanyaki;40 e 60
+42;Combinado Sushi Salmão;25 e 30
+42;Guioza;25 e 30
+42;Risoto de Camarão;25 e 30
+43;File do meio ao alho;40 e 60
+44;Frango Caipira com Quiabo;40 e 60
+44;Polenta de belorzonte;40 e 60
+7;Linguiça Cuiabana;40 e 60
+7;Picanha;40 e 60
+7;Cerveja Colorado;40 e 60
+8;Simplão;60+
+7;Artesanal Angus;40 e 60
+7;Artesanal do Buda;40 e 60
+9;Artesanal do Buda;18 e 25
+42;X-Frango;25 e 30
+43;Artesanal Angus;40 e 60
+9;X-Frango Bacon;18 e 25
+6;Yakisoba;40 e 60
+42;Arroz Primavera;25 e 30
+43;Arroz Primavera;40 e 60
+44;Porco Agridoce;40 e 60
+9;Porco Agridoce;18 e 25
+8;Yakisoba;60+
+7;Porco Agridoce;40 e 60
+43;Yakisoba;40 e 60
+42;Yakisoba;25 e 30
+44;Arroz Primavera;40 e 60
+6;Porco Agridoce;40 e 60
+6;Arroz Primavera;40 e 60
+9;Yakisoba;18 e 25
+42;Quibe cru com menta;25 e 30
+42;Esfirra fechada de queijo;25 e 30
+42;Esfirra fechada a moda;25 e 30
+44;Esfirra fechada de calabresa;40 e 60
+44;Esfirra fechada de carne;40 e 60
+49;Macarrão à carbonara;25 e 30
+49;Lasanha à Bolonhesa;25 e 30
+49;Polenta de belorzonte;25 e 30
+49;Cerveja Heineken;25 e 30
+49;Milk-shake;25 e 30
+49;Picolé;25 e 30
+50;Risoto de Camarão;18 e 25
+50;Frango Caipira com Quiabo;18 e 25
+50;Polenta de belorzonte;18 e 25
+50;Suco di laranja;18 e 25
+50;Arroz Primavera;18 e 25
+50;Porco Agridoce;18 e 25
+51;Bisteca di porco;40 e 60
+51;Coca cola lata;40 e 60
+51;Esfirra aberta de Queijo;40 e 60
+51;Esfirra aberta de frango;40 e 60
+51;Esfirra fechada de queijo;40 e 60
+51;Skol lata;40 e 60
+51;Croissant;40 e 60
+51;Suco limao;40 e 60
+51;Contra-file;40 e 60
+51;Pão de alho;40 e 60
+51;X-Salada;40 e 60
+52;Frango Gong Bao;60+
+52;Arroz Primavera;60+
+52;X-Bacon;60+
+54;Picanha;60+
+54;Panceta;60+
+54;Brahma lata;60+
+54;File do meio ao alho;60+
+54;Frango Caipira com Quiabo;60+
+54;Coca Cola lata;60+
+53;Artesanal do Buda;40 e 60
+53;Pepsi Cola;40 e 60
+53; vitamina gelada;40 e 60
+53;Petit gateau;40 e 60
+53;esfirra fechada com doce de leite;40 e 60
+53;X-Frango;40 e 60
+53;Guaraná Antarctica;40 e 60
+53;Lasanha à Bolonhesa;40 e 60
+53;Frango Caipira com Quiabo;40 e 60
+53;Caipirinha cachaça;40 e 60
+54;Linguiça Cuiabana;60+
+54;Picanha;60+
+54;Suco limao;60+
+54;Porco na lata;60+
+54;Bisteca di porco;60+
+54;Lasanha à Bolonhesa;60+
+55;Risoto de Camarão;60+
+55;File do meio ao alho;60+
+55;Coca Cola lata;60+
+55;X-Bacon;60+
+56;Teppanyaki;25 e 30
+56;Quejim com goiabada;25 e 30
+56;Yakisoba;25 e 30
+57;Artesanal do Buda;18 e 25
+57;Guaraná Antarctica;18 e 25
+57;Esfirra fechada de queijo;18 e 25
+57;Picanha;18 e 25
+57;Cerveja Amstel;18 e 25
+58;Macarrão à carbonara;18 e 25
+58;Milk-shake;18 e 25
+58;Petit gateau;18 e 25
+58; vitamina gelada;18 e 25
+59;Combinado Hot Roll;18 e 25
+59;Yakisoba;18 e 25
+59;Bisteca di porco;18 e 25
+59;Coca Cola lata;18 e 25

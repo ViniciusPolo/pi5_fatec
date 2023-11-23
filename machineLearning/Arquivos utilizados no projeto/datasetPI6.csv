@@ -1,0 +1,567 @@
+id_pedido;day_of_week;id_cliente;gender;age;id_restaurante;cousine_type;id_item;food_name;type_of_product;quantity;price;total_value
+1;weekday;1;M;30 e 40;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+2;weekend;2;F;25 e 30;1;JAPONESA;1;Combinado Sushi Salmão;food;2;69.9;139.8
+3;weekend;2;F;25 e 30;1;JAPONESA;5;Saquê;alcoholicDrink;2;11.9;23.8
+4;weekday;3;M;18 e 25;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+5;weekend;1;M;30 e 40;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+6;weekend;4;M;60+;2;ITALIANA;6;Macarrão à carbonara;food;3;24.9;74.69999999999999
+7;weekday;1;M;30 e 40;2;ITALIANA;4;Guioza;food;4;19.9;79.6
+8;weekend;1;M;30 e 40;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+9;weekday;8;F;60+;2;ITALIANA;10;Coca-cola;drink;2;6.9;13.8
+10;weekday;7;M;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+11;weekend;9;M;18 e 25;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+12;weekend;9;M;18 e 25;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+13;weekday;6;F;40 e 60;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+14;weekend;7;M;40 e 60;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+15;weekend;6;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+16;weekday;6;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+17;weekend;6;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;2;9.9;19.8
+18;weekend;6;F;40 e 60;1;JAPONESA;4;Guioza;food;2;19.9;39.8
+19;weekday;7;M;40 e 60;1;JAPONESA;4;Guioza;food;4;19.9;79.6
+20;weekday;8;F;60+;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+21;weekday;9;M;18 e 25;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+22;weekday;6;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+23;weekend;9;M;18 e 25;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+24;weekend;1;M;30 e 40;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+25;weekday;4;M;60+;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+26;weekend;4;M;60+;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+27;weekend;1;M;30 e 40;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+28;weekend;7;M;40 e 60;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+29;weekday;9;M;18 e 25;2;ITALIANA;10;Coca-cola;drink;3;6.9;20.700000000000003
+30;weekday;6;F;40 e 60;1;JAPONESA;3;Teppanyaki;food;2;49.9;99.8
+31;weekend;5;F;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;2;69.9;139.8
+32;weekend;4;M;60+;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+33;weekend;2;F;25 e 30;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+34;weekend;3;M;18 e 25;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+35;weekend;3;M;18 e 25;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+36;weekend;3;M;18 e 25;3;MINEIRA;15;Cerveja Heineken;alcoholicDrink;6;13.9;83.4
+37;weekday;13;M;40 e 60;3;MINEIRA;18;Porco na lata;food;6;79.9;479.40000000000003
+38;weekday;13;M;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;6;9.9;59.400000000000006
+39;weekday;13;M;40 e 60;3;MINEIRA;17;Coca Cola lata;drink;6;9.9;59.400000000000006
+40;weekday;14;F;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+41;weekday;14;F;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+42;weekday;2;F;25 e 30;1;JAPONESA;2;Combinado Hot Roll;food;2;69.9;139.8
+43;weekday;2;F;25 e 30;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+44;weekend;2;F;25 e 30;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+45;weekday;12;M;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+46;weekend;12;M;40 e 60;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+47;weekend;12;M;40 e 60;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+48;weekday;12;M;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+49;weekday;12;M;40 e 60;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+50;weekend;6;F;40 e 60;6;ARABE;22;Esfirra aberta de Carne;food;2;9.9;19.8
+51;weekend;6;F;40 e 60;6;ARABE;41;Suco laranja;drink;2;9.9;19.8
+52;weekday;8;F;60+;6;ARABE;30;Esfirra fechada de calabresa;food;1;9.9;9.9
+53;weekday;8;F;60+;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+54;weekday;8;F;60+;6;ARABE;38;Heineken lata;alcoholicDrink;1;9.9;9.9
+55;weekend;40;F;18 e 25;8;FRANCESA;50;Macaron;desert;10;8.5;85.0
+56;weekday;40;F;18 e 25;7;SOBREMESA;42;Sundaes;desert;2;9.9;19.8
+57;weekday;39;M;25 e 30;7;SOBREMESA;45;Suco;drink;3;8.9;26.700000000000003
+58;weekend;39;M;25 e 30;3;MINEIRA;15;Cerveja Heineken;alcoholicDrink;9;13.9;125.10000000000001
+59;weekend;38;M;40 e 60;6;ARABE;40;CocaCola lata;drink;3;5.9;17.700000000000003
+60;weekday;38;M;40 e 60;7;SOBREMESA;44;Picolé;desert;10;4.9;49.0
+61;weekday;37;F;60+;7;SOBREMESA;43;Milk-shake;desert;3;9.9;29.700000000000003
+62;weekend;37;F;60+;2;ITALIANA;8;Tiramisù;desert;5;9.9;49.5
+63;weekend;37;F;60+;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+64;weekend;36;F;30 e 40;8;FRANCESA;49;Ratatouille;food;2;30.5;61.0
+65;weekday;36;F;30 e 40;8;FRANCESA;46;Pão;food;20;0.9;18.0
+66;weekend;35;F;18 e 25;6;ARABE;25;Esfirra aberta de frango;food;3;9.9;29.700000000000003
+67;weekday;35;F;18 e 25;3;MINEIRA;18;Porco na lata;food;2;79.9;159.8
+68;weekday;35;F;18 e 25;3;MINEIRA;17;Coca Cola lata;drink;4;9.9;39.6
+69;weekday;34;M;25 e 30;6;ARABE;34;esfirra fechada com doce de leite;desert;6;19.9;119.39999999999999
+70;weekday;34;M;25 e 30;6;ARABE;39;Bavaria lata;alcoholicDrink;6;5.9;35.400000000000006
+71;weekend;34;M;25 e 30;6;ARABE;37;Antarctica lata;alcoholicDrink;10;7.9;79.0
+72;weekend;34;M;25 e 30;6;ARABE;28;Esfirra fechada de carne;food;2;9.9;19.8
+73;weekday;33;M;30 e 40;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+74;weekday;33;M;30 e 40;7;SOBREMESA;45;Suco;drink;6;8.9;53.400000000000006
+75;weekend;32;F;40 e 60;7;SOBREMESA;45;Suco;drink;3;8.9;26.700000000000003
+76;weekend;32;F;40 e 60;6;ARABE;36;Skol lata;alcoholicDrink;20;7.9;158.0
+77;weekend;32;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;3;19.9;59.699999999999996
+78;weekend;31;M;25 e 30;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+79;weekday;31;M;25 e 30;7;SOBREMESA;42;Sundaes;desert;2;9.9;19.8
+80;weekday;31;M;25 e 30;1;JAPONESA;5;Saquê;alcoholicDrink;3;11.9;35.7
+81;weekday;30;M;30 e 40;6;ARABE;23;Esfirra aberta de Queijo;food;8;9.9;79.2
+82;weekend;30;M;30 e 40;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+83;weekend;30;M;30 e 40;8;FRANCESA;47;Croissant;food;5;9.9;49.5
+84;weekday;29;F;18-;8;FRANCESA;46;Pão;food;15;0.9;13.5
+85;weekend;29;F;18-;7;SOBREMESA;43;Milk-shake;desert;1;9.9;9.9
+86;weekend;29;F;18-;3;MINEIRA;16;Caipirinha cachaça;alcoholicDrink;4;19.9;79.6
+87;weekend;29;F;18-;8;FRANCESA;50;Macaron;desert;4;8.5;34.0
+88;weekend;28;M;25 e 30;7;SOBREMESA;43;Milk-shake;desert;3;9.9;29.700000000000003
+89;weekday;28;M;25 e 30;7;SOBREMESA;45;Suco;drink;1;8.9;8.9
+90;weekend;27;M;18-;8;FRANCESA;46;Pão;food;2;0.9;1.8
+91;weekend;27;M;18-;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+92;weekend;26;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+93;weekday;26;M;40 e 60;3;MINEIRA;13;Polenta de belorzonte;food;2;39.9;79.8
+94;weekday;26;M;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;5;9.9;49.5
+95;weekday;25;M;30 e 40;4;CHURRASCO;20;Suco di laranja;drink;5;10.0;50.0
+96;weekend;25;M;30 e 40;6;ARABE;24;Esfirra aberta de Calabresa;food;5;9.9;49.5
+97;weekend;25;M;30 e 40;8;FRANCESA;49;Ratatouille;food;2;30.5;61.0
+98;weekend;24;M;18-;8;FRANCESA;47;Croissant;food;6;9.9;59.400000000000006
+99;weekday;24;M;18-;2;ITALIANA;9;Risoto de Camarão;food;3;5.9;17.700000000000003
+100;weekday;24;M;18-;2;ITALIANA;8;Tiramisù;desert;3;9.9;29.700000000000003
+101;weekday;23;F;30 e 40;3;MINEIRA;17;Coca Cola lata;drink;4;9.9;39.6
+102;weekend;23;F;30 e 40;7;SOBREMESA;45;Suco;drink;4;8.9;35.6
+103;weekday;23;F;30 e 40;8;FRANCESA;46;Pão;food;8;0.9;7.2
+104;weekend;23;F;30 e 40;8;FRANCESA;50;Macaron;desert;10;8.5;85.0
+105;weekend;23;F;30 e 40;7;SOBREMESA;43;Milk-shake;desert;10;9.9;99.0
+106;weekend;22;F;18 e 25;8;FRANCESA;49;Ratatouille;food;2;30.5;61.0
+107;weekend;22;F;18 e 25;6;ARABE;26;Esfirra aberta a moda;food;4;9.9;39.6
+108;weekday;22;F;18 e 25;6;ARABE;33;esfirra aberta romeu e julietta;desert;2;19.9;39.8
+109;weekday;21;F;40 e 60;6;ARABE;37;Antarctica lata;alcoholicDrink;6;7.9;47.400000000000006
+110;weekend;21;F;40 e 60;6;ARABE;39;Bavaria lata;alcoholicDrink;6;5.9;35.400000000000006
+111;weekend;21;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;2;19.9;39.8
+112;weekday;20;M;30 e 40;8;FRANCESA;46;Pão;food;12;0.9;10.8
+113;weekday;20;M;30 e 40;7;SOBREMESA;45;Suco;drink;4;8.9;35.6
+114;weekend;20;M;30 e 40;7;SOBREMESA;44;Picolé;desert;14;4.9;68.60000000000001
+115;weekend;20;M;30 e 40;7;SOBREMESA;42;Sundaes;desert;1;9.9;9.9
+116;weekend;20;M;30 e 40;6;ARABE;35;Brahma lata;alcoholicDrink;8;7.9;63.2
+117;weekday;20;M;30 e 40;8;FRANCESA;51;Café au lait;drink;2;8.9;17.8
+118;weekend;20;M;30 e 40;8;FRANCESA;52; expresso caramel;drink;2;9.9;19.8
+119;weekend;19;F;18 e 25;7;SOBREMESA;53; vitamina gelada;drink;2;19.9;39.8
+120;weekend;19;F;18 e 25;7;SOBREMESA;45;Suco;drink;2;8.9;17.8
+121;weekday;19;F;18 e 25;6;ARABE;25;Esfirra aberta de frango;food;3;9.9;29.700000000000003
+122;weekday;19;F;18 e 25;3;MINEIRA;15;Cerveja Heineken;alcoholicDrink;2;13.9;27.8
+123;weekend;19;F;18 e 25;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+124;weekend;19;F;18 e 25;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+125;weekday;18;M;40 e 60;3;MINEIRA;16;Caipirinha cachaça;alcoholicDrink;6;19.9;119.39999999999999
+126;weekday;18;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;2;29.5;59.0
+127;weekday;18;M;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;4;9.9;39.6
+128;weekday;18;M;40 e 60;6;ARABE;37;Antarctica lata;alcoholicDrink;15;7.9;118.5
+129;weekday;18;M;40 e 60;8;FRANCESA;50;Macaron;desert;10;8.5;85.0
+130;weekend;18;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;3;9.9;29.700000000000003
+131;weekend;17;F;30 e 40;8;FRANCESA;53; vitamina gelada;drink;2;19.9;39.8
+132;weekend;17;F;30 e 40;7;SOBREMESA;53; vitamina gelada;drink;2;19.9;39.8
+133;weekday;17;F;30 e 40;8;FRANCESA;47;Croissant;food;4;9.9;39.6
+134;weekday;17;F;30 e 40;7;SOBREMESA;45;Suco;drink;5;8.9;44.5
+135;weekend;17;F;30 e 40;7;SOBREMESA;42;Sundaes;desert;1;9.9;9.9
+136;weekend;17;F;30 e 40;7;SOBREMESA;41;Suco laranja;drink;3;9.9;29.700000000000003
+137;weekend;17;F;30 e 40;6;ARABE;32;esfirra aberta de chocolate;desert;5;19.9;99.5
+138;weekend;16;F;30 e 40;2;ITALIANA;10;Coca-cola;drink;5;6.9;34.5
+139;weekend;16;F;30 e 40;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+140;weekend;16;F;30 e 40;3;MINEIRA;17;Coca Cola lata;drink;2;9.9;19.8
+141;weekday;16;F;30 e 40;8;FRANCESA;46;Pão;food;9;0.9;8.1
+142;weekday;16;F;30 e 40;3;MINEIRA;12;Frango Caipira com Quiabo;food;2;119.9;239.8
+143;weekday;15;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;2;39.9;79.8
+144;weekday;15;M;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;2;9.9;19.8
+145;weekday;15;M;40 e 60;6;ARABE;34;esfirra fechada com doce de leite;desert;1;19.9;19.9
+146;weekend;15;M;40 e 60;6;ARABE;36;Skol lata;alcoholicDrink;6;7.9;47.400000000000006
+147;weekend;15;M;40 e 60;7;SOBREMESA;45;Suco;drink;2;8.9;17.8
+148;weekend;15;M;40 e 60;8;FRANCESA;48;Petit gateau;desert;6;19.9;119.39999999999999
+149;weekend;40;F;18 e 25;8;FRANCESA;51;Café au lait;drink;2;8.9;17.8
+150;weekday;40;F;18 e 25;8;FRANCESA;52; expresso caramel;drink;2;9.9;19.8
+151;weekday;40;F;18 e 25;8;FRANCESA;47;Croissant;food;3;9.9;29.700000000000003
+152;weekday;40;F;18 e 25;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+153;weekday;29;F;18-;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+154;weekend;23;F;30 e 40;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+155;weekday;33;M;30 e 40;1;JAPONESA;3;Teppanyaki;food;5;49.9;249.5
+156;weekday;20;M;30 e 40;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+157;weekend;38;M;40 e 60;2;ITALIANA;8;Tiramisù;desert;3;9.9;29.700000000000003
+158;weekend;12;M;40 e 60;7;SOBREMESA;53; vitamina gelada;drink;2;19.9;39.8
+159;weekend;33;M;30 e 40;4;CHURRASCO;20;Suco di laranja;drink;2;10.0;20.0
+160;weekday;33;M;30 e 40;8;FRANCESA;51;Café au lait;drink;2;8.9;17.8
+161;weekday;40;F;18 e 25;8;FRANCESA;51;Café au lait;drink;2;8.9;17.8
+162;weekend;6;F;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;2;39.9;79.8
+163;weekday;8;F;60+;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+164;weekend;8;F;60+;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+165;weekend;8;F;60+;3;MINEIRA;14;Quejim com goiabada;desert;2;9.9;19.8
+166;weekday;7;M;40 e 60;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+167;weekend;6;F;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+168;weekend;7;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+169;weekday;9;M;18 e 25;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+170;weekend;7;M;40 e 60;3;MINEIRA;19;Bisteca di porco;food;3;29.5;88.5
+171;weekday;7;M;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+172;weekend;9;M;18 e 25;6;ARABE;22;Esfirra aberta de Carne;food;5;9.9;49.5
+173;weekday;9;M;18 e 25;6;ARABE;22;Esfirra aberta de Carne;food;2;9.9;19.8
+174;weekend;8;F;60+;6;ARABE;22;Esfirra aberta de Carne;food;3;9.9;29.700000000000003
+175;weekday;7;M;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;1;9.9;9.9
+176;weekday;6;F;40 e 60;6;ARABE;26;Esfirra aberta a moda;food;2;9.9;19.8
+178;weekday;9;M;18 e 25;6;ARABE;28;Esfirra fechada de carne;food;1;9.9;9.9
+179;weekday;6;F;40 e 60;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+181;weekend;9;M;18 e 25;6;ARABE;31;Quibe cru com menta;food;2;19.9;39.8
+182;weekend;9;M;18 e 25;6;ARABE;32;esfirra aberta de chocolate;desert;4;19.9;79.6
+183;weekend;6;F;40 e 60;7;SOBREMESA;43;Milk-shake;desert;1;9.9;9.9
+184;weekday;6;F;40 e 60;8;FRANCESA;46;Pão;food;4;0.9;3.6
+185;weekend;6;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+186;weekday;8;F;60+;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+187;weekend;6;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+188;weekday;7;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+189;weekday;8;F;60+;8;FRANCESA;53; vitamina gelada;drink;1;19.9;19.9
+190;weekend;7;M;40 e 60;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+191;weekday;6;F;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+192;weekday;8;F;60+;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+193;weekend;7;M;40 e 60;1;JAPONESA;3;Teppanyaki;food;3;49.9;149.7
+194;weekend;7;M;40 e 60;1;JAPONESA;5;Saquê;alcoholicDrink;2;11.9;23.8
+195;weekend;8;F;60+;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+196;weekday;9;M;18 e 25;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+197;weekend;6;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+198;weekend;8;F;60+;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+199;weekend;8;F;60+;2;ITALIANA;10;Coca-cola;drink;2;6.9;13.8
+200;weekend;6;F;40 e 60;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+201;weekday;8;F;60+;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+202;weekend;6;F;40 e 60;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+203;weekend;6;F;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;1;9.9;9.9
+204;weekend;7;M;40 e 60;3;MINEIRA;15;Cerveja Heineken;alcoholicDrink;2;13.9;27.8
+205;weekend;8;F;60+;3;MINEIRA;16;Caipirinha cachaça;alcoholicDrink;1;19.9;19.9
+206;weekday;7;M;40 e 60;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+207;weekend;6;F;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+208;weekend;6;F;40 e 60;3;MINEIRA;19;Bisteca di porco;food;1;29.5;29.5
+209;weekend;6;F;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+210;weekend;9;M;18 e 25;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+211;weekday;12;M;40 e 60;8;FRANCESA;46;Pão;food;1;0.9;0.9
+212;weekday;12;M;40 e 60;8;FRANCESA;53; vitamina gelada;drink;1;19.9;19.9
+213;weekday;12;M;40 e 60;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+214;weekday;12;M;40 e 60;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+215;weekday;12;M;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+216;weekday;12;M;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+217;weekday;12;M;40 e 60;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+218;weekday;10;M;25 e 30;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+219;weekday;8;F;60+;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+220;weekday;8;F;60+;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+221;weekday;8;F;60+;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+222;weekday;15;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+223;weekday;15;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+224;weekday;15;M;40 e 60;8;FRANCESA;53; vitamina gelada;drink;1;19.9;19.9
+225;weekend;14;F;40 e 60;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+226;weekend;5;F;40 e 60;1;JAPONESA;4;Guioza;food;1;19.9;19.9
+227;weekend;8;F;60+;1;JAPONESA;6;Macarrão à carbonara;food;1;24.9;24.9
+228;weekend;8;F;60+;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+229;weekend;9;M;18 e 25;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+230;weekend;9;M;18 e 25;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+231;weekend;9;M;18 e 25;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+232;weekend;12;M;40 e 60;3;MINEIRA;8;Tiramisù;desert;1;9.9;9.9
+233;weekend;13;M;40 e 60;3;MINEIRA;8;Tiramisù;desert;1;9.9;9.9
+234;weekend;12;M;40 e 60;3;MINEIRA;8;Tiramisù;desert;1;9.9;9.9
+235;weekend;13;M;40 e 60;3;MINEIRA;8;Tiramisù;desert;1;9.9;9.9
+236;weekend;13;M;40 e 60;3;MINEIRA;6;Macarrão à carbonara;food;1;24.9;24.9
+237;weekend;13;M;40 e 60;3;MINEIRA;2;Combinado Hot Roll;food;1;69.9;69.9
+238;weekend;13;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+239;weekend;13;M;40 e 60;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+240;weekday;13;M;40 e 60;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+241;weekday;12;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+242;weekday;1;M;30 e 40;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+243;weekday;1;M;30 e 40;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+244;weekend;1;M;30 e 40;3;MINEIRA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+245;weekend;2;F;25 e 30;1;JAPONESA;1;Combinado Sushi Salmão;food;1;69.9;69.9
+246;weekend;2;F;25 e 30;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+247;weekend;2;F;25 e 30;1;JAPONESA;5;Saquê;alcoholicDrink;2;11.9;23.8
+248;weekday;1;M;30 e 40;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+249;weekday;1;M;30 e 40;1;JAPONESA;4;Guioza;food;2;19.9;39.8
+250;weekend;11;M;25 e 30;2;ITALIANA;2;Combinado Hot Roll;food;1;69.9;69.9
+251;weekend;11;M;25 e 30;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+252;weekend;11;M;25 e 30;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+253;weekday;13;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+254;weekday;13;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;2;119.9;239.8
+255;weekday;13;M;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;2;9.9;19.8
+256;weekday;13;M;40 e 60;3;MINEIRA;17;Coca Cola lata;drink;2;9.9;19.8
+257;weekday;3;M;18 e 25;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+258;weekday;3;M;18 e 25;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+259;weekend;4;M;60+;6;ARABE;27;Esfirra fechada a moda;food;1;9.9;9.9
+260;weekend;4;M;60+;6;ARABE;28;Esfirra fechada de carne;food;1;9.9;9.9
+261;weekend;4;M;60+;6;ARABE;32;esfirra aberta de chocolate;desert;1;19.9;19.9
+262;weekend;5;F;40 e 60;6;ARABE;33;esfirra aberta romeu e julietta;desert;1;19.9;19.9
+263;weekend;5;F;40 e 60;6;ARABE;34;esfirra fechada com doce de leite;desert;1;19.9;19.9
+264;weekend;5;F;40 e 60;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+265;weekend;6;F;40 e 60;1;JAPONESA;4;Guioza;food;2;19.9;39.8
+266;weekend;8;F;60+;9;CHURRASCO;54;Suco limao;drink;2;9.9;19.8
+267;weekend;8;F;60+;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+268;weekend;8;F;60+;9;CHURRASCO;61;Pão de alho;food;1;29.9;29.9
+269;weekday;14;F;40 e 60;9;CHURRASCO;61;Pão de alho;food;1;29.9;29.9
+270;weekday;14;F;40 e 60;9;CHURRASCO;63;Cerveja Colorado;alcoholicDrink;3;18.9;56.699999999999996
+271;weekend;6;F;40 e 60;9;CHURRASCO;65;Guaraná Antarctica;drink;2;7.9;15.8
+272;weekday;14;F;40 e 60;9;CHURRASCO;61;Pão de alho;food;2;29.9;59.8
+273;weekday;14;F;40 e 60;9;CHURRASCO;57;Contra-file;food;1;79.9;79.9
+274;weekend;9;M;18 e 25;9;CHURRASCO;61;Pão de alho;food;2;29.9;59.8
+275;weekend;14;F;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+276;weekend;9;M;18 e 25;9;CHURRASCO;60;Linguiça Cuiabana;food;1;49.9;49.9
+277;weekend;9;M;18 e 25;9;CHURRASCO;58;Tulipa;food;1;39.9;39.9
+278;weekend;9;M;18 e 25;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+279;weekend;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;2;89.9;179.8
+280;weekday;9;M;18 e 25;7;SOBREMESA;43;Milk-shake;desert;1;9.9;9.9
+281;weekend;1;M;30 e 40;9;CHURRASCO;57;Contra-file;food;1;79.9;79.9
+282;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+283;weekend;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+284;weekend;1;M;30 e 40;9;CHURRASCO;61;Pão de alho;food;1;29.9;29.9
+285;weekend;2;F;25 e 30;9;CHURRASCO;62;Cerveja Amstel;alcoholicDrink;12;8.9;106.80000000000001
+286;weekend;2;F;25 e 30;9;CHURRASCO;57;Contra-file;food;2;79.9;159.8
+287;weekend;9;M;18 e 25;6;ARABE;38;Heineken lata;alcoholicDrink;2;9.9;19.8
+288;weekday;10;M;25 e 30;8;FRANCESA;46;Pão;food;2;0.9;1.8
+289;weekday;10;M;25 e 30;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+290;weekday;10;M;25 e 30;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+291;weekday;5;F;40 e 60;8;FRANCESA;46;Pão;food;5;0.9;4.5
+292;weekday;5;F;40 e 60;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+293;weekday;5;F;40 e 60;8;FRANCESA;49;Ratatouille;food;2;30.5;61.0
+294;weekday;5;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;2;19.9;39.8
+295;weekday;5;F;40 e 60;8;FRANCESA;53; vitamina gelada;drink;2;19.9;39.8
+296;weekend;6;F;40 e 60;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+297;weekend;5;F;40 e 60;8;FRANCESA;53; vitamina gelada;drink;1;19.9;19.9
+298;weekend;6;F;40 e 60;6;ARABE;30;Esfirra fechada de calabresa;food;1;9.9;9.9
+299;weekend;5;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+300;weekend;5;F;40 e 60;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+301;weekend;6;F;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+302;weekend;1;M;30 e 40;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+303;weekend;6;F;40 e 60;7;SOBREMESA;45;Suco;drink;1;8.9;8.9
+304;weekend;7;M;40 e 60;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+305;weekend;7;M;40 e 60;9;CHURRASCO;57;Contra-file;food;1;79.9;79.9
+306;weekend;7;M;40 e 60;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+307;weekday;6;F;40 e 60;7;SOBREMESA;53; vitamina gelada;drink;1;19.9;19.9
+308;weekend;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+309;weekend;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+310;weekend;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+311;weekend;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+312;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+313;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+314;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+315;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+316;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+317;weekday;1;M;30 e 40;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+318;weekday;8;F;60+;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+319;weekday;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+320;weekday;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+321;weekday;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+322;weekday;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+323;weekday;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+324;weekday;8;F;60+;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+325;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+326;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+327;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+328;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+329;weekday;8;F;60+;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+330;weekday;6;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+331;weekday;6;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+332;weekend;6;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+333;weekend;6;F;40 e 60;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+334;weekend;6;F;40 e 60;7;SOBREMESA;45;Suco;drink;1;8.9;8.9
+335;weekend;6;F;40 e 60;7;SOBREMESA;44;Picolé;desert;1;4.9;4.9
+336;weekend;9;M;18 e 25;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+337;weekend;9;M;18 e 25;2;ITALIANA;10;Coca-cola;drink;1;6.9;6.9
+338;weekend;9;M;18 e 25;3;MINEIRA;14;Quejim com goiabada;desert;1;9.9;9.9
+339;weekend;8;F;60+;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+340;weekend;8;F;60+;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+341;weekend;7;M;40 e 60;6;ARABE;25;Esfirra aberta de frango;food;1;9.9;9.9
+342;weekend;7;M;40 e 60;6;ARABE;34;esfirra fechada com doce de leite;desert;1;19.9;19.9
+343;weekend;7;M;40 e 60;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+344;weekend;7;M;40 e 60;6;ARABE;41;Suco laranja;drink;1;9.9;9.9
+345;weekend;7;M;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+346;weekend;7;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+347;weekend;6;F;40 e 60;9;CHURRASCO;57;Contra-file;food;1;79.9;79.9
+348;weekend;6;F;40 e 60;9;CHURRASCO;58;Tulipa;food;1;39.9;39.9
+349;weekend;1;M;30 e 40;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+350;weekend;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+351;weekend;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+352;weekend;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+353;weekend;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+354;weekday;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+355;weekday;1;M;30 e 40;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+356;weekday;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+357;weekday;1;M;30 e 40;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+358;weekday;1;M;30 e 40;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+359;weekday;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+360;weekday;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+361;weekday;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+362;weekend;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+363;weekend;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+364;weekend;1;M;30 e 40;8;FRANCESA;46;Pão;food;1;0.9;0.9
+365;weekend;1;M;30 e 40;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+366;weekend;1;M;30 e 40;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+367;weekend;1;M;30 e 40;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+368;weekend;1;M;30 e 40;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+369;weekend;1;M;30 e 40;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+370;weekend;1;M;30 e 40;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+371;weekend;1;M;30 e 40;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+372;weekend;1;M;30 e 40;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+373;weekday;1;M;30 e 40;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+374;weekday;1;M;30 e 40;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+375;weekday;1;M;30 e 40;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+376;weekday;1;M;30 e 40;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+377;weekday;1;M;30 e 40;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+378;weekday;1;M;30 e 40;8;FRANCESA;52; expresso caramel;drink;1;9.9;9.9
+379;weekday;1;M;30 e 40;8;FRANCESA;51;Café au lait;drink;1;8.9;8.9
+380;weekday;1;M;30 e 40;6;ARABE;22;Esfirra aberta de Carne;food;1;9.9;9.9
+381;weekday;1;M;30 e 40;6;ARABE;22;Esfirra aberta de Carne;food;1;9.9;9.9
+382;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+383;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+384;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+385;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+386;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;1;7.9;7.9
+387;weekday;1;M;30 e 40;6;ARABE;37;Antarctica lata;alcoholicDrink;10;7.9;79.0
+388;weekday;41;M;40 e 60;6;ARABE;37;Antarctica lata;alcoholicDrink;10;7.9;79.0
+389;weekday;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+390;weekday;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+391;weekday;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+392;weekday;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+393;weekday;41;M;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+394;weekday;41;M;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+395;weekday;41;M;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+396;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+397;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+398;weekday;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+399;weekday;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+400;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+401;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+402;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+403;weekend;5;F;40 e 60;8;FRANCESA;50;Macaron;desert;1;8.5;8.5
+404;weekday;41;M;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+405;weekday;44;F;40 e 60;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+406;weekday;12;M;40 e 60;8;FRANCESA;30;Esfirra fechada de calabresa;food;1;9.9;9.9
+407;weekday;12;M;40 e 60;8;FRANCESA;46;Pão;food;1;0.9;0.9
+408;weekday;10;M;25 e 30;8;FRANCESA;46;Pão;food;1;0.9;0.9
+409;weekday;14;F;40 e 60;8;FRANCESA;46;Pão;food;1;0.9;0.9
+410;weekday;14;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+411;weekday;14;F;40 e 60;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+412;weekday;16;F;30 e 40;8;FRANCESA;49;Ratatouille;food;1;30.5;30.5
+413;weekend;44;F;40 e 60;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+414;weekend;44;F;40 e 60;2;ITALIANA;8;Tiramisù;desert;1;9.9;9.9
+415;weekend;44;F;40 e 60;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+416;weekend;43;M;40 e 60;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+417;weekend;43;M;40 e 60;9;CHURRASCO;58;Tulipa;food;1;39.9;39.9
+418;weekend;43;M;40 e 60;9;CHURRASCO;59;Panceta;food;1;39.9;39.9
+419;weekend;43;M;40 e 60;9;CHURRASCO;61;Pão de alho;food;1;29.9;29.9
+420;weekend;43;M;40 e 60;6;ARABE;40;CocaCola lata;drink;1;5.9;5.9
+421;weekday;43;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+422;weekday;43;M;40 e 60;3;MINEIRA;14;Quejim com goiabada;desert;1;9.9;9.9
+423;weekday;43;M;40 e 60;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+424;weekend;43;M;40 e 60;6;ARABE;22;Esfirra aberta de Carne;food;1;9.9;9.9
+425;weekend;43;M;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;1;9.9;9.9
+426;weekend;43;M;40 e 60;6;ARABE;33;esfirra aberta romeu e julietta;desert;1;19.9;19.9
+427;weekend;43;M;40 e 60;6;ARABE;40;CocaCola lata;drink;1;5.9;5.9
+428;weekend;43;M;40 e 60;7;SOBREMESA;44;Picolé;desert;10;4.9;49.0
+429;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+430;weekday;42;F;25 e 30;8;FRANCESA;46;Pão;food;10;0.9;9.0
+431;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+432;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+433;weekday;42;F;25 e 30;8;FRANCESA;49;Ratatouille;food;10;30.5;305.0
+434;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+435;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+436;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+437;weekend;41;M;40 e 60;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+438;weekend;42;F;25 e 30;8;FRANCESA;47;Croissant;food;10;9.9;99.0
+439;weekend;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+440;weekend;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+441;weekend;41;M;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+442;weekend;42;F;25 e 30;8;FRANCESA;50;Macaron;desert;10;8.5;85.0
+443;weekend;42;F;25 e 30;8;FRANCESA;51;Café au lait;drink;10;8.9;89.0
+444;weekend;43;M;40 e 60;8;FRANCESA;52; expresso caramel;drink;10;9.9;99.0
+445;weekend;6;F;40 e 60;8;FRANCESA;53; vitamina gelada;drink;10;19.9;199.0
+446;weekend;41;M;40 e 60;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+447;weekend;41;M;40 e 60;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+448;weekend;41;M;40 e 60;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+449;weekend;41;M;40 e 60;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+450;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+451;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+452;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+453;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+454;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+455;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+456;weekend;12;M;40 e 60;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+457;weekday;12;M;40 e 60;6;ARABE;25;Esfirra aberta de frango;food;1;9.9;9.9
+458;weekday;12;M;40 e 60;6;ARABE;25;Esfirra aberta de frango;food;1;9.9;9.9
+459;weekday;12;M;40 e 60;6;ARABE;25;Esfirra aberta de frango;food;1;9.9;9.9
+460;weekend;6;F;40 e 60;9;CHURRASCO;54;Suco limao;drink;10;9.9;99.0
+461;weekday;12;M;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;1;9.9;9.9
+462;weekday;12;M;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;1;9.9;9.9
+463;weekday;12;M;40 e 60;6;ARABE;26;Esfirra aberta a moda;food;1;9.9;9.9
+464;weekday;12;M;40 e 60;6;ARABE;26;Esfirra aberta a moda;food;1;9.9;9.9
+465;weekend;43;M;40 e 60;1;JAPONESA;2;Combinado Hot Roll;food;10;69.9;699.0
+466;weekend;43;M;40 e 60;1;JAPONESA;3;Teppanyaki;food;10;49.9;499.0
+467;weekend;42;F;25 e 30;1;JAPONESA;1;Combinado Sushi Salmão;food;10;69.9;699.0
+468;weekend;42;F;25 e 30;1;JAPONESA;4;Guioza;food;4;19.9;79.6
+469;weekday;42;F;25 e 30;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+470;weekday;43;M;40 e 60;2;ITALIANA;11;File do meio ao alho;food;1;39.9;39.9
+471;weekday;44;F;40 e 60;2;ITALIANA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+472;weekday;44;F;40 e 60;2;ITALIANA;13;Polenta de belorzonte;food;1;39.9;39.9
+475;weekend;7;M;40 e 60;9;CHURRASCO;60;Linguiça Cuiabana;food;1;49.9;49.9
+476;weekend;7;M;40 e 60;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+477;weekend;7;M;40 e 60;9;CHURRASCO;63;Cerveja Colorado;alcoholicDrink;2;18.9;37.8
+478;weekend;8;F;60+;10;FASTFOOD;74;Simplão;food;1;11.9;11.9
+479;weekend;7;M;40 e 60;10;FASTFOOD;71;Artesanal Angus;food;1;25.9;25.9
+480;weekend;7;M;40 e 60;10;FASTFOOD;73;Artesanal do Buda;food;1;28.9;28.9
+481;weekend;9;M;18 e 25;10;FASTFOOD;73;Artesanal do Buda;food;1;28.9;28.9
+482;weekend;42;F;25 e 30;10;FASTFOOD;68;X-Frango;food;1;15.9;15.9
+483;weekend;43;M;40 e 60;10;FASTFOOD;71;Artesanal Angus;food;1;25.9;25.9
+484;weekend;9;M;18 e 25;10;FASTFOOD;69;X-Frango Bacon;food;1;15.9;15.9
+485;weekday;6;F;40 e 60;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+486;weekday;42;F;25 e 30;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+487;weekday;43;M;40 e 60;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+488;weekday;44;F;40 e 60;11;CHINESA;76;Porco Agridoce;food;1;20.9;20.9
+489;weekday;9;M;18 e 25;11;CHINESA;76;Porco Agridoce;food;1;20.9;20.9
+490;weekday;8;F;60+;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+491;weekday;7;M;40 e 60;11;CHINESA;76;Porco Agridoce;food;1;20.9;20.9
+492;weekend;43;M;40 e 60;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+493;weekend;42;F;25 e 30;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+494;weekend;44;F;40 e 60;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+495;weekend;6;F;40 e 60;11;CHINESA;76;Porco Agridoce;food;1;20.9;20.9
+496;weekend;6;F;40 e 60;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+497;weekend;9;M;18 e 25;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+498;weekend;42;F;25 e 30;6;ARABE;31;Quibe cru com menta;food;1;19.9;19.9
+499;weekend;42;F;25 e 30;6;ARABE;29;Esfirra fechada de queijo;food;1;9.9;9.9
+500;weekend;42;F;25 e 30;6;ARABE;27;Esfirra fechada a moda;food;1;9.9;9.9
+501;weekend;44;F;40 e 60;6;ARABE;30;Esfirra fechada de calabresa;food;1;9.9;9.9
+502;weekend;44;F;40 e 60;6;ARABE;28;Esfirra fechada de carne;food;1;9.9;9.9
+503;weekday;49;F;25 e 30;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+504;weekend;49;F;25 e 30;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+505;weekday;49;F;25 e 30;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+506;weekend;49;F;25 e 30;3;MINEIRA;15;Cerveja Heineken;alcoholicDrink;1;13.9;13.9
+507;weekend;49;F;25 e 30;7;SOBREMESA;43;Milk-shake;desert;1;9.9;9.9
+508;weekday;49;F;25 e 30;7;SOBREMESA;44;Picolé;desert;1;4.9;4.9
+509;weekend;50;F;18 e 25;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+510;weekend;50;F;18 e 25;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+511;weekend;50;F;18 e 25;3;MINEIRA;13;Polenta de belorzonte;food;1;39.9;39.9
+512;weekend;50;F;18 e 25;4;CHURRASCO;20;Suco di laranja;drink;1;10.0;10.0
+513;weekend;50;F;18 e 25;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+514;weekend;50;F;18 e 25;11;CHINESA;76;Porco Agridoce;food;1;20.9;20.9
+515;weekday;51;F;40 e 60;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+516;weekday;51;F;40 e 60;4;CHURRASCO;21;Coca cola lata;drink;1;6.0;6.0
+517;weekend;51;F;40 e 60;6;ARABE;23;Esfirra aberta de Queijo;food;1;9.9;9.9
+518;weekend;51;F;40 e 60;6;ARABE;25;Esfirra aberta de frango;food;1;9.9;9.9
+519;weekend;51;F;40 e 60;6;ARABE;29;Esfirra fechada de queijo;food;1;9.9;9.9
+520;weekend;51;F;40 e 60;6;ARABE;36;Skol lata;alcoholicDrink;1;7.9;7.9
+521;weekend;51;F;40 e 60;8;FRANCESA;47;Croissant;food;1;9.9;9.9
+522;weekend;51;F;40 e 60;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+523;weekend;51;F;40 e 60;9;CHURRASCO;57;Contra-file;food;1;79.9;79.9
+524;weekend;51;F;40 e 60;9;CHURRASCO;61;Pão de alho;food;1;29.9;29.9
+525;weekday;51;F;40 e 60;10;FASTFOOD;66;X-Salada;food;1;15.9;15.9
+526;weekday;52;M;60+;11;CHINESA;77;Frango Gong Bao;food;1;21.9;21.9
+527;weekday;52;M;60+;11;CHINESA;79;Arroz Primavera;food;1;20.9;20.9
+528;weekday;52;M;60+;10;FASTFOOD;70;X-Bacon;food;1;18.9;18.9
+529;weekend;54;M;60+;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+530;weekend;54;M;60+;9;CHURRASCO;59;Panceta;food;1;39.9;39.9
+531;weekend;54;M;60+;6;ARABE;35;Brahma lata;alcoholicDrink;1;7.9;7.9
+532;weekday;54;M;60+;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+533;weekday;54;M;60+;4;CHURRASCO;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+534;weekday;54;M;60+;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+535;weekday;53;M;40 e 60;10;FASTFOOD;73;Artesanal do Buda;food;1;28.9;28.9
+536;weekday;53;M;40 e 60;9;CHURRASCO;64;Pepsi Cola;drink;1;7.9;7.9
+537;weekday;53;M;40 e 60;7;SOBREMESA;53; vitamina gelada;drink;1;19.9;19.9
+538;weekend;53;M;40 e 60;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+539;weekend;53;M;40 e 60;6;ARABE;34;esfirra fechada com doce de leite;desert;1;19.9;19.9
+540;weekday;53;M;40 e 60;10;FASTFOOD;68;X-Frango;food;1;15.9;15.9
+541;weekday;53;M;40 e 60;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+542;weekend;53;M;40 e 60;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+543;weekend;53;M;40 e 60;3;MINEIRA;12;Frango Caipira com Quiabo;food;1;119.9;119.9
+544;weekend;53;M;40 e 60;3;MINEIRA;16;Caipirinha cachaça;alcoholicDrink;1;19.9;19.9
+545;weekday;54;M;60+;9;CHURRASCO;60;Linguiça Cuiabana;food;1;49.9;49.9
+546;weekday;54;M;60+;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+547;weekday;54;M;60+;9;CHURRASCO;54;Suco limao;drink;1;9.9;9.9
+548;weekday;54;M;60+;3;MINEIRA;18;Porco na lata;food;1;79.9;79.9
+549;weekday;54;M;60+;3;MINEIRA;19;Bisteca di porco;food;1;29.5;29.5
+550;weekday;54;M;60+;2;ITALIANA;7;Lasanha à Bolonhesa;food;1;44.9;44.9
+551;weekend;55;M;60+;2;ITALIANA;9;Risoto de Camarão;food;1;5.9;5.9
+552;weekend;55;M;60+;4;CHURRASCO;11;File do meio ao alho;food;1;39.9;39.9
+553;weekend;55;M;60+;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
+554;weekend;55;M;60+;10;FASTFOOD;70;X-Bacon;food;1;18.9;18.9
+555;weekend;56;F;25 e 30;1;JAPONESA;3;Teppanyaki;food;1;49.9;49.9
+556;weekend;56;F;25 e 30;3;MINEIRA;14;Quejim com goiabada;desert;1;9.9;9.9
+557;weekday;56;F;25 e 30;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+558;weekday;57;M;18 e 25;10;FASTFOOD;73;Artesanal do Buda;food;1;28.9;28.9
+559;weekday;57;M;18 e 25;9;CHURRASCO;65;Guaraná Antarctica;drink;1;7.9;7.9
+560;weekday;57;M;18 e 25;6;ARABE;29;Esfirra fechada de queijo;food;1;9.9;9.9
+561;weekend;57;M;18 e 25;9;CHURRASCO;56;Picanha;food;1;89.9;89.9
+562;weekend;57;M;18 e 25;9;CHURRASCO;62;Cerveja Amstel;alcoholicDrink;1;8.9;8.9
+563;weekend;58;M;18 e 25;2;ITALIANA;6;Macarrão à carbonara;food;1;24.9;24.9
+564;weekend;58;M;18 e 25;7;SOBREMESA;43;Milk-shake;desert;1;9.9;9.9
+565;weekend;58;M;18 e 25;8;FRANCESA;48;Petit gateau;desert;1;19.9;19.9
+566;weekday;58;M;18 e 25;7;SOBREMESA;53; vitamina gelada;drink;1;19.9;19.9
+567;weekend;59;F;18 e 25;1;JAPONESA;2;Combinado Hot Roll;food;1;69.9;69.9
+568;weekend;59;F;18 e 25;11;CHINESA;78;Yakisoba;food;1;31.9;31.9
+569;weekday;59;F;18 e 25;4;CHURRASCO;19;Bisteca di porco;food;1;29.5;29.5
+570;weekday;59;F;18 e 25;3;MINEIRA;17;Coca Cola lata;drink;1;9.9;9.9
