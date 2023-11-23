@@ -7,6 +7,7 @@ from decouple import config
 import asyncio
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+import joblib
 
 app = FastAPI()
 
@@ -74,6 +75,8 @@ async def getIndication(cousine, food):
 
         cousine_type = cousine
         age_inner_id = trainset.to_inner_iid(cousine_type)
+        # joblib.dump(age_inner_id, 'cousine.pkl')
+        age_inner_id = joblib.load('/cousine.pkl')
         neighbors = model.get_neighbors(age_inner_id, k=1)
         neighbors = [trainset.to_raw_iid(inner_id) for inner_id in neighbors]
 
