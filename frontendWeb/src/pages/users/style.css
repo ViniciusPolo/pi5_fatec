@@ -6,7 +6,6 @@
 .boxImg {
   height: 100vh;
   width: 60%;
-  z-index: 1;
 }
 
 .boxImgC {
@@ -15,7 +14,7 @@
 }
 
 .boxImg img {
-  background: var(--second-color);
+  background: #FFA500;
   height: 100%;
   width: 105%;
   border-radius: 0px 150px 150px 0px;
@@ -24,7 +23,7 @@
 }
 
 .boxImgC img {
-  background: var(--second-color);
+  background: #FFA500;
   height: 100%;
   width: 110%;
   margin-left: -40px;
@@ -56,6 +55,7 @@
   margin: 20px;
   border-radius: 30px;
 }
+
 .user .formBx h2 {
   font-size: 18px;
   font-weight: 600;
@@ -64,8 +64,9 @@
   text-align: center;
   width: 100%;
   margin-bottom: 10px;
-  color: #555;
+  color: #000;
 }
+
 .user .formBx input {
   width: 100%;
   padding: 10px;
@@ -80,9 +81,10 @@
   letter-spacing: 1px;
   font-weight: 300;
 }
+
 .user .formBx input[type="submit"] {
   max-width: 100px;
-  background: #677eff;
+  background: #FFA500;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -90,22 +92,34 @@
   letter-spacing: 1px;
   transition: 0.5;
 }
+
 .user .formBx input[type="submit"] {
-  background: var(--button-color);
+  background: #FFA500;
+  color: #000;
+  font-weight: 600;
 }
 
 .user .formBx .signup {
   position: relative;
   margin-top: 20px;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
-  color: #555;
+  color: #000;
   text-transform: uppercase;
   font-weight: 300;
 }
 
-.user .formBx .signup a {
+.user .formBx {
   font-weight: 600;
   text-decoration: none;
-  color: #577eff;
+  color: #FFA500;
+  margin-top: 20px;
+}
+
+.signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #FFA500;
+  margin-top: 20px;
+  font-size: 16px;
 }

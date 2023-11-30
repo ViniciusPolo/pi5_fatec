@@ -13,9 +13,10 @@
 }
 
 .menu1 img {
-  height: 80px;
-  width: 100%;
-  border: 2px solid #fff;
+  height: 150px;
+  width: 150px;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
 }
 
 .headerMenu a {
@@ -33,6 +34,18 @@
   margin-left: 5px;
 }
 
+main {
+  background-color: #FFA500;
+}
+
 main a {
   cursor: pointer;
+}
+
+p {
+  margin: 10px 25px;
+}
+
+h2 {
+  margin-left: 25px;
 }

@@ -20,7 +20,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 export default function About() {
   return (
     <>
-      <div className="container">
+      <div className="container-about">
         <Header />
         <div className="about">
           <h1>Equipe PI 6º periodo DSM - fatec franca/SP -  2023</h1>

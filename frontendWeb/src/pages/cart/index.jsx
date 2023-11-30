@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./style.css";
 import HeaderText from "../../components/HeaderText";
+import Footer from "../../components/Footer";
 
 import { UseApi } from "../../services/api";
 
@@ -130,6 +131,7 @@ export default function Cart() {
           </aside>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

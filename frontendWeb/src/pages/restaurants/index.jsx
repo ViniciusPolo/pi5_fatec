@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeaderText from "../../components/HeaderText";
+import Footer from "../../components/Footer";
 
 import "./style.css";
 import "swiper/css";
@@ -40,12 +41,9 @@ export default function Restaurants() {
   return (
     <>
       <HeaderText />
-      <main>
+      <main className="main-rest">
         <div className="pesq">
-          <h1>Restaurantes</h1>
-          <div className="letreiros">
-            <p>Restaurantes em destaque</p>
-          </div>
+          <div className="letreiro"><h1>Restaurantes</h1></div>
           <div className="pagescroll">
             <Swiper
               slidesPerView={4}
@@ -53,7 +51,7 @@ export default function Restaurants() {
               loop={true}
               centeredSlides={true}
               autoplay={{
-                delay: 1500,
+                delay: 2500,
                 disableOnInteraction: true,
               }}
               pagination={{
@@ -79,6 +77,7 @@ export default function Restaurants() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

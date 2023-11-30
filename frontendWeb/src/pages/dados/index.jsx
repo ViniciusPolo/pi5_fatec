@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
 import HeaderText from "../../components/HeaderText";
+import Footer from "../../components/Footer";
 
 import ListAddress from "./ListAddress";
 
@@ -211,6 +212,7 @@ export default function Dados() {
           ))}
         </div>
       </main>
+      <Footer />
     </>
   );
 }

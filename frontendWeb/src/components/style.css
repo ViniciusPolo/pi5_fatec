@@ -1,0 +1,9 @@
+a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 600;
+}
+

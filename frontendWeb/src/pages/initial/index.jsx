@@ -88,7 +88,7 @@ export default function Home() {
             <div className="pagescroll">
               <Swiper
                 slidesPerView={5}
-                spaceBetween={20}
+                spaceBetween={15}
                 loop={true}
                 centeredSlides={true}
                 autoplay={{

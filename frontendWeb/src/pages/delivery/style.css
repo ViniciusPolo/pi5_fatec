@@ -1,14 +1,27 @@
 .entrega {
   display: flex;
-  color: #00f;
+  color: #000;
   font-size: 1rem;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
+
 .Mercado {
   display: flex;
   color: #000;
   font-size: 1rem;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.mercado2 {
+  height: 361px;
+}
+
+.entrega2 {
+  height: 361px;
 }

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HeaderText from "../../components/HeaderText";
+import Footer from "../../components/Footer";
 
 import { UseApi } from "../../services/api";
 
@@ -150,6 +151,7 @@ export default function Address() {
           <p>{notify}</p>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

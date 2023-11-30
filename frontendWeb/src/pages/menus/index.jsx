@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeaderText from "../../components/HeaderText";
+import Footer from "../../components/Footer";
 
 import "./style.css";
 import "swiper/css";
@@ -305,6 +306,7 @@ export default function Menus() {
           <div id="linha-horizontal"></div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
