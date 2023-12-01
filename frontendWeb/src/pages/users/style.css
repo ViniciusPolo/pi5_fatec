@@ -1,0 +1,111 @@
+.user {
+  overflow: hidden;
+  display: flex;
+}
+
+.boxImg {
+  height: 100vh;
+  width: 60%;
+  z-index: 1;
+}
+
+.boxImgC {
+  height: 100vh;
+  width: 125%;
+}
+
+.boxImg img {
+  background: var(--second-color);
+  height: 100%;
+  width: 105%;
+  border-radius: 0px 150px 150px 0px;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.boxImgC img {
+  background: var(--second-color);
+  height: 100%;
+  width: 110%;
+  margin-left: -40px;
+  border-radius: 0px 150px 150px 0px;
+  transform: rotateY(180deg);
+  transition: 0.5s;
+}
+
+.loginUser {
+  height: 100vh;
+  width: 50%;
+}
+
+.CadUser {
+  height: 100vh;
+  width: 105%;
+}
+
+.user .formBx {
+  position: relative;
+  width: 70%;
+  height: 80%;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+  margin: 20px;
+  border-radius: 30px;
+}
+.user .formBx h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+.user .formBx input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 18px;
+  margin: 8px 0;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.user .formBx input[type="submit"] {
+  max-width: 100px;
+  background: #677eff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5;
+}
+.user .formBx input[type="submit"] {
+  background: var(--button-color);
+}
+
+.user .formBx .signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.user .formBx .signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #577eff;
+}
