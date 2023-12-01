@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import Home from "../pages/home";
+import Home from "../pages/initial";
 
 export const RequireAuth = ({ children }) => {
   const keyAuth = useContext(AuthContext);

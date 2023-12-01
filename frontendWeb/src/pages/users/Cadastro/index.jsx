@@ -8,7 +8,7 @@ import Fig from "../../../assets/logoLogin.svg";
 import { UseApi } from "../../../services/api";
 
 export default function UserCad() {
-  const [first_name, setName] = useState("");
+  const [user_name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPass, setConfPass] = useState("");
@@ -23,13 +23,7 @@ export default function UserCad() {
     // verificar se existe email cadastrado no banco
 
     const userEmail = await api.findEmailById(email);
-
-    if (userEmail === email) {
-      setNotify("Email já cadastrado!");
-      return false;
-    }
-
-    if (!first_name) {
+    if (!user_name) {
       setNotify("Campo Nome não pode ser vazio!");
       return false;
     }
@@ -45,9 +39,15 @@ export default function UserCad() {
       setNotify("Senhas não conferem!");
       return false;
     }
+    if (userEmail === email) {
+      setNotify("Email já cadastrado!");
+      return false;
+    }
     setNotify("");
 
-    const user = await api.creatUser(first_name, email, password);
+    let first_name = user_name.split(" ")[0];
+    console.log(first_name);
+    const user = await api.creatUser(user_name, first_name, email, password);
     if (!user) {
       setNotify("Algo deu errado");
       return false;
@@ -65,10 +65,10 @@ export default function UserCad() {
               <h2>Cadastre-se e mate sua fome.</h2>
               <input
                 type="text"
-                placeholder="Primeiro nome"
+                placeholder="Nome Completo"
                 id="cadastro-nome"
                 name="fullname"
-                value={first_name}
+                value={user_name}
                 onChange={(e) => setName(e.target.value)}
               />
               <input

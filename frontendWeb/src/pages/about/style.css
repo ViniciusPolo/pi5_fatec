@@ -1,44 +1,44 @@
 .about {
-  padding-top: 150px;
-  background: #d5d5d5;
-  height: calc(100vh - 350px);
+  padding-top: 100px;
+  background: #FFA500;
+  height: 70%;
   overflow: hidden;
 }
 
-.about h1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  letter-spacing: 1px;
-  color: #555;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
+.about h1,
 .about p {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
   letter-spacing: 1px;
-  color: #555;
+  font-weight: 600;
   text-transform: uppercase;
+}
+
+.about h1 {
+  margin-top: 20px;
+  color: #000;
+  background: #d5d5d5;
+}
+
+.about p {
+  margin-top: 10px;
+  color: #fff;
   font-weight: 700;
 }
 
 .about .swiper {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 .about .swiper-slide {
+  background: #d5d5d5;
   background-position: center;
   background-size: cover;
   width: 300px;
   height: 400px;
-  background: #d5d5d5;
 }
 
 .about .swiper-slide img {
@@ -55,3 +55,51 @@
   font-size: 2rem;
 }
 
+footer {
+  padding-top: 20px;
+  background: #000;
+  position: relative;
+}
+
+footer ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer ul li {
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul li a {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.redes h2 {
+  padding: 10px;
+  font-weight: normal;
+  color: #fff;
+}
+
+.redes {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  margin-top: 10px;
+  width: 150px;
+  height: 20px;
+  justify-content: space-between;
+  font-size: 1rem;
+}

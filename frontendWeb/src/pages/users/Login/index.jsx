@@ -6,8 +6,6 @@ import "../style.css";
 
 import Fig from "../../../assets/logoLogin.svg";
 
-// import { UseApi } from "../../../services/api";
-
 export default function UserLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,18 +14,21 @@ export default function UserLogin() {
 
   const auth = useContext(AuthContext);
 
-  // const api = UseApi();
-
   async function handleSubmit(e) {
     e.preventDefault();
     setNotify("");
-
-    const user = await auth.signin(email, password);
-    if (!user) {
-      setNotify("Email ou senha inválidos!");
-      return false;
+    // console.log("AGORA AQUI");
+    try {
+      const user = await auth.signin(email, password);
+      console.log(user);
+      if (!user) {
+        setNotify("Email ou senha inválidos!");
+        return false;
+      }
+      navigate("/home");
+    } catch (error) {
+      setNotify("Usuário não cadastrado!");
     }
-    navigate("/home");
   }
 
   return (
@@ -62,13 +63,13 @@ export default function UserLogin() {
                 value="Login"
                 href="/home"
               ></input>
-              <p>{notify}</p>
               <p className="signup">
                 Não tem uma conta? <Link to="/caduser">Cadastre-se</Link>
               </p>
               <p className="signup">
                 <Link to="/">Home</Link>
               </p>
+              <p>{notify}</p>
             </form>
           </div>
         </div>

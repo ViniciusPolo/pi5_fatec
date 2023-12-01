@@ -1,25 +1,36 @@
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./contexts/RequireAuth";
 
-import Home from "./pages/home";
+import Initial from "./pages/initial";
 import Delivery from "./pages/delivery";
-import UserLogin from "./pages/users/Login";
+import Mercados from "./pages/delivery/mercados";
 import UserCad from "./pages/users/Cadastro";
-import About from "./pages/about";
-import Inicial from "./pages/Inicial";
-import Dados from "./pages/dados";
+import UserLogin from "./pages/users/Login";
 import Restaurants from "./pages/restaurants";
-import Menus from "./pages/menus";
-import Cart from "./pages/menus/cart";
+import Dados from "./pages/dados";
+import About from "./pages/about";
+import Menu from "./pages/menus";
+import Orders from "./pages/pedidos";
+import Address from "./pages/dados/address.jsx";
+import Cart from "./pages/cart";
 
 export default function Routers() {
   return (
     <Routes>
+<<<<<<< HEAD
       <Route exact path="/" element={<Home />} />
       <Route exact path="/delivery" element={<Delivery />} />
       <Route exact path="/loginuser" element={<UserLogin />} />
       <Route exact path="/caduser" element={<UserCad />} />
       <Route exact path="/about" element={<About />} />
+=======
+      <Route exact path="/" element={<Initial />} />
+      <Route exact path="/delivery" element={<Delivery />} />
+      <Route exact path="/loginuser" element={<UserLogin />} />
+      <Route exact path="/restmerc" element={<Mercados />} />
+      <Route exact path="/about" element={<About />} />
+      <Route exact path="/caduser" element={<UserCad />} />
+>>>>>>> fabricio-frontend
       <Route
         exact
         path="/home"
@@ -31,19 +42,33 @@ export default function Routers() {
       />
       <Route
         exact
+<<<<<<< HEAD
         path="/pedidos"
         element={
           <RequireAuth>
             <Inicial />
+=======
+        path="/menu"
+        element={
+          <RequireAuth>
+            <Menu />
+>>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />
       <Route
         exact
+<<<<<<< HEAD
         path="/pedidos/cart"
         element={
           <RequireAuth>
             <Cart />
+=======
+        path="/orders"
+        element={
+          <RequireAuth>
+            <Orders />
+>>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />
@@ -56,6 +81,7 @@ export default function Routers() {
           </RequireAuth>
         }
       />
+<<<<<<< HEAD
 
       <Route
         exact
@@ -63,6 +89,23 @@ export default function Routers() {
         element={
           <RequireAuth>
             <Menus />
+=======
+      <Route
+        exact
+        path="/address"
+        element={
+          <RequireAuth>
+            <Address />
+          </RequireAuth>
+        }
+      />
+      <Route
+        exact
+        path="/pedidos/cart"
+        element={
+          <RequireAuth>
+            <Cart />
+>>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />

@@ -1,11 +1,7 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    'config': path.resolve(__dirname, 'config', 'database.js'),
-    'migrations-path': path.resolve(__dirname, 'database', 'migrations')
-}
-//On Root, this comands
-//npx sequelize db:create
-//npx sequelize migration:create --name languages
-//npx sequelize db:migrate
-//npx sequelize-cli db:migrate --to 20170316142544-create-an-index.js
+  config: path.resolve(__dirname, "src", "config", "database.js"),
+  "migrations-path": path.resolve(__dirname, "src", "database", "migrations"),
+  "seeders-path": path.resolve(__dirname, "src", "database", "seeders"),
+};

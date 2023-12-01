@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
 
+import "./style.css";
+
 export default function Header() {
   return (
     <>
@@ -17,7 +19,7 @@ export default function Header() {
               <Link to="/delivery">Entregador</Link>
             </li>
             <li>
-              <Link to="#">Restaurante e Mercado</Link>
+              <Link to="/restmerc">Restaurante e Mercado</Link>
             </li>
             <li>
               <Link to="/about">quem somos</Link>

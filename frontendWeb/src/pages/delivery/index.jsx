@@ -1,40 +1,20 @@
-// import { useState } from "react";
-
-// import "./style.css";
+import "./style.css";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Delivery() {
   return (
     <>
       <Header />
-      <div className="container">
-        <div className="content">
-          <div className="box">
-            <div className="circle">
-              <h2>
-                Pagina<small>%</small>
-              </h2>
-            </div>
-            <h3>Html</h3>
-          </div>
-          <div className="box">
-            <div className="circle">
-              <h2>
-                20<small>%</small>
-              </h2>
-            </div>
-            <h3>Logomarca</h3>
-          </div>
-          <div className="box">
-            <div className="circle">
-              <h2>
-                20<small>%</small>
-              </h2>
-            </div>
-            <h3>Pagina </h3>
-          </div>
+      <main>
+        <div className="entrega">
+          <h1>Entregadores</h1>
         </div>
-      </div>
+        <div className="entrega2">
+
+        </div>
+        <Footer />
+      </main>
     </>
   );
 }

@@ -60,7 +60,7 @@ export default function HeaderText({ nomeClass }) {
               <Link to="/menu">Menus</Link>
             </li>
             <li className={pedidos}>
-              <Link to="/pedidos">Pedidos</Link>
+              <Link to="/orders">Pedidos</Link>
             </li>
             <li className={carrinho}>
               <Link to="/pedidos/cart">Carrinho</Link>

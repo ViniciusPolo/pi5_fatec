@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
 
   const validatetoken = async () => {
     const storageData = localStorage.getItem("x-access-token");
-
     if (storageData) {
       const authorization = await api.validToken(storageData);
       setAuth(authorization);
@@ -22,16 +21,16 @@ export const AuthProvider = ({ children }) => {
 
   const signin = async (email, password) => {
     const data = await api.login(email, password);
+    console.log(data);
     if (!data) {
       return false;
     }
     if (data.data.user_id && data.data.token) {
-      setUser(data);
+      setUser(data.data.user_id);
       localStorage.setItem("x-access-token", data.data.token);
       localStorage.setItem("UserId", data.data.user_id);
       localStorage.setItem("AuthUser", data.data.auth);
       localStorage.setItem("email", email);
-      // localStorage.setItem("UserLog", data.user_id);
       console.log(data);
       return true;
     }

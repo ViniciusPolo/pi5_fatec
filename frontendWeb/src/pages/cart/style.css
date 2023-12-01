@@ -1,0 +1,265 @@
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+.boxmenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin-top: 100px;
+  height: 300px;
+  min-width: 150px;
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+}
+
+.menuheader {
+  display: block;
+  justify-content: left;
+  color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+main .page-title {
+  font-size: 15px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+main .content {
+  display: flex;
+  height: 100%;
+}
+
+main .content section {
+  flex: 1;
+}
+
+main .content aside {
+  min-width: 250px;
+}
+
+button {
+  cursor: pointer;
+}
+
+main .content table {
+  width: 97%;
+  border-collapse: collapse;
+  margin-left: 25px;
+}
+
+main .content table thead tr {
+  border-bottom: 3px solid #eee;
+}
+
+main .content table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+main .content table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+
+main .content table tbody tr:last-child {
+  border: 0;
+}
+
+main .content table tbody td {
+  padding: 20px 0;
+}
+
+main .content .product {
+  display: flex;
+  align-items: center;
+}
+
+main .content .product img {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+main .content .info {
+  margin-left: 20px;
+}
+
+main .content .name {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+main .content .category {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+main .content .qty {
+  background: #eee;
+  display: inline-flex;
+  padding: 0 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+
+main .content .qty span {
+  margin: 0 10px;
+}
+
+main .content .qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+
+main .content .qty button:hover {
+  background: #ddd;
+}
+
+main .content .remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+main .content .remove:hover {
+  background: #ddd;
+}
+
+main .content aside {
+  margin-left: 30px;
+}
+
+main .content aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #eee;
+  color: #222;
+}
+
+main .content aside .box .cartheader {
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+main .content aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+
+main .content aside .box .info div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+main .content aside .box .info div:last-child {
+  margin: 0;
+}
+
+main .content aside .box .info button {
+  color: #000;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+main .content aside .cartfooter {
+  padding: 15px 20px;
+  background: #ddd;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .content aside button {
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #28a745;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main .content aside button:hover {
+  background: #3bc55b;
+}
+
+.bx .bxs-trash {
+  color: red;
+}
+
+footer {
+  background: #000;
+  position: relative;
+}
+
+footer ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer ul li {
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul li a {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.redes h2 {
+  padding: 10px;
+  color: #fff;
+}
+
+.redes {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  margin-top: 10px;
+  width: 200px;
+  height: 20px;
+  justify-content: space-between;
+  font-size: 1rem;
+}
