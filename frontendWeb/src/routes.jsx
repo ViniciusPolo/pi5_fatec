@@ -17,20 +17,12 @@ import Cart from "./pages/cart";
 export default function Routers() {
   return (
     <Routes>
-<<<<<<< HEAD
-      <Route exact path="/" element={<Home />} />
-      <Route exact path="/delivery" element={<Delivery />} />
-      <Route exact path="/loginuser" element={<UserLogin />} />
-      <Route exact path="/caduser" element={<UserCad />} />
-      <Route exact path="/about" element={<About />} />
-=======
       <Route exact path="/" element={<Initial />} />
       <Route exact path="/delivery" element={<Delivery />} />
       <Route exact path="/loginuser" element={<UserLogin />} />
       <Route exact path="/restmerc" element={<Mercados />} />
       <Route exact path="/about" element={<About />} />
       <Route exact path="/caduser" element={<UserCad />} />
->>>>>>> fabricio-frontend
       <Route
         exact
         path="/home"
@@ -42,33 +34,19 @@ export default function Routers() {
       />
       <Route
         exact
-<<<<<<< HEAD
-        path="/pedidos"
-        element={
-          <RequireAuth>
-            <Inicial />
-=======
         path="/menu"
         element={
           <RequireAuth>
             <Menu />
->>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />
       <Route
         exact
-<<<<<<< HEAD
-        path="/pedidos/cart"
-        element={
-          <RequireAuth>
-            <Cart />
-=======
         path="/orders"
         element={
           <RequireAuth>
             <Orders />
->>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />
@@ -81,15 +59,6 @@ export default function Routers() {
           </RequireAuth>
         }
       />
-<<<<<<< HEAD
-
-      <Route
-        exact
-        path="/menu"
-        element={
-          <RequireAuth>
-            <Menus />
-=======
       <Route
         exact
         path="/address"
@@ -105,7 +74,6 @@ export default function Routers() {
         element={
           <RequireAuth>
             <Cart />
->>>>>>> fabricio-frontend
           </RequireAuth>
         }
       />

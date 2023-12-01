@@ -12,10 +12,7 @@
   "dependencies": {
     "axios": "^1.5.1",
     "react": "^18.2.0",
-<<<<<<< HEAD
-=======
     "react-datepicker": "^4.21.0",
->>>>>>> fabricio-frontend
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",

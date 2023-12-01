@@ -48,27 +48,14 @@ export default function Dados() {
 
     nGender === "M" ? setGender("MASCULINO") : setGender("FEMININO");
 
-<<<<<<< HEAD
-    setLastName(user.data.user.last_name);
-    setName(user.data.user.first_name);
-    setEmail(user.data.user.email);
-    console.log(user.data.user.address[0]);
-=======
     setUserName(user.data.user.user_name);
     setName(user.data.user.first_name);
     setEmail(user.data.user.email);
->>>>>>> fabricio-frontend
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     const storageData = localStorage.getItem("UserId");
-<<<<<<< HEAD
-    const userdata = await api.findUserById(storageData);
-    const type_of_user = userdata.data.user.type_of_user;
-    const gender = genderSel === "MASCULINO" ? "M" : "F";
-
-=======
     const gender = genderSel === "MASCULINO" ? "M" : "F";
 
     const newData = new Date(dtBirth);
@@ -79,7 +66,6 @@ export default function Dados() {
       "/" +
       newData.getDate();
 
->>>>>>> fabricio-frontend
     // Validar campos
     setNotify("");
     // nome
@@ -88,35 +74,11 @@ export default function Dados() {
       return false;
     }
     // Sobrenome
-<<<<<<< HEAD
-    if (!last_name) {
-=======
     if (!user_name) {
->>>>>>> fabricio-frontend
       setNotify("Preencha o campo sobrenome!");
       return false;
     }
     // idade
-<<<<<<< HEAD
-    if (!age) {
-      setNotify("Preencha o campo idade!");
-      return false;
-    }
-    if (age == 0 || age > 100) {
-      setNotify("Preencha idade válida!");
-      return false;
-    }
-
-    const data = {
-      first_name,
-      last_name,
-      type_of_user,
-      age,
-      gender,
-    };
-    await api.updateUser(data, storageData);
-    recuperaDados();
-=======
     if (!birth) {
       setNotify("Preencha o campo data Nascimento!");
       return false;
@@ -159,7 +121,6 @@ export default function Dados() {
     await api.updateUser(data, storageData);
     recuperaDados();
     setNotify("Dados salvos com sucesso!");
->>>>>>> fabricio-frontend
   }
 
   return (
@@ -183,11 +144,7 @@ export default function Dados() {
             </div>
 
             <div className="half-box spacing">
-<<<<<<< HEAD
-              <label htmlFor="first_name">Nome</label>
-=======
               <label htmlFor="first_name">Apelido</label>
->>>>>>> fabricio-frontend
               <input
                 type="text"
                 placeholder="Digite o nome"
@@ -198,31 +155,12 @@ export default function Dados() {
               />
             </div>
             <div className="half-box">
-<<<<<<< HEAD
-              <label htmlFor="last-name">Sobrenome</label>
-=======
               <label htmlFor="last-name">Nome completo</label>
->>>>>>> fabricio-frontend
               <input
                 type="text"
                 placeholder="Digite o sobrenome"
                 id="last-name"
                 name="last-name"
-<<<<<<< HEAD
-                value={last_name}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </div>
-            <div className="half-box spacing">
-              <label htmlFor="age">Idade</label>
-              <input
-                type="number"
-                placeholder="digite sua idade"
-                id="age"
-                name="age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-=======
                 value={user_name}
                 onChange={(e) => setUserName(e.target.value)}
               />
@@ -235,7 +173,6 @@ export default function Dados() {
                 name="date_of_birth"
                 onChange={(date) => setDtBirth(date)}
                 dateFormat="dd/MM/yyyy"
->>>>>>> fabricio-frontend
               />
             </div>
             <div className="half-box">
@@ -264,9 +201,6 @@ export default function Dados() {
             <p>{notify}</p>
           </form>
         </div>
-<<<<<<< HEAD
-      </main>
-=======
         <div id="linha-horizontal"></div>
         <Link to="/address" className="linkaddress">
           Cadastrar endereço
@@ -279,7 +213,6 @@ export default function Dados() {
         </div>
       </main>
       <Footer />
->>>>>>> fabricio-frontend
     </>
   );
 }
